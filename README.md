@@ -1,4 +1,4 @@
-# Handoff: NFC Street Activations deck — v5 (25 slides)
+# Handoff: NFC Street Activations deck — v7 (25 slides)
 
 `index.html` is an identical copy of the deck for hosts that need a default document.
 
@@ -18,6 +18,9 @@ A finished, self-contained slide deck (`NFC Street Activations.dc.html`) built a
 - `uploads/` — remaining source photos referenced directly by the deck.
 - `deck-stage.js`, `image-slot.js`, `support.js` — plain JS web components the deck's `<helmet>`/template load; no build step, no bundler.
 - The six background videos (art wrap, Normies flyover, OpenSea loop, courtyard clip, two mural clips) are NOT included here — the deck's `<video>` tags already point at `https://raw.githubusercontent.com/hs7j4yk4sz-boop/slides/main/...`, so they load from that repo at runtime.
+
+## v7 changes (2026-09-10)
+Copy-only pass: cover subtitle, "one of our artists", houses installed 27–28 May (two days), "painted on one exterior side", "One shell, five ways", PFP copy (prominent position, hand-painted), 500 names, email john@nonfungibleconference.com, flagship XCOPY sentence without the 20,000 stat. Slide layouts unchanged. No new video files — the six raw.githubusercontent.com links are unchanged.
 
 ## Fidelity
 This is the final, approved design — not a wireframe. Deploy it as-is; no restyling or recreation needed.
