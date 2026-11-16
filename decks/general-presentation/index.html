@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>General Presentation · NFC Summit 2027</title>
+<meta property="og:title" content="General Presentation · NFC Summit 2027">
+<meta property="og:image" content="cover.jpg">
+<link rel="icon" href="../../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300..700&display=swap">
+<link rel="stylesheet" href="../../assets/viewer.css">
+<style>
+:root {
+  --ink: #0B0B0B; --graphite: #1A1A1A; --chalk: #F2F0EB; --grey: #B0ACA2; --grey-deep: #6B685F;
+  --paper: #FFFFFF; --paper-2: #F3F6FF; --rule-paper: #D5DCEE;
+  --yellow: #F6B800; --blue: #1442B2; --ink-blue: #0E2A6E;
+}
+body { font-family: 'Space Grotesk', Arial, sans-serif; }
+section.s { background: var(--ink); color: var(--chalk); padding: 96px 96px 160px; display: flex; flex-direction: column; justify-content: space-between; }
+section.paper { background: var(--paper); color: var(--ink); }
+section.paper2 { background: var(--paper-2); color: var(--ink); }
+section.yellow { background: var(--yellow); color: var(--ink-blue); }
+section.blue { background: var(--blue); color: var(--paper); }
+section.bottom { justify-content: flex-end; }
+.bg { position: absolute; left: 0px; top: 0px; width: 1920px; height: 1080px; object-fit: cover; }
+.shade-l { position: absolute; left: 0px; top: 0px; width: 1920px; height: 1080px; background: linear-gradient(90deg, rgba(11,11,11,0.9) 0%, rgba(11,11,11,0.55) 45%, rgba(11,11,11,0) 75%); }
+.shade-b { position: absolute; left: 0px; top: 0px; width: 1920px; height: 1080px; background: linear-gradient(0deg, rgba(11,11,11,0.92) 0%, rgba(11,11,11,0.45) 40%, rgba(11,11,11,0) 70%); }
+.shade-r { position: absolute; left: 0px; top: 0px; width: 1920px; height: 1080px; background: linear-gradient(270deg, rgba(11,11,11,1) 0%, rgba(11,11,11,0.97) 42%, rgba(11,11,11,0.6) 60%, rgba(11,11,11,0) 80%); }
+.shade-dark { position: absolute; left: 0px; top: 0px; width: 1920px; height: 1080px; background: linear-gradient(0deg, rgba(11,11,11,0.96) 0%, rgba(11,11,11,0.8) 60%, rgba(11,11,11,0.45) 100%); }
+.t { font-family: 'Anton', Arial, sans-serif; font-weight: 400; text-transform: uppercase; line-height: 0.86; }
+.t200 { font-size: 200px; letter-spacing: -4px; line-height: 0.84; }
+.t168 { font-size: 168px; letter-spacing: -3px; }
+.t150 { font-size: 150px; letter-spacing: -3px; }
+.t120 { font-size: 120px; letter-spacing: -2px; }
+.t112 { font-size: 112px; letter-spacing: -2px; line-height: 0.9; }
+.t88 { font-size: 88px; letter-spacing: -2px; line-height: 0.9; }
+.t64 { font-size: 64px; letter-spacing: -1px; line-height: 0.92; }
+.t48 { font-size: 48px; letter-spacing: -1px; line-height: 0.95; }
+.t36 { font-size: 36px; line-height: 1; }
+section.paper .t, section.paper2 .t { color: var(--ink-blue); }
+.lab { font-size: 26px; font-weight: 600; line-height: 1.2; }
+.acc { color: var(--yellow); }
+section.paper .acc, section.paper2 .acc { color: var(--blue); }
+section.yellow .acc { color: var(--ink-blue); }
+.lead { font-size: 40px; font-weight: 300; line-height: 1.3; }
+.body { font-size: 28px; font-weight: 400; line-height: 1.4; }
+.small { font-size: 24px; font-weight: 400; line-height: 1.35; }
+.mute { color: var(--grey); }
+section.paper .mute, section.paper2 .mute { color: var(--grey-deep); }
+.foot { position: absolute; left: 96px; bottom: 56px; width: 1300px; font-size: 24px; font-weight: 500; line-height: 1.2; color: var(--grey); }
+.pg { position: absolute; left: 1704px; bottom: 56px; width: 120px; text-align: right; font-size: 24px; font-weight: 500; line-height: 1.2; color: var(--grey); }
+section.paper .foot, section.paper .pg, section.paper2 .foot, section.paper2 .pg { color: var(--grey-deep); }
+section.yellow .foot, section.yellow .pg { color: var(--ink-blue); }
+section.blue .foot, section.blue .pg { color: var(--paper); }
+section.yellow .mute { color: #3C4658; }
+section.yellow .rule, section.yellow .rule-d { border-top-color: rgba(14,42,110,0.28); }
+section.yellow .bar, section.yellow .sq, section.yellow .ysq { background: var(--blue); }
+section.yellow .frame { border-color: var(--ink-blue); }
+.col { display: flex; flex-direction: column; }
+.row { display: flex; flex-direction: row; }
+.g8 { gap: 8px; } .g12 { gap: 12px; } .g16 { gap: 16px; } .g20 { gap: 20px; } .g24 { gap: 24px; } .g32 { gap: 32px; } .g40 { gap: 40px; } .g48 { gap: 48px; } .g64 { gap: 64px; }
+.bar { width: 72px; height: 6px; background: var(--yellow); }
+section.paper .bar, section.paper2 .bar { background: var(--blue); }
+.sq { width: 20px; height: 20px; background: var(--yellow); }
+.bsq { width: 12px; height: 12px; background: var(--blue); margin-top: 14px; flex: none; }
+.ysq { width: 12px; height: 12px; background: var(--yellow); margin-top: 14px; flex: none; }
+.rule { border-top: 1px solid var(--rule-paper); }
+.rule-d { border-top: 1px solid #2E2E2E; }
+.panel { position: absolute; left: 880px; top: 96px; width: 3px; height: 824px; background: var(--ink-blue); }
+.frame { border: 2px solid var(--chalk); }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0px); } }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+.in { animation: rise 600ms ease-out both; }
+.in2 { animation: rise 600ms ease-out 180ms both; }
+.in3 { animation: rise 600ms ease-out 360ms both; }
+
+</style>
+</head>
+<body>
+<div id="stage"><div id="deck">
+<section id="cover" class="s bottom" data-transition="fade">
+<img class="bg" src="../../media/videos-2026/art-factory-rez-de-chaussee.jpg" data-video="../../media/videos-2026/art-factory-rez-de-chaussee.mp4" alt="The flour mill machines of the Art Factory at NFC Summit 2026">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div style="position:absolute;left:96px;top:96px;width:176px;height:100px;overflow:hidden"><img src="../../media/logos-2027/logo-nfc-blanc.png" alt="NFC Summit logo" style="position:absolute;left:-10px;top:-47px;width:196px;height:196px;object-fit:contain"></div>
+<div class="col g32 in" style="width:1500px">
+<p class="lab acc">Sixth edition · fifth anniversary</p>
+<h1 class="t t200">NFC Summit 2027</h1>
+<p class="lead">The Digital Pop Culture Festival</p>
+<p class="lab">27 — 29 May 2027 · Unicorn Factory, Beato, Lisbon</p>
+</div>
+<aside>Sixth edition, fifth anniversary. 27 to 29 May 2027, Unicorn Factory, Beato, Lisbon. The film behind the title is the Art Factory in 2026.</aside>
+</section>
+<section id="belief" class="s bottom" data-transition="fade" style="padding-bottom:144px">
+<img class="bg" src="../../media/videos-2026/place-totem-et-mur.jpg" data-video="../../media/videos-2026/place-totem-et-mur.mp4" alt="The central plaza of NFC Summit 2026: a digital art totem in front of the pixel portraits of the Wall">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g40 in" style="width:1500px">
+<h2 class="t t150">The future belongs to crossovers.</h2>
+<p class="lead">Five years later, this community has an address.</p>
+</div>
+<aside>Our belief. Between communities. Between artists and collectors. Between technology and culture. Between the digital and the real world. Five years later, this community turned that belief into a place. Three days a year, it has an address.</aside>
+</section>
+<section id="thesis" class="s bottom" data-transition="fade" style="padding-bottom:144px">
+<img class="bg" src="../../media/videos-2026/mur-crane-pixel.jpg" data-video="../../media/videos-2026/mur-crane-pixel.mp4" alt="A giant pixel skull painted on a facade at the Unicorn Factory, filmed by drone">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g40 in" style="width:1500px">
+<h2 class="t t150">Art at the service of entertainment.</h2>
+<p class="lead">2027, our fifth anniversary: the festival becomes a fairground.</p>
+</div>
+<aside>The line for 2027, the fifth anniversary: art at the service of entertainment. The festival becomes a fairground: Play the art.</aside>
+</section>
+<section id="started" class="s " data-transition="fade">
+<div class="col g24 in">
+<p class="lab acc">On The Wall · since September 2026</p>
+<h2 class="t t150">It has already started.</h2>
+</div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(4, 1fr);column-gap:48px"><div class="col g16"><div class="sq"></div><p class="lead" style="font-size:36px;line-height:1.25">325 mints in seven weeks</p></div><div class="col g16"><div class="sq"></div><p class="lead" style="font-size:36px;line-height:1.25">311 names and 14 portraits, hand-painted on the walls of NFC 2027</p></div><div class="col g16"><div class="sq"></div><p class="lead" style="font-size:36px;line-height:1.25">House 01 already taken by JPEG FRENS</p></div><div class="col g16"><div class="sq"></div><p class="lead" style="font-size:36px;line-height:1.25">People of the Wall, the podcast: every Friday, 32 episodes so far</p></div></div>
+<div class="col g32">
+<p class="lead mute">The community did not wait for May.</p>
+<div class="row g24" aria-label="People of the Wall pixel avatars"><img src="../../media/people-of-the-wall/sprite-00.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-01.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-02.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-03.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-04.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-05.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-06.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-07.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-08.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-09.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-10.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-11.png" alt="" style="width:96px;height:96px"></div>
+</div>
+<p class="foot">NFC Summit 2027 — General presentation</p>
+<p class="pg">04</p>
+<aside>The campaign ran from 10 September to 30 October 2026. On its final day it reached “Today’s News” on X. The Yearbook is made with Alpha Labs and handed out on 27 May.</aside>
+</section>
+<section id="definition" class="s yellow" data-transition="fade" style="flex-direction:row;gap:96px">
+<div class="col" style="width:760px;justify-content:space-between">
+<p class="lab acc">Definition</p>
+<div class="col g32"><h2 class="t t150">Digital Pop Culture</h2><p class="lead">Culture is now made where two worlds meet.</p></div>
+</div>
+<div class="col in2" style="flex:1;justify-content:flex-end"><div class="row g20 rule" style="padding:22px 0;align-items:center"><h3 class="t t48">Art</h3><p class="lead acc" style="line-height:1">×</p><h3 class="t t48">Finance</h3></div><div class="row g20 rule" style="padding:22px 0;align-items:center"><h3 class="t t48">Builders</h3><p class="lead acc" style="line-height:1">×</p><h3 class="t t48">Creators</h3></div><div class="row g20 rule" style="padding:22px 0;align-items:center"><h3 class="t t48">Communities</h3><p class="lead acc" style="line-height:1">×</p><h3 class="t t48">Institutions</h3></div><div class="row g20 rule" style="padding:22px 0;align-items:center"><h3 class="t t48">Internet</h3><p class="lead acc" style="line-height:1">×</p><h3 class="t t48">Real life</h3></div><div class="row g20 rule" style="padding:22px 0;align-items:center"><h3 class="t t48">Technology</h3><p class="lead acc" style="line-height:1">×</p><h3 class="t t48">Culture</h3></div><div class="row g20 rule" style="padding:22px 0;align-items:center"><h3 class="t t48">Collecting</h3><p class="lead acc" style="line-height:1">×</p><h3 class="t t48">Belonging</h3></div></div>
+<p class="foot">NFC Summit 2027 — General presentation</p>
+<p class="pg">05</p>
+<aside>Not an industry. A method. Culture is no longer handed down by one world at a time. It is assembled where two worlds meet, by people who were never supposed to be in the same room. Digital Pop Culture is what happens when the internet stops being a channel and becomes a co-author. Every crossover already has an audience. None of them has a home. That is the gap NFC fills.</aside>
+</section>
+<section id="address" class="s bottom" data-transition="fade" style="padding-bottom:110px">
+<img class="bg" src="../../media/px/expo-crowd.jpg" data-video="../../media/videos-2026/expo-art-factory-etage.mp4" alt="Visitors in an exhibition room of the Art Factory at NFC Summit 2026">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g24 in" style="width:1600px">
+<p class="lab acc">Sixth edition · fifth anniversary</p>
+<h2 class="t" style="font-size:200px;line-height:0.88;letter-spacing:-4px">Five years.<br>One address.</h2>
+</div>
+<aside>A pause. Five years after the first edition, the community has a home in Lisbon: the Unicorn Factory, every May.</aside>
+</section>
+<section id="numbers" class="s " data-transition="fade">
+<img class="bg" src="../../media/photos-2026/place-centrale-visiteuses.jpg" alt="Visitors on the central plaza of the Unicorn Factory, NFC Summit 2026">
+<div class="shade-dark"></div>
+<div class="col g24 in">
+<p class="lab acc">2026 edition — final report</p>
+<h2 class="t t120">What one edition holds</h2>
+</div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(4, 1fr);row-gap:56px;column-gap:48px"><div class="col g16"><div class="bar"></div><p class="t t112">2 740</p><p class="lab mute">Visitors</p></div><div class="col g16"><div class="bar"></div><p class="t t112">150+</p><p class="lab mute">Speakers</p></div><div class="col g16"><div class="bar"></div><p class="t t112">79</p><p class="lab mute">Countries</p></div><div class="col g16"><div class="bar"></div><p class="t t112">75</p><p class="lab mute">Sponsors</p></div><div class="col g16"><div class="bar"></div><p class="t t112">200+</p><p class="lab mute">Artists exhibited</p></div><div class="col g16"><div class="bar"></div><p class="t t112">30+</p><p class="lab mute">Side events</p></div><div class="col g16"><div class="bar"></div><p class="t t112">6M+</p><p class="lab mute">Organic impressions</p></div></div>
+<p class="foot">Source: NFC Summit 2026 final report</p>
+<p class="pg">07</p>
+<aside>All figures come from the NFC Summit 2026 final report.</aside>
+</section>
+<section id="voices" class="s " data-transition="fade" style="justify-content:center;padding-bottom:150px">
+<img src="../../media/dragons-2027/dragon-art-factory.webp" alt="" style="position:absolute;left:1150px;top:600px;width:470px;height:540px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-parties.webp" alt="" style="position:absolute;left:1610px;top:580px;width:441px;height:560px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-conference.webp" alt="The conference dragon at the microphone, with the art factory and parties dragons" style="position:absolute;left:1300px;top:470px;width:524px;height:660px;object-fit:contain">
+<div class="col in" style="width:1060px">
+<p class="t" style="font-size:320px;line-height:0.62;height:160px;color:var(--yellow)">“</p>
+<p style="font-size:80px;font-weight:300;line-height:1.1;letter-spacing:-1px">Amazing 48 hours at NFC Summit in Lisbon. <b style="font-weight:500">One of the best 2 days of my life.</b></p>
+<div class="col g12" style="margin-top:56px">
+<p class="t t64">Adam Weitsman</p>
+<p class="lab mute">Collector · Gold sponsor 2027</p>
+</div>
+</div>
+<aside>Other voices from 2026. DANAE.io: “NFC Summit exceeded everything we hoped for. The crowd, the wonder, the children’s laughter echoing in the room, moments we won’t forget.” Matt Medved: “NFC’s always been an important event for digital art, bringing Europe and the Americas together.” Giannis Sourdis: “A level up compared to the last few years. The vibes are also better than last year.”</aside>
+</section>
+<section id="welcome" class="s " data-transition="fade">
+<img src="../../media/dragons-2027/dragon-ringmaster-hero.webp" alt="The ringmaster hero dragon" style="position:absolute;left:781px;top:230px;width:1209px;height:980px;object-fit:contain">
+<div class="col g24 in" style="position:absolute;left:96px;top:0px;width:1000px;height:1080px;justify-content:center">
+<p class="lab acc">Six worlds · 27 — 29 May 2027</p>
+<h2 class="t" style="font-size:150px;line-height:0.92;letter-spacing:-3px">Welcome to the fairground.</h2>
+</div>
+<aside>The ringmaster opens the six worlds of 2027: Art Fun Fair, Kawaii Summit, Conference, Art Factory, Hackathon · AI Day, Parties.</aside>
+</section>
+<section id="worlds" class="s " data-transition="fade">
+<div class="col g24 in"><p class="lab acc">The programme</p><h2 class="t t120">Six worlds</h2></div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(3, 1fr);column-gap:64px;row-gap:56px"><div class="col g12 rule-d" style="padding-top:28px"><p class="lab mute">01</p><h3 class="t t64">Art Fun Fair</h3><p class="lab acc">Art × Play</p></div><div class="col g12 rule-d" style="padding-top:28px"><p class="lab mute">02</p><h3 class="t t64">Kawaii Summit</h3><p class="lab acc">Cards × Art</p></div><div class="col g12 rule-d" style="padding-top:28px"><p class="lab mute">03</p><h3 class="t t64">Conference</h3><p class="lab acc">Ideas × Action</p></div><div class="col g12 rule-d" style="padding-top:28px"><p class="lab mute">04</p><h3 class="t t64">Art Factory</h3><p class="lab acc">Art × Collecting</p></div><div class="col g12 rule-d" style="padding-top:28px"><p class="lab mute">05</p><h3 class="t t64">Hackathon · AI Day</h3><p class="lab acc">Builders × AI</p></div><div class="col g12 rule-d" style="padding-top:28px"><p class="lab mute">06</p><h3 class="t t64">Parties</h3><p class="lab acc">Internet × Real life</p></div></div>
+<p class="foot">NFC Summit 2027 — General presentation</p>
+<p class="pg">10</p>
+<aside>The six worlds of the site, each with its crossover. The containers now live in the On The Wall story (slide 4).</aside>
+</section>
+<section id="fair" class="s " data-transition="fade">
+<img src="../../media/dragons-2027/dragon-art-fun-fair.webp" alt="The Art Fun Fair dragon, riso-printed in yellow and blue" style="position:absolute;left:823px;top:190px;width:897px;height:1000px;object-fit:contain">
+<p class="lab acc" style="width:720px">World 01 · Art × Play</p>
+<div class="col g32 in" style="width:720px">
+<h2 class="t t168">Play the art.</h2>
+<p class="lead">A fairground where artists build the rides: a screen, a score, a print to take home.</p>
+</div>
+<p class="foot">NFC Summit 2027 — General presentation</p>
+<p class="pg">11</p>
+<aside>Every stand is an Artistic Digital Activation: play, win, keep. Photobooths, arcades, claws and shooting stands designed by artists.</aside>
+</section>
+<section id="kawaii" class="s bottom" data-transition="fade">
+<img class="bg" src="../../media/videos-2026/salle-kawaii-cartes-et-stamps.jpg" data-video="../../media/videos-2026/salle-kawaii-cartes-et-stamps.mp4" alt="The Kawaii Summit hall in 2026: card sellers, game tables and tournaments">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g32 in" style="width:1180px">
+<p class="lab acc">World 02 · Cards × Art</p>
+<h2 class="t t120">Where cards become art.</h2>
+<p class="lead">Tournaments on the tables, the card as an artwork on the walls.</p>
+</div>
+<p class="foot">NFC Summit 2027 — General presentation</p>
+<p class="pg">12</p>
+<aside>Kawaii Summit 2026: 20 exhibitors, 3 TCG tournaments, its own stage. Trading floors next to drawing tables. Collectors of ten and collectors of forty, trading with each other.</aside>
+</section>
+<section id="conference" class="s bottom" data-transition="fade">
+<img class="bg" src="../../media/photos-2026/scene-speakeuse.jpg" alt="A speaker on the main stage of NFC Summit 2026">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g32 in" style="width:1180px">
+<p class="lab acc">World 03 · Ideas × Action</p>
+<h2 class="t t120">One day to think. One day to listen.</h2>
+<p class="lead">Day one, working groups. Day two, the symposium and the big names.</p>
+</div>
+<p class="foot">NFC Summit 2027 — General presentation</p>
+<p class="pg">13</p>
+<aside>Stage time is earned: we book people who shipped the thing, not people who predict it. Conversations continue in the corridor and end in decisions.</aside>
+</section>
+<section id="artfactory" class="s bottom" data-transition="fade" style="padding-bottom:144px">
+<img class="bg" src="../../media/videos-2026/art-factory-premier-etage.jpg" data-video="../../media/videos-2026/art-factory-premier-etage.mp4" alt="Artworks shown on the first floor of the Art Factory in 2026">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g40 in" style="width:1500px">
+<h2 class="t t150">The museum of the summit.</h2>
+<p class="lead">Four floors of a former flour mill, the machines still in place.</p>
+</div>
+<aside>World 04 · Art × Collecting. Artists work in the open: nothing sits behind glass. The person who made the piece is standing next to it, and the person buying it asks in person.</aside>
+</section>
+<section id="hackathon" class="s bottom" data-transition="fade">
+<img class="bg" src="../../media/photos-2026/gaming-enfant.jpg" alt="A young visitor playing a game at NFC Summit 2026">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g32 in" style="width:1180px">
+<p class="lab acc">World 05 · Builders × AI</p>
+<h2 class="t t120">Build it in two days.</h2>
+<p class="lead">In the Escola 42 building, on site, 27 and 28 May. The best projects demo on the main stage.</p>
+</div>
+<p class="foot">NFC Summit 2027 — General presentation</p>
+<p class="pg">15</p>
+<aside>Teams build in the same place where the work will be shown. On the last afternoon they demo to the people who would actually use it.</aside>
+</section>
+<section id="parties" class="s bottom" data-transition="fade">
+<img class="bg" src="../../media/photos-2026/fete-dj-palmiers.jpg" alt="A DJ set under the palm trees, NFC Summit 2026">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g32 in" style="width:1180px">
+<p class="lab acc">World 06 · Internet × Real life</p>
+<h2 class="t t120">Every night, everywhere.</h2>
+<p class="lead">A party every evening, and 29 May is the party day.</p>
+</div>
+<p class="foot">NFC Summit 2027 — General presentation</p>
+<p class="pg">16</p>
+<aside>One party every night, one big one, and the whole of 29 May given to the party.</aside>
+</section>
+<section id="play" class="s bottom" data-transition="fade" style="padding-bottom:110px">
+<img class="bg" src="../../media/videos-2026/mur-crane-pixel.jpg" data-video="../../media/videos-2026/mur-crane-pixel.mp4" alt="A pixel skull mural on the walls of NFC Summit 2026">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g24 in" style="width:1600px">
+<p class="lab acc">Every stand is an artistic activation</p>
+<h2 class="t" style="font-size:200px;line-height:0.88;letter-spacing:-4px">Play. Win. Keep.</h2>
+</div>
+<aside>Play the art, win a prize, keep a print. Every stand of the fair is designed by an artist.</aside>
+</section>
+<section id="venue" class="s yellow" data-transition="fade" style="flex-direction:row;padding-bottom:140px">
+<img src="../../media/decors/plan-unicorn-factory-transparent.webp" alt="Riso drawing of the Unicorn Factory site in Beato" style="position:absolute;left:40px;top:160px;width:1130px;height:753px;object-fit:contain">
+<p style="position:absolute;left:435px;top:325px;width:205px;font-size:24px;font-weight:600;line-height:1;text-align:center;padding:10px 0;background:var(--blue);color:var(--paper);border:2px solid var(--ink-blue)">Art Factory</p>
+<p style="position:absolute;left:656px;top:438px;width:160px;font-size:24px;font-weight:600;line-height:1;text-align:center;padding:10px 0;background:var(--blue);color:var(--paper);border:2px solid var(--ink-blue)">The Wall</p>
+<p style="position:absolute;left:205px;top:683px;width:190px;font-size:24px;font-weight:600;line-height:1;text-align:center;padding:10px 0;background:var(--blue);color:var(--paper);border:2px solid var(--ink-blue)">Main stage</p>
+<p style="position:absolute;left:442px;top:765px;width:235px;font-size:24px;font-weight:600;line-height:1;text-align:center;padding:10px 0;background:var(--blue);color:var(--paper);border:2px solid var(--ink-blue)">Kawaii Summit</p>
+<p style="position:absolute;left:556px;top:548px;width:220px;font-size:24px;font-weight:600;line-height:1;text-align:center;padding:10px 0;background:var(--ink-blue);color:var(--paper);border:2px solid var(--ink-blue)">Art Fun Fair</p>
+<p style="position:absolute;left:469px;top:193px;width:205px;font-size:24px;font-weight:600;line-height:1;text-align:center;padding:10px 0;background:var(--blue);color:var(--paper);border:2px solid var(--ink-blue)">Side events</p>
+<p style="position:absolute;left:900px;top:347px;width:145px;font-size:24px;font-weight:600;line-height:1;text-align:center;padding:10px 0;background:var(--blue);color:var(--paper);border:2px solid var(--ink-blue)">Parties</p>
+<p style="position:absolute;left:232px;top:510px;width:175px;font-size:24px;font-weight:600;line-height:1;text-align:center;padding:10px 0;background:var(--blue);color:var(--paper);border:2px solid var(--ink-blue)">Galleries</p>
+<div style="width:1124px;flex:none"></div>
+<div class="col" style="flex:1;justify-content:space-between">
+<div class="col g20"><p class="lab acc">The venue</p><h2 class="t t88">One site, one fairground</h2></div>
+<div class="col"><div class="col g8 rule" style="padding:14px 0"><h3 class="t t36">Art Fun Fair</h3><p class="small mute">The fair, at the heart of the plaza</p></div><div class="col g8 rule" style="padding:14px 0"><h3 class="t t36">Art Factory</h3><p class="small mute">Four floors of exhibitions</p></div><div class="col g8 rule" style="padding:14px 0"><h3 class="t t36">Main stage</h3><p class="small mute">Two days of conference</p></div><div class="col g8 rule" style="padding:14px 0"><h3 class="t t36">Kawaii Summit</h3><p class="small mute">Cards, players, artists</p></div><div class="col g8 rule" style="padding:14px 0"><h3 class="t t36">The Wall</h3><p class="small mute">The names of the community</p></div><div class="col g8 rule" style="padding:14px 0"><h3 class="t t36">Escola 42</h3><p class="small mute">Hackathon · AI Day</p></div></div>
+</div>
+<p class="foot">NFC Summit 2027 — General presentation</p>
+<p class="pg">18</p>
+<aside>The Unicorn Factory in Beato: the Art Factory on the left, the Wall along the right building, the main stage and the Kawaii Summit at the bottom, the fair in the middle of the plaza. The hackathon is in the Escola 42 building, on site.</aside>
+</section>
+<section id="days" class="s " data-transition="fade">
+<div class="col g24 in"><p class="lab acc">27 — 29 May 2027</p><h2 class="t t120">Three days in May</h2></div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(3, 1fr);column-gap:48px"><div class="col">
+<img src="../../media/photos-2026/hall-galeries.jpg" alt="The galleries hall of NFC Summit 2026" style="width:528px;height:300px;object-fit:cover">
+<p class="lab acc" style="margin-top:32px">Thursday 27</p>
+<h3 class="t t48" style="margin-top:12px">The working day</h3>
+<div class="col g8" style="margin-top:20px"><p class="body mute">— Working groups</p><p class="body mute">— Fair, cards and Art Factory open</p><p class="body mute">— The hackathon starts</p></div>
+</div><div class="col">
+<img src="../../media/photos-2026/scene-speaker.jpg" alt="A speaker on the main stage of NFC Summit 2026" style="width:528px;height:300px;object-fit:cover">
+<p class="lab acc" style="margin-top:32px">Friday 28</p>
+<h3 class="t t48" style="margin-top:12px">The symposium</h3>
+<div class="col g8" style="margin-top:20px"><p class="body mute">— Main stage, big names</p><p class="body mute">— Tournaments and fair all day</p><p class="body mute">— Hackathon demos</p></div>
+</div><div class="col">
+<img src="../../media/photos-2026/fete-dj-palmiers.jpg" alt="A DJ set under the palm trees, NFC Summit 2026" style="width:528px;height:300px;object-fit:cover">
+<p class="lab acc" style="margin-top:32px">Saturday 29</p>
+<h3 class="t t48" style="margin-top:12px">The party day</h3>
+<div class="col g8" style="margin-top:20px"><p class="body mute">— No talks, no stage</p><p class="body mute">— A full day of party</p><p class="body mute">— The final party</p></div>
+</div></div>
+<p class="foot">NFC Summit 2027 — General presentation</p>
+<p class="pg">19</p>
+<aside>Thursday is the working day, Friday the symposium, Saturday the party day.</aside>
+</section>
+<section id="stage" class="s " data-transition="fade" style="justify-content:flex-start;padding-bottom:0px">
+<img src="../../media/dragons-2027/dragon-art-fun-fair.webp" alt="" style="position:absolute;left:0px;top:760px;width:323px;height:360px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-kawaii-summit.webp" alt="" style="position:absolute;left:249px;top:760px;width:325px;height:360px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-conference.webp" alt="" style="position:absolute;left:543px;top:760px;width:286px;height:360px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-ringmaster-hero.webp" alt="The seven NFC dragons lined up" style="position:absolute;left:682px;top:670px;width:555px;height:450px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-art-factory.webp" alt="" style="position:absolute;left:1078px;top:760px;width:313px;height:360px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-hackathon-ai-day.webp" alt="" style="position:absolute;left:1342px;top:780px;width:333px;height:340px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-parties.webp" alt="" style="position:absolute;left:1633px;top:740px;width:299px;height:380px;object-fit:contain">
+<div class="col g28 in" style="width:1728px;gap:28px">
+<p class="lab acc">2027 · our fifth anniversary</p>
+<h2 class="t" style="font-size:168px;line-height:0.88;letter-spacing:-2px">Just wait until you see what we’ve built.</h2>
+</div>
+<div style="height:420px"></div>
+<aside>Five years of bringing together artists, collectors, builders and fans in Lisbon. To celebrate our birthday, we are not just doing more of the same: we are taking things to a whole new level. Just wait until you see what we’ve built.</aside>
+</section>
+<section id="lisbon" class="s bottom" data-transition="fade">
+<img class="bg" src="../../media/photos-2026/terrasse-tage-fete.jpg" alt="A rooftop party above the Tagus during NFC Summit 2026">
+<div class="shade-b"></div>
+<div class="shade-l"></div>
+<div class="col g32 in" style="width:1400px">
+<h2 class="t t150">The city was already here</h2>
+<p class="lead">Artists, founders and collectors moved to Lisbon before anyone called it a scene.</p>
+</div>
+<p class="foot">NFC Summit 2027 — General presentation</p>
+<p class="pg">21</p>
+<aside>The festival did not import an audience: it set a date for the one living here. A former factory in Beato holds the programme. The city holds the rest: studios, rooftops, the river at four in the morning. Nobody stays a stranger in a walkable city.</aside>
+</section>
+<section id="comeback" class="s yellow" data-transition="fade" style="flex-direction:row;gap:96px">
+<div class="col" style="width:760px;justify-content:space-between">
+<p class="lab acc">Why people come back</p>
+<div class="col g32"><h2 class="t t150">Three days people keep</h2></div>
+</div>
+<div class="col in2" style="flex:1;justify-content:flex-end"><div class="row g32 rule" style="padding:28px 0;align-items:baseline"><p class="lab acc">01</p><h3 class="t t64">You meet the people you only knew online</h3></div><div class="row g32 rule" style="padding:28px 0;align-items:baseline"><p class="lab acc">02</p><h3 class="t t64">You see ideas before they become trends</h3></div><div class="row g32 rule" style="padding:28px 0;align-items:baseline"><p class="lab acc">03</p><h3 class="t t64">You leave with something started</h3></div></div>
+<p class="foot">NFC Summit 2027 — General presentation</p>
+<p class="pg">22</p>
+<aside>01 — Years of messages, one handshake. It changes how you work with them afterwards. 02 — The work shown in May is the work everyone quotes in November. 03 — A project, a friendship, a collaboration. Usually all three, decided on a staircase.</aside>
+</section>
+<section id="close" class="s " data-transition="fade" style="justify-content:flex-start;padding-bottom:0px">
+<img src="../../media/dragons-2027/dragon-art-fun-fair.webp" alt="" style="position:absolute;left:0px;top:740px;width:341px;height:380px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-kawaii-summit.webp" alt="" style="position:absolute;left:240px;top:740px;width:343px;height:380px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-conference.webp" alt="" style="position:absolute;left:535px;top:740px;width:302px;height:380px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-ringmaster-hero.webp" alt="" style="position:absolute;left:670px;top:650px;width:580px;height:470px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-art-factory.webp" alt="" style="position:absolute;left:1069px;top:740px;width:331px;height:380px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-hackathon-ai-day.webp" alt="" style="position:absolute;left:1332px;top:760px;width:353px;height:360px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-parties.webp" alt="" style="position:absolute;left:1625px;top:720px;width:315px;height:400px;object-fit:contain">
+<div class="col g32 in" style="width:1728px">
+<p class="lab acc">27 — 29 May 2027 · Unicorn Factory, Beato, Lisbon</p>
+<h2 class="t t150">See you in Beato</h2>
+<p class="body mute">Gold sponsors 2027 · JPEG-FRENS · Yuga Labs · Adam Weitsman</p>
+
+</div>
+<div style="height:420px"></div>
+<aside>Close on the dates and the seven dragons: the ringmaster in the middle, one dragon per world around him.</aside>
+</section>
+
+</div></div>
+
+<nav class="v-bar v-top" aria-label="Deck">
+  <a class="v-btn" href="../../" title="Tous les decks"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg><span class="v-hide-sm">Tous les decks</span></a>
+  <span class="v-sep"></span>
+  <span class="v-title">General Presentation</span>
+</nav>
+<nav class="v-bar v-bottom" aria-label="Navigation">
+  <button class="v-btn" id="v-prev" type="button" title="Précédente (←)" aria-label="Slide précédente"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <span class="v-count" id="v-count" aria-live="polite">1 / 23</span>
+  <button class="v-btn" id="v-next" type="button" title="Suivante (→)" aria-label="Slide suivante"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  <span class="v-sep"></span>
+  <button class="v-btn" id="v-grid" type="button" title="Vue d’ensemble (G)" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg><span class="v-hide-sm">Slides</span></button>
+  <button class="v-btn" id="v-notes" type="button" title="Notes (N)" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 9h8M8 13h8M8 17h5"/></svg><span class="v-hide-sm">Notes</span></button>
+  <a class="v-btn" href="general-presentation.pdf" download title="Télécharger le PDF"><svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span class="v-hide-sm">PDF</span></a>
+  <button class="v-btn" id="v-fs" type="button" title="Plein écran (F)" aria-label="Plein écran"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button>
+</nav>
+<div class="v-progress" id="v-progress"></div>
+
+<aside id="notes" hidden><h4>Notes · à dire</h4><p></p></aside>
+
+<div id="grid" hidden>
+  <div class="g-head"><h2>General Presentation</h2><button class="v-btn" type="button" data-close>Fermer · Esc</button></div>
+  <ol><li><button type="button" data-i="0"><img src="thumbs/01.jpg" alt="Slide 1" loading="lazy" width="480" height="270">01</button></li><li><button type="button" data-i="1"><img src="thumbs/02.jpg" alt="Slide 2" loading="lazy" width="480" height="270">02</button></li><li><button type="button" data-i="2"><img src="thumbs/03.jpg" alt="Slide 3" loading="lazy" width="480" height="270">03</button></li><li><button type="button" data-i="3"><img src="thumbs/04.jpg" alt="Slide 4" loading="lazy" width="480" height="270">04</button></li><li><button type="button" data-i="4"><img src="thumbs/05.jpg" alt="Slide 5" loading="lazy" width="480" height="270">05</button></li><li><button type="button" data-i="5"><img src="thumbs/06.jpg" alt="Slide 6" loading="lazy" width="480" height="270">06</button></li><li><button type="button" data-i="6"><img src="thumbs/07.jpg" alt="Slide 7" loading="lazy" width="480" height="270">07</button></li><li><button type="button" data-i="7"><img src="thumbs/08.jpg" alt="Slide 8" loading="lazy" width="480" height="270">08</button></li><li><button type="button" data-i="8"><img src="thumbs/09.jpg" alt="Slide 9" loading="lazy" width="480" height="270">09</button></li><li><button type="button" data-i="9"><img src="thumbs/10.jpg" alt="Slide 10" loading="lazy" width="480" height="270">10</button></li><li><button type="button" data-i="10"><img src="thumbs/11.jpg" alt="Slide 11" loading="lazy" width="480" height="270">11</button></li><li><button type="button" data-i="11"><img src="thumbs/12.jpg" alt="Slide 12" loading="lazy" width="480" height="270">12</button></li><li><button type="button" data-i="12"><img src="thumbs/13.jpg" alt="Slide 13" loading="lazy" width="480" height="270">13</button></li><li><button type="button" data-i="13"><img src="thumbs/14.jpg" alt="Slide 14" loading="lazy" width="480" height="270">14</button></li><li><button type="button" data-i="14"><img src="thumbs/15.jpg" alt="Slide 15" loading="lazy" width="480" height="270">15</button></li><li><button type="button" data-i="15"><img src="thumbs/16.jpg" alt="Slide 16" loading="lazy" width="480" height="270">16</button></li><li><button type="button" data-i="16"><img src="thumbs/17.jpg" alt="Slide 17" loading="lazy" width="480" height="270">17</button></li><li><button type="button" data-i="17"><img src="thumbs/18.jpg" alt="Slide 18" loading="lazy" width="480" height="270">18</button></li><li><button type="button" data-i="18"><img src="thumbs/19.jpg" alt="Slide 19" loading="lazy" width="480" height="270">19</button></li><li><button type="button" data-i="19"><img src="thumbs/20.jpg" alt="Slide 20" loading="lazy" width="480" height="270">20</button></li><li><button type="button" data-i="20"><img src="thumbs/21.jpg" alt="Slide 21" loading="lazy" width="480" height="270">21</button></li><li><button type="button" data-i="21"><img src="thumbs/22.jpg" alt="Slide 22" loading="lazy" width="480" height="270">22</button></li><li><button type="button" data-i="22"><img src="thumbs/23.jpg" alt="Slide 23" loading="lazy" width="480" height="270">23</button></li></ol>
+</div>
+
+<script src="../../assets/viewer.js"></script>
+</body>
+</html>

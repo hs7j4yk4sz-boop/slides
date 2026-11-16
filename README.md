@@ -1,26 +1,49 @@
-# Handoff: NFC Street Activations deck — v7 (25 slides)
+# NFC Summit 2027 — les decks de l'équipe
 
-`index.html` is an identical copy of the deck for hosts that need a default document.
+Le site interne où l'équipe NFC retrouve, présente et partage les cinq decks 2027 :
 
-## What this is
-A finished, self-contained slide deck (`NFC Street Activations.dc.html`) built as a static HTML file — not a component to reimplement, just a file to deploy as-is. It renders correctly when opened directly in a browser as long as its relative asset paths (`compressed/`, `assets/`, `_ds/`, `uploads/`, and the loose `.js` files at the root) stay in the same relative positions to it.
+| Deck | Pour qui | Slides |
+|---|---|---|
+| General Presentation | Tout le monde : partenaires, presse, sponsors, speakers | 23 |
+| CryptoStamp Corner | Postes et émetteurs de timbres numériques | 9 |
+| NFC Artist Cards — Kawaii × PHANTASM | Artistes invités à dessiner une carte | 11 |
+| NFC Collection Cards | Collections NFT et PFP | 14 |
+| NFC Street Activations — On The Wall | Sponsors, galeries, plateformes, communautés | 29 |
 
-## What to do with it
-1. `git init` this folder (or copy its contents into an existing repo).
-2. Commit everything, `git push` to the target GitHub repo (`hs7j4yk4sz-boop/slides`, branch `main`, already holds the 6 background videos this deck links to via `raw.githubusercontent.com` — no video files are duplicated in this bundle).
-3. Deploy the repo to Vercel (or any static host) with no build step — it's plain HTML/CSS/JS, served as-is. The entry file is `NFC Street Activations.dc.html`; you may want to rename/symlink it to `index.html` depending on the host's default-document rules.
+Chaque deck se présente en plein écran dans le navigateur (flèches, **F** plein écran, **N** notes, **G** toutes les slides, glisser sur téléphone), se télécharge en PDF, et a son propre lien à envoyer.
 
-## Structure
-- `NFC Street Activations.dc.html` — the deck. Navigation: arrow keys / click-drag on a deck-stage web component (`deck-stage.js`).
-- `compressed/` — optimized JPGs used by several slides.
-- `assets/dragons/`, `assets/logo-*` — NFC Summit design-system illustration assets.
-- `_ds/` — the bound NFC Summit 2027 design system bundle (fonts/colors/typography CSS + a JS bundle the deck's `<helmet>` loads).
-- `uploads/` — remaining source photos referenced directly by the deck.
-- `deck-stage.js`, `image-slot.js`, `support.js` — plain JS web components the deck's `<helmet>`/template load; no build step, no bundler.
-- The six background videos (art wrap, Normies flyover, OpenSea loop, courtyard clip, two mural clips) are NOT included here — the deck's `<video>` tags already point at `https://raw.githubusercontent.com/hs7j4yk4sz-boop/slides/main/...`, so they load from that repo at runtime.
+## Mise en ligne
 
-## v7 changes (2026-09-10)
-Copy-only pass: cover subtitle, "one of our artists", houses installed 27–28 May (two days), "painted on one exterior side", "One shell, five ways", PFP copy (prominent position, hand-painted), 500 names, email john@nonfungibleconference.com, flagship XCOPY sentence without the 20,000 stat. Slide layouts unchanged. No new video files — the six raw.githubusercontent.com links are unchanged.
+Le site est statique : la page d'accueil est `index.html` à la racine, chaque deck est dans `decks/<nom>/`.
+Si le repo est déjà relié à Vercel (c'était le cas pour le deck v7), chaque `git push` sur `main` remet le site à jour tout seul.
+Sinon, une seule fois sur [vercel.com](https://vercel.com) : **Add New → Project**, importer `slides`, Framework **Other**, pas de commande de build, dossier de sortie : la racine. **Deploy**.
 
-## Fidelity
-This is the final, approved design — not a wireframe. Deploy it as-is; no restyling or recreation needed.
+Le site n'est pas référencé par Google (`noindex`), mais toute personne qui a le lien peut l'ouvrir, et **le repo est public** : tout ce qui est commité ici est lisible sur GitHub. Pour un mot de passe sur le site, il faut l'option *Deployment Protection* de Vercel (plan Pro).
+
+## Modifier un deck avec Claude Code
+
+Dans le dossier du repo, lancer `claude`, puis par exemple :
+
+```
+/update-deck Street Activations : remplace "Your wall is waiting." par "Pick your wall."
+/update-deck GP : ajoute une slide pause avec le dragon Parties avant "Every night, everywhere."
+```
+
+Claude modifie la source du deck, reconstruit le site et les PDF, vérifie les slides touchées, puis pousse : Vercel publie dans la minute.
+Tout est expliqué pour Claude dans `CLAUDE.md` (organisation du repo, règles du design system).
+
+Sans Claude Code :
+
+```bash
+pip3 install playwright pillow && python3 -m playwright install chromium   # la première fois
+python3 src/build_site.py && python3 src/render.py
+git add -A && git commit -m "…" && git push
+```
+
+## Les originaux sur claude.ai
+
+Les cinq decks existent aussi en version modifiable sur claude.ai (compte de John), reliés au design system NFC Summit 2027. Ce repo ne les met pas à jour : pour reporter un changement là-bas, le demander à Claude dans le projet « Nfc 27 ».
+
+## L'ancien deck Street Activations v7 (septembre 2026)
+
+Les fichiers déjà présents à la racine avant le site (`NFC Street Activations.dc.html`, les `.mp4`, `compressed/`, `uploads/`, `_ds/`, `assets/dragons/`, `deck-stage.js`, `image-slot.js`, `support.js`) forment l'ancien deck v7. Il reste en ligne à son adresse (`/NFC Street Activations.dc.html`) ; seule la racine du site montre désormais la page d'équipe. Ne pas déplacer ces fichiers : ses vidéos sont chargées depuis `raw.githubusercontent.com/hs7j4yk4sz-boop/slides/main/…`. La version à jour du deck est `decks/street-activations/`.

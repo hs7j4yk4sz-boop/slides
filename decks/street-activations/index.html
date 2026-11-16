@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>NFC Street Activations — On The Wall · NFC Summit 2027</title>
+<meta property="og:title" content="NFC Street Activations — On The Wall · NFC Summit 2027">
+<meta property="og:image" content="cover.jpg">
+<link rel="icon" href="../../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300..700&display=swap">
+<link rel="stylesheet" href="../../assets/viewer.css">
+<style>
+:root {
+  --ink: #0B0B0B; --graphite: #1A1A1A; --chalk: #F2F0EB; --grey: #B0ACA2; --grey-deep: #6B685F;
+  --paper: #FFFFFF; --paper-2: #F3F6FF; --rule-paper: #D5DCEE;
+  --yellow: #F6B800; --blue: #1442B2; --ink-blue: #0E2A6E;
+}
+body { font-family: 'Space Grotesk', Arial, sans-serif; }
+section.s { background: var(--ink); color: var(--chalk); padding: 96px 96px 160px; display: flex; flex-direction: column; justify-content: space-between; }
+section.paper { background: var(--paper); color: var(--ink); }
+section.paper2 { background: var(--paper-2); color: var(--ink); }
+section.yellow { background: var(--yellow); color: var(--ink-blue); }
+section.blue { background: var(--blue); color: var(--paper); }
+section.bottom { justify-content: flex-end; }
+.bg { position: absolute; left: 0px; top: 0px; width: 1920px; height: 1080px; object-fit: cover; }
+.shade-l { position: absolute; left: 0px; top: 0px; width: 1920px; height: 1080px; background: linear-gradient(90deg, rgba(11,11,11,0.9) 0%, rgba(11,11,11,0.55) 45%, rgba(11,11,11,0) 75%); }
+.shade-b { position: absolute; left: 0px; top: 0px; width: 1920px; height: 1080px; background: linear-gradient(0deg, rgba(11,11,11,0.92) 0%, rgba(11,11,11,0.45) 40%, rgba(11,11,11,0) 70%); }
+.shade-r { position: absolute; left: 0px; top: 0px; width: 1920px; height: 1080px; background: linear-gradient(270deg, rgba(11,11,11,1) 0%, rgba(11,11,11,0.97) 42%, rgba(11,11,11,0.6) 60%, rgba(11,11,11,0) 80%); }
+.shade-dark { position: absolute; left: 0px; top: 0px; width: 1920px; height: 1080px; background: linear-gradient(0deg, rgba(11,11,11,0.96) 0%, rgba(11,11,11,0.8) 60%, rgba(11,11,11,0.45) 100%); }
+.t { font-family: 'Anton', Arial, sans-serif; font-weight: 400; text-transform: uppercase; line-height: 0.86; }
+.t200 { font-size: 200px; letter-spacing: -4px; line-height: 0.84; }
+.t168 { font-size: 168px; letter-spacing: -3px; }
+.t150 { font-size: 150px; letter-spacing: -3px; }
+.t120 { font-size: 120px; letter-spacing: -2px; }
+.t112 { font-size: 112px; letter-spacing: -2px; line-height: 0.9; }
+.t88 { font-size: 88px; letter-spacing: -2px; line-height: 0.9; }
+.t64 { font-size: 64px; letter-spacing: -1px; line-height: 0.92; }
+.t48 { font-size: 48px; letter-spacing: -1px; line-height: 0.95; }
+.t36 { font-size: 36px; line-height: 1; }
+section.paper .t, section.paper2 .t { color: var(--ink-blue); }
+.lab { font-size: 26px; font-weight: 600; line-height: 1.2; }
+.acc { color: var(--yellow); }
+section.paper .acc, section.paper2 .acc { color: var(--blue); }
+section.yellow .acc { color: var(--ink-blue); }
+.lead { font-size: 40px; font-weight: 300; line-height: 1.3; }
+.body { font-size: 28px; font-weight: 400; line-height: 1.4; }
+.small { font-size: 24px; font-weight: 400; line-height: 1.35; }
+.mute { color: var(--grey); }
+section.paper .mute, section.paper2 .mute { color: var(--grey-deep); }
+.foot { position: absolute; left: 96px; bottom: 56px; width: 1300px; font-size: 24px; font-weight: 500; line-height: 1.2; color: var(--grey); }
+.pg { position: absolute; left: 1704px; bottom: 56px; width: 120px; text-align: right; font-size: 24px; font-weight: 500; line-height: 1.2; color: var(--grey); }
+section.paper .foot, section.paper .pg, section.paper2 .foot, section.paper2 .pg { color: var(--grey-deep); }
+section.yellow .foot, section.yellow .pg { color: var(--ink-blue); }
+section.blue .foot, section.blue .pg { color: var(--paper); }
+section.yellow .mute { color: #3C4658; }
+section.yellow .rule, section.yellow .rule-d { border-top-color: rgba(14,42,110,0.28); }
+section.yellow .bar, section.yellow .sq, section.yellow .ysq { background: var(--blue); }
+section.yellow .frame { border-color: var(--ink-blue); }
+.col { display: flex; flex-direction: column; }
+.row { display: flex; flex-direction: row; }
+.g8 { gap: 8px; } .g12 { gap: 12px; } .g16 { gap: 16px; } .g20 { gap: 20px; } .g24 { gap: 24px; } .g32 { gap: 32px; } .g40 { gap: 40px; } .g48 { gap: 48px; } .g64 { gap: 64px; }
+.bar { width: 72px; height: 6px; background: var(--yellow); }
+section.paper .bar, section.paper2 .bar { background: var(--blue); }
+.sq { width: 20px; height: 20px; background: var(--yellow); }
+.bsq { width: 12px; height: 12px; background: var(--blue); margin-top: 14px; flex: none; }
+.ysq { width: 12px; height: 12px; background: var(--yellow); margin-top: 14px; flex: none; }
+.rule { border-top: 1px solid var(--rule-paper); }
+.rule-d { border-top: 1px solid #2E2E2E; }
+.panel { position: absolute; left: 880px; top: 96px; width: 3px; height: 824px; background: var(--ink-blue); }
+.frame { border: 2px solid var(--chalk); }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0px); } }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+.in { animation: rise 600ms ease-out both; }
+.in2 { animation: rise 600ms ease-out 180ms both; }
+.in3 { animation: rise 600ms ease-out 360ms both; }
+
+</style>
+</head>
+<body>
+<div id="stage"><div id="deck">
+<section id="cover" class="s bottom" data-transition="fade">
+<img class="bg" src="../../media/sa/cover-murals.jpg" alt="The central plaza of NFC Summit 2026, with its pixel murals">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div style="position:absolute;left:96px;top:96px;width:176px;height:100px;overflow:hidden"><img src="../../media/logos-2027/logo-nfc-blanc.png" alt="NFC Summit logo" style="position:absolute;left:-10px;top:-47px;width:196px;height:196px;object-fit:contain"></div>
+<div class="col g32 in" style="width:1500px">
+<p class="lab acc">NFC Summit 2027 · 27 — 29 May · Unicorn Factory, Lisbon</p>
+<h1 class="t t200">NFC Street Activations</h1>
+<p class="lead">Containers, murals and street art take over Europe’s leading festival for digital creative communities.</p>
+<p class="lab">On The Wall</p>
+</div>
+<aside>NFC Street Activations: the containers, the murals and the street art of NFC Summit 2027, and how the community paid to be on the walls before the festival.</aside>
+</section>
+<section id="nfc" class="s bottom" data-transition="fade" style="padding-bottom:144px">
+<img class="bg" src="../../media/videos-2026/place-totem-et-mur.jpg" data-video="../../media/videos-2026/place-totem-et-mur.mp4" alt="The central plaza of NFC Summit 2026: a digital art totem in front of the pixel portraits of the Wall">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g40 in" style="width:1500px">
+<p class="lab acc">Sixth edition · 27 — 29 May 2027 · Unicorn Factory, Lisbon</p>
+<h2 class="t t150">This is NFC.</h2>
+<p class="lead">The annual home of digital creative communities.</p>
+<div class="row in2" style="gap:80px;margin-top:16px"><div class="col g8"><p class="t t64">2,740</p><p class="lab mute">attendees in 2026</p></div><div class="col g8"><p class="t t64">79</p><p class="lab mute">countries</p></div><div class="col g8"><p class="t t64">6M+</p><p class="lab mute">organic impressions</p></div></div>
+</div>
+<aside>The annual home of digital creative communities: artists, collectors, builders. Three days, one venue. In 2026: 2,740 attendees from 79 countries, more than 6 million organic impressions.</aside>
+</section>
+<section id="museum" class="s bottom" data-transition="fade" style="padding-bottom:144px">
+<img class="bg" src="../../media/videos-2026/mur-crane-pixel.jpg" data-video="../../media/videos-2026/mur-crane-pixel.mp4" alt="A pixel skull mural on the walls of NFC Summit 2026">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g40 in" style="width:1500px">
+<p class="lab acc">NFC, year after year, became</p>
+<h2 class="t t150">An open-air digital art museum.</h2>
+<p class="lead">The most photographed square metres of NFC.</p>
+
+</div>
+<aside>Flying over the 2026 murals. 01: it started two years ago with the containers. 02: the 2026 murals became the most loved part of NFC. 03: they are still on the walls today. 04: street-art tour agencies now include the site.</aside>
+</section>
+<section id="community" class="s bottom" data-transition="fade">
+<img class="bg" src="../../media/sa/painter.jpg" alt="An artist painting a container at NFC Summit 2026">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g32 in" style="width:1180px">
+<p class="lab acc">On The Wall · 10 Sept — 30 Oct 2026</p>
+<h2 class="t t120">The community went first.</h2>
+<p class="lead">From 10 September to 30 October 2026, we opened the walls of NFC to the community.</p>
+</div>
+<p class="foot">NFC Summit 2027 — NFC Street Activations</p>
+<p class="pg">04</p>
+<aside>From 10 September to 30 October 2026, we opened the walls of NFC to the community: five walls, five ways in.</aside>
+</section>
+<section id="happened" class="s " data-transition="fade">
+<div class="col g24 in">
+<p class="lab acc">On The Wall · the campaign</p>
+<h2 class="t t150">They made NFC 2027 happen.</h2>
+</div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(4, 1fr);column-gap:48px"><div class="col g16"><div class="sq"></div><p class="lead" style="font-size:36px;line-height:1.25">325 mints in seven weeks</p></div><div class="col g16"><div class="sq"></div><p class="lead" style="font-size:36px;line-height:1.25">311 names and 14 portraits to be hand-painted on the walls</p></div><div class="col g16"><div class="sq"></div><p class="lead" style="font-size:36px;line-height:1.25">House 01 taken by JPEG FRENS</p></div><div class="col g16"><div class="sq"></div><p class="lead" style="font-size:36px;line-height:1.25">People of the Wall, the podcast: every Friday, 32 episodes so far</p></div></div>
+<div class="col g32">
+<p class="lead mute">The community did not wait for May.</p>
+<div class="row g24" aria-label="People of the Wall pixel avatars"><img src="../../media/people-of-the-wall/sprite-00.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-01.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-02.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-03.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-04.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-05.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-06.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-07.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-08.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-09.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-10.png" alt="" style="width:96px;height:96px"><img src="../../media/people-of-the-wall/sprite-11.png" alt="" style="width:96px;height:96px"></div>
+</div>
+<p class="foot">NFC Summit 2027 — NFC Street Activations</p>
+<p class="pg">05</p>
+<aside>325 mints in seven weeks. 311 names and 14 portraits to be hand-painted on the walls of NFC 2027. House 01 taken by JPEG FRENS. People of the Wall, the podcast, every Friday: 32 episodes so far. The final day reached Today’s News on X. The Yearbook, made with Alpha Labs, is handed out on 27 May.</aside>
+</section>
+<section id="street" class="s bottom" data-transition="fade" style="padding-bottom:110px">
+<img class="bg" src="../../media/px/courtyard-drone.jpg" data-video="../../media/px/courtyard-drone.mp4" alt="A drone flight over the courtyard and its pixel mural at NFC Summit 2026">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g24 in" style="width:1600px">
+<p class="lab acc">On The Wall</p>
+<h2 class="t" style="font-size:200px;line-height:0.88;letter-spacing:-4px">The street<br>is the gallery.</h2>
+</div>
+<aside>A pause. Containers, murals and street art: the whole site becomes the exhibition.</aside>
+</section>
+<section id="why" class="s yellow" data-transition="fade" style="flex-direction:row;gap:96px">
+<div class="col" style="width:600px;justify-content:space-between">
+<p class="lab acc in">Why take one</p>
+<div class="col g32 in"><h2 class="t t120">These spaces build the festival.</h2><p class="lead">The community funded the edition early, and got more than a thank-you.</p></div>
+</div>
+<div class="in2" style="flex:1;display:grid;grid-template-columns:1fr 1fr;column-gap:56px;row-gap:28px;align-content:end"><div class="col g8 rule" style="padding-top:20px"><p class="lab acc">01</p><h3 class="t t36">Painted for real</h3><p class="small mute">Your mark, hand-painted on the venue. Still there after the festival.</p></div><div class="col g8 rule" style="padding-top:20px"><p class="lab acc">02</p><h3 class="t t36">A post-ready card</h3><p class="small mute">Your azulejo card: name, spot, made to share.</p></div><div class="col g8 rule" style="padding-top:20px"><p class="lab acc">03</p><h3 class="t t36">On-chain, yours to keep</h3><p class="small mute">An NFT that proves your place on the wall.</p></div><div class="col g8 rule" style="padding-top:20px"><p class="lab acc">04</p><h3 class="t t36">Part of the museum</h3><p class="small mute">Inside the open-air museum, photographed all year, on the street-art tour route.</p></div><div class="col g8 rule" style="padding-top:20px"><p class="lab acc">05</p><h3 class="t t36">Holder exclusives & surprises</h3><p class="small mute">Drops, access and surprises for everyone on the wall, during the campaign and at NFC 2027.</p></div><div class="col g8 rule" style="padding-top:20px"><p class="lab acc">06</p><h3 class="t t36">A ticket in every tier</h3><p class="small mute">From 1 GA with a name to 70 tickets with the flagship.</p></div><div class="col g8 rule" style="padding-top:20px"><p class="lab acc">07</p><h3 class="t t36">The higher, the bigger</h3><p class="small mute">Passes, events, status, keynotes: the bigger your wall, the bigger your role.</p></div></div>
+<p class="foot">NFC Summit 2027 — NFC Street Activations</p>
+<p class="pg">07</p>
+<aside>The community funded the edition early, and got more than a thank-you. Every mark on the wall comes with: 01 Painted for real: your mark, hand-painted on the venue, still there after the festival. 02 A post-ready card: your azulejo card, name, spot, made to share. Your face on our channels, not just our logo on yours. 03 On-chain, yours to keep: an NFT that proves your place on the wall. 04 Part of the museum: inside the open-air museum, photographed all year, on the street-art tour route. 05 Holder exclusives and surprises: drops, access and surprises for everyone on the wall, during the campaign and at NFC 2027. 06 A ticket in every tier: from 1 GA with a name to 70 tickets with the flagship. 07 The higher, the bigger: passes, events, status, keynotes; the bigger your wall, the bigger your role.</aside>
+</section>
+<section id="quote" class="s " data-transition="fade" style="justify-content:flex-start;padding-bottom:0px">
+<img src="../../media/dragons-2027/dragon-art-fun-fair.webp" alt="" style="position:absolute;left:0px;top:760px;width:323px;height:360px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-kawaii-summit.webp" alt="" style="position:absolute;left:249px;top:760px;width:325px;height:360px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-conference.webp" alt="" style="position:absolute;left:543px;top:760px;width:286px;height:360px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-ringmaster-hero.webp" alt="The seven NFC dragons lined up" style="position:absolute;left:682px;top:670px;width:555px;height:450px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-art-factory.webp" alt="" style="position:absolute;left:1078px;top:760px;width:313px;height:360px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-hackathon-ai-day.webp" alt="" style="position:absolute;left:1342px;top:780px;width:333px;height:340px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-parties.webp" alt="" style="position:absolute;left:1633px;top:740px;width:299px;height:380px;object-fit:contain">
+<div class="col g28 in" style="width:1728px;gap:28px">
+<p class="lab acc">John Karp · founder</p>
+<h2 class="t" style="font-size:132px;line-height:0.88;letter-spacing:-2px">NFC exists because people like you decide it should. Be the one for 2027.</h2>
+</div>
+<div style="height:420px"></div>
+<aside>NFC exists because people like you decide it should. Be the one for 2027. John Karp, founder of NFC Summit.</aside>
+</section>
+<section id="how" class="s " data-transition="fade">
+<div class="col g24 in"><p class="lab acc">How it happens</p><h2 class="t t120">Four steps, one delivery date.</h2></div>
+<div class="col g48">
+<div class="in2" style="display:grid;grid-template-columns:repeat(4, 1fr);column-gap:48px"><div class="col g12"><p class="lab acc">01</p><h3 class="t t48">Pick your wall</h3><p class="small mute">Choose your Mural. Four houses exist, 2 Murals, 1 Flagship.</p></div><div class="col g12"><p class="lab acc">02</p><h3 class="t t48">Send the artwork</h3><p class="small mute">Yours, your artist’s, or a piece from your collection.</p></div><div class="col g12"><p class="lab acc">03</p><h3 class="t t48">Adapt & validate</h3><p class="small mute">Re-composed for the wall’s real proportions. You sign it off.</p></div><div class="col g12"><p class="lab acc">04</p><h3 class="t t48">Built & delivered</h3><p class="small mute">Hand-painted on site before doors, your credit beside it.</p></div></div>
+<div class="in3" style="display:grid;grid-template-columns:repeat(4, 1fr);column-gap:48px;border-top:2px solid var(--graphite);padding-top:32px"><div class="col g12"><div class="sq"></div><p class="lab">10 Sept — 30 Oct 2026</p><p class="small mute">Campaign window: the mint was open</p></div><div class="col g12"><div class="sq"></div><p class="lab">Winter 2026 — 27</p><p class="small mute">Customization and validation</p></div><div class="col g12"><div class="sq"></div><p class="lab">Before 27 May 2027</p><p class="small mute">Build, paint, install on the plaza</p></div><div class="col g12"><div class="sq"></div><p class="lab">27 May 2027</p><p class="small mute">Your mural is painted</p></div></div>
+</div>
+<p class="foot">NFC Summit 2027 — NFC Street Activations</p>
+<p class="pg">09</p>
+<aside>Four steps, one delivery date. 01 Pick your wall: choose your Mural; four houses exist, 2 Murals, 1 Flagship. 02 Send the artwork: yours, your artist’s, or a piece from your collection. 03 Adapt and validate: re-composed for the wall’s real proportions; you sign it off. 04 Built and delivered: hand-painted on site before doors, your credit beside it. Dates: the campaign window and mint ran from 10 September to 30 October 2026; customization and validation in winter 2026 — 27; build, paint and install on the plaza before 27 May 2027; your mural is painted for 27 May 2027.</aside>
+</section>
+<section id="waiting" class="s " data-transition="fade">
+<img src="../../media/dragons-2027/dragon-ringmaster-hero.webp" alt="The ringmaster hero dragon" style="position:absolute;left:781px;top:230px;width:1209px;height:980px;object-fit:contain">
+<div class="col g24 in" style="position:absolute;left:96px;top:0px;width:1000px;height:1080px;justify-content:center">
+<p class="lab acc">Five ways in</p>
+<h2 class="t" style="font-size:150px;line-height:0.92;letter-spacing:-3px">Your wall<br>is waiting.</h2>
+</div>
+<aside>The ringmaster opens the offers: the flagship mural, two artist murals, the community houses, the PFP wall and the name wall.</aside>
+</section>
+<section id="offers" class="s yellow" data-transition="fade">
+<div class="col g24 in"><p class="lab acc">Five ways in · the offers · Mint 10 Sept — 30 Oct 2026</p><h2 class="t t120">Five offers, one wall each.</h2><p class="lead">From a hand-painted name at 0.06 ETH to the flagship mural at 40. Anyone can own a piece.</p></div>
+<div class="col in2"><div class="rule" style="display:grid;grid-template-columns:56px 380px 240px 160px 1fr 340px;column-gap:24px;align-items:center;padding:20px 0">
+<p class="lab acc">01</p><h3 class="t t48">Flagship Mural</h3><p class="t t64">40 ETH</p><p class="lab mute">1 of 1</p><p class="small">The most visible wall of NFC 2027. Keynote, 20 VIP + 50 GA.</p><p class="lab mute">Platinum · Co-organizer</p></div><div class="rule" style="display:grid;grid-template-columns:56px 380px 240px 160px 1fr 340px;column-gap:24px;align-items:center;padding:20px 0">
+<p class="lab acc">02</p><h3 class="t t48">Artist Murals</h3><p class="t t64">15 ETH</p><p class="lab mute">2 walls</p><p class="small">Main Stage or North Wall, painted by one of our artists. 8 VIP + 20 GA.</p><p class="lab mute">Platinum Sponsor</p></div><div class="rule" style="display:grid;grid-template-columns:56px 380px 240px 160px 1fr 340px;column-gap:24px;align-items:center;padding:20px 0">
+<p class="lab acc">03</p><h3 class="t t48">Community House</h3><p class="t t64">9 ETH</p><p class="lab mute">4 houses</p><p class="small">Your container on the central plaza, in your colour. 4 VIP + 10 GA.</p><p class="lab mute">Gold Sponsor · Top 14</p></div><div class="rule" style="display:grid;grid-template-columns:56px 380px 240px 160px 1fr 340px;column-gap:24px;align-items:center;padding:20px 0">
+<p class="lab acc">04</p><h3 class="t t48">The PFP Wall</h3><p class="t t64">0.6 ETH</p><p class="lab mute">50 squares</p><p class="small">Your PFP hand-painted at the top of the wall. 2 VIP passes.</p><p class="lab mute">onthewall.nfcsummit.com</p></div><div class="rule" style="display:grid;grid-template-columns:56px 380px 240px 160px 1fr 340px;column-gap:24px;align-items:center;padding:20px 0">
+<p class="lab acc">05</p><h3 class="t t48">The Name Wall</h3><p class="t t64">0.06 ETH</p><p class="lab mute">500 names</p><p class="small">Your name hand-painted on the façade. 1 GA ticket.</p><p class="lab mute">onthewall.nfcsummit.com</p></div></div>
+<p class="foot">This deck details offers 01 — 03 · 04 and 05 live on the site</p>
+<p class="pg">11</p>
+<aside>Five offers, one wall each, from a hand-painted name at 0.06 ETH to the flagship mural at 40 ETH. This deck details offers 01 to 03; offers 04 and 05 are on onthewall.nfcsummit.com.</aside>
+</section>
+<section id="flagship" class="s bottom" data-transition="fade">
+<img src="../../media/sa/flagship-passage.jpg" alt="The courtyard passage where the Flagship Mural will be painted" style="position:absolute;left:1312px;top:0px;width:608px;height:1080px;object-fit:cover">
+<div class="col g32 in" style="width:1120px">
+<p class="lab acc">Offer 01 · 1 of 1</p>
+<h2 class="t t200">Flagship Mural</h2>
+<p class="lead">Above the courtyard passage.</p>
+</div>
+<p class="foot">NFC Summit 2027 — NFC Street Activations</p>
+<p class="pg">12</p>
+<aside>Offer 01: the Flagship Mural, 1 of 1, 40 ETH, above the courtyard passage.</aside>
+</section>
+<section id="flag-wall" class="s bottom" data-transition="fade">
+<img class="bg" src="../../media/sa/xcopy-passage.jpg" alt="Visitors in the XCOPY passage at NFC Summit 2026">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g32 in" style="width:1200px">
+<p class="lab acc">Flagship Mural · 1 of 1</p>
+<h2 class="t t120">The most visible wall of NFC 2027.</h2>
+<p class="lead">Every edition has one wall everyone sees. In 2026, it was XCOPY’s.</p>
+<p class="body mute">In 2027 the festival reorganises around the courtyard, and its most visible wall is this one. Painted from your artwork. Yours takes the role.</p>
+</div>
+<p class="foot">The 2026 precedent: the XCOPY passage</p>
+<p class="pg">13</p>
+<aside>Every edition has one wall everyone sees. In 2026, it was XCOPY’s. In 2027 the festival reorganises around the courtyard, and its most visible wall is this one. Painted from your artwork. Yours takes the role.</aside>
+</section>
+<section id="flag-role" class="s " data-transition="fade">
+<div class="col g24 in"><p class="lab acc">Flagship Mural · the role</p><h2 class="t t120">You don’t sponsor NFC 2027.<br>You co-organize it.</h2></div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(4, 1fr);column-gap:48px;row-gap:40px"><div class="col g12 rule-d" style="padding-top:24px"><h3 class="t t36">Category exclusivity</h3><p class="small mute">No competitor in your category sponsors NFC.</p></div><div class="col g12 rule-d" style="padding-top:24px"><h3 class="t t36">Co-build</h3><p class="small mute">Influence the programme, editorial line, speakers and formats.</p></div><div class="col g12 rule-d" style="padding-top:24px"><h3 class="t t36">You make it happen</h3><p class="small mute">Your commitment secures the edition. The patron of patrons.</p></div><div class="col g12 rule-d" style="padding-top:24px"><h3 class="t t36">100 % integrated</h3><p class="small mute">Shared goals, clear KPIs, measurable ROI. Everything adjustable.</p></div><div class="col g12 rule-d" style="padding-top:24px"><h3 class="t t36">100 % custom</h3><p class="small mute">Content, production, data, CTAs and calendar built for you.</p></div><div class="col g12 rule-d" style="padding-top:24px"><h3 class="t t36">Year-round</h3><p class="small mute">A 2026 / 2027 partnership: before, during and after the event.</p></div><div class="col g12 rule-d" style="padding-top:24px"><h3 class="t t36">Community trust</h3><p class="small mute">Build trust and engage your community where it lives.</p></div><div class="col g12 rule-d" style="padding-top:24px"><h3 class="t t36">On-chain</h3><p class="small mute">Your products integrated into the NFC registration flow.</p></div></div>
+<p class="foot">Co-organizer of NFC 2027</p>
+<p class="pg">14</p>
+<aside>You don’t sponsor NFC 2027. You co-organize it: category exclusivity, co-build, you make it happen, 100% integrated, 100% custom, year-round, community trust, on-chain.</aside>
+</section>
+<section id="flag-offer" class="s yellow" data-transition="fade" style="padding-bottom:300px">
+<div style="position:absolute;left:0px;top:850px;width:1920px;height:230px;background:var(--ink)"></div>
+<div class="col g16 in" style="color:var(--ink)"><p class="lab">Offer 01 · Platinum + Co-organizer</p><h2 class="t t120" style="color:var(--ink)">Flagship Mural</h2><p class="lab">NFC 2026: 2,740 attendees from 79 countries</p></div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(4, 1fr);column-gap:48px"><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">1</p><p class="t t48" style="color:var(--ink)">wall</p></div>
+<p class="body" style="color:var(--ink)">The most visible wall of NFC 2027, painted from your artwork</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">1</p><p class="t t48" style="color:var(--ink)">keynote</p></div>
+<p class="body" style="color:var(--ink)">An opening slot on the main stage</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">70</p><p class="t t48" style="color:var(--ink)">tickets</p></div>
+<p class="body" style="color:var(--ink)">20 VIP + 50 GA, from January 2027</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">#1</p><p class="t t48" style="color:var(--ink)">partner</p></div>
+<p class="body" style="color:var(--ink)">Co-organizer of NFC 2027, top line of nfcsummit.com</p></div></div>
+<div class="row in3" style="position:absolute;left:96px;top:850px;width:1728px;height:230px;align-items:center;justify-content:space-between">
+<div class="row" style="align-items:center;gap:40px"><p class="t" style="font-size:112px;line-height:0.86;color:var(--yellow)">40 ETH</p>
+<p class="t" style="font-size:44px;line-height:1;padding:10px 18px 8px;background:var(--yellow);color:var(--ink);transform:rotate(-3deg)">1 of 1</p></div>
+<p class="lab" style="color:var(--yellow);text-align:right;width:640px">Talk to John first →</p></div>
+<aside>Flagship Mural, 40 ETH, 1 of 1: Platinum + Co-organizer. Talk to John first. Full list. The wall: The main artwork of NFC 2027, the most visible wall of the festival; Artist and artwork chosen together, nothing painted without your sign-off; The flagship unveiling: a dedicated event at the mural; The NFT: the 1 of 1 of the on-chain network artwork. The role: Co-organizer of NFC 2027, top line of nfcsummit.com; Platinum Sponsor status; Category exclusivity; An opening keynote slot on the main stage; 20 VIP + 50 GA tickets, claimable from January 2027; Your profile put forward across NFC 2027 communications; One hour before + the holders’ brunch, as guest of honour.</aside>
+</section>
+<section id="murals" class="s bottom" data-transition="fade">
+<img class="bg" src="../../media/sa/van-street-art.jpg" alt="Street art on a wall behind a painted van">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g32 in" style="width:1500px">
+<p class="lab acc">Offer 02 · 2 available</p>
+<h2 class="t t200">Artist Murals</h2>
+<p class="lead">Your artwork, painted for real.</p>
+</div>
+<p class="foot">NFC Summit 2027 — NFC Street Activations</p>
+<p class="pg">16</p>
+<aside>Offer 02: the Artist Murals, 2 available, 15 ETH. Your artwork, painted for real.</aside>
+</section>
+<section id="murals-walls" class="s " data-transition="fade">
+<img src="../../media/sa/main-stage-wall.jpg" alt="The site of the Main Stage Artist Mural" style="position:absolute;left:1280px;top:0px;width:640px;height:1080px;object-fit:cover">
+<div class="col g24 in" style="width:1080px"><p class="lab acc">Artist Murals · 2 available · 15 ETH</p><h2 class="t t120">Two walls, measured.</h2></div>
+<div class="in2" style="display:grid;grid-template-columns:1fr 1fr;column-gap:64px;width:1080px"><div class="col g16"><div class="bar"></div><p class="lab acc">Main Stage Artist Mural</p><p class="t t120">4.2 × 3.4</p><p class="body mute">Metres · faces the main stage</p></div><div class="col g16"><div class="bar"></div><p class="lab acc">North Wall Artist Mural</p><p class="t t120">3.0 × 3.3</p><p class="body mute">Metres · on the praça</p></div></div>
+<div class="col g16 in3" style="width:1060px"><p class="lead">Painted by one of our artists from your artwork, with your credit painted beside it.</p><p class="body mute">The 2026 murals are still on the walls: that is what a mural here means.</p></div>
+<p class="foot">NFC Summit 2027 — NFC Street Activations</p>
+<p class="pg">17</p>
+<aside>Two walls, measured. Main Stage Artist Mural: 4.2 × 3.4 m, faces the main stage. North Wall Artist Mural: 3.0 × 3.3 m, on the praça. Painted by one of our artists from your artwork, with your credit painted beside it. The 2026 murals are still on the walls: that is what a mural here means.</aside>
+</section>
+<section id="murals-event" class="s " data-transition="fade">
+<img src="../../media/sa/mural-event.jpg" alt="A crowd in front of a black and white mural at NFC Summit 2026" style="position:absolute;left:1120px;top:0px;width:800px;height:1080px;object-fit:cover">
+<div style="position:absolute;left:1120px;top:0px;width:320px;height:1080px;background:linear-gradient(90deg, rgba(11,11,11,1) 0%, rgba(11,11,11,0) 100%)"></div>
+<div class="col g32 in" style="width:960px"><p class="lab acc">Artist Murals · your event</p><h2 class="t t120">A community event at your mural.</h2>
+<p class="lead">We organise a meetup and unveiling moment at the wall with you: your community in front of your piece, drinks, photos, the artist on site.</p></div>
+<div class="col in2" style="width:940px"><div class="row g20 rule-d" style="padding:18px 0"><div class="ysq"></div><p class="body">A slot in the festival programme at your wall</p></div><div class="row g20 rule-d" style="padding:18px 0"><div class="ysq"></div><p class="body">Promoted to the full audience as part of the festival programme</p></div><div class="row g20 rule-d" style="padding:18px 0"><div class="ysq"></div><p class="body">2026 precedent: the XCOPY passage became the busiest photo spot of the festival</p></div></div>
+<p class="foot">NFC Summit 2027 — NFC Street Activations</p>
+<p class="pg">18</p>
+<aside>A community event at your mural: we organise a meetup and unveiling moment at the wall with you; your community in front of your piece, drinks, photos, the artist on site. A slot in the festival programme at your wall, promoted to the full audience. 2026 precedent: the XCOPY passage became the busiest photo spot of the festival.</aside>
+</section>
+<section id="murals-offer" class="s yellow" data-transition="fade" style="padding-bottom:300px">
+<div style="position:absolute;left:0px;top:850px;width:1920px;height:230px;background:var(--ink)"></div>
+<div class="col g16 in" style="color:var(--ink)"><p class="lab">Offer 02 · Platinum Sponsor</p><h2 class="t t120" style="color:var(--ink)">Artist Murals</h2><p class="lab">NFC 2026: 2,740 attendees from 79 countries</p></div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(4, 1fr);column-gap:48px"><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">1</p><p class="t t48" style="color:var(--ink)">wall</p></div>
+<p class="body" style="color:var(--ink)">Main stage or north wall, painted from your artwork by one of our artists</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">1</p><p class="t t48" style="color:var(--ink)">event</p></div>
+<p class="body" style="color:var(--ink)">A dedicated community event at your mural, 27 — 29 May</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">28</p><p class="t t48" style="color:var(--ink)">tickets</p></div>
+<p class="body" style="color:var(--ink)">8 VIP + 20 GA, from January 2027</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">1</p><p class="t t48" style="color:var(--ink)">credit</p></div>
+<p class="body" style="color:var(--ink)">Your “Presented by” credit, hand-painted on the wall</p></div></div>
+<div class="row in3" style="position:absolute;left:96px;top:850px;width:1728px;height:230px;align-items:center;justify-content:space-between">
+<div class="row" style="align-items:center;gap:40px"><p class="t" style="font-size:112px;line-height:0.86;color:var(--yellow)">15 ETH</p>
+<p class="t" style="font-size:44px;line-height:1;padding:10px 18px 8px;background:var(--yellow);color:var(--ink);transform:rotate(-3deg)">2 available</p></div>
+<p class="lab" style="color:var(--yellow);text-align:right;width:640px">Talk to John first →</p></div>
+<aside>Artist Murals, 15 ETH, 2 available: Platinum Sponsor. Talk to John first. Full list. The wall: One wall: main stage (4.2 × 3.4 m) or north wall (3.0 × 3.3 m); Painted from your artwork by one of our artists; Artwork adaption approved by you before painting; Your “Presented by” credit, hand-painted on the wall; The NFT: your mural in the on-chain network artwork. The status: Platinum Sponsor status, live on nfcsummit.com; A dedicated community event at your mural, 27 — 29 May; 8 VIP + 20 GA tickets, claimable from January 2027; Presence across NFC 2027 communications; One hour before + the holders’ brunch.</aside>
+</section>
+<section id="house" class="s bottom" data-transition="fade">
+<img class="bg" src="../../media/sa/house-opensea.jpg" alt="A container painted for OpenSea at NFC Summit 2026">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g32 in" style="width:1500px">
+<p class="lab acc">Offer 03 · 4 available</p>
+<h2 class="t t200">Community House</h2>
+<p class="lead">Your house on the central plaza.</p>
+</div>
+<p class="foot">NFC Summit 2027 — NFC Street Activations</p>
+<p class="pg">20</p>
+<aside>Offer 03: the Community House, 4 available, 9 ETH. Your house on the central plaza.</aside>
+</section>
+<section id="house-ways" class="s " data-transition="fade">
+<div class="col g24 in"><p class="lab acc">Community House · what it becomes · photos, edition 2026</p><h2 class="t t120">One shell, five ways.</h2></div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(5, 1fr);column-gap:32px"><div class="col"><img src="../../media/sa/way-gallery.jpg" alt="A gallery inside a container" style="width:320px;height:240px;object-fit:cover"><h3 class="t t36" style="margin-top:24px">Gallery</h3><p class="small mute" style="margin-top:8px">Hang the collection, sell in the room.</p></div><div class="col"><img src="../../media/sa/way-installation.jpg" alt="An immersive installation inside a container" style="width:320px;height:240px;object-fit:cover"><h3 class="t t36" style="margin-top:24px">Installation</h3><p class="small mute" style="margin-top:8px">One immersive piece people queue for.</p></div><div class="col"><img src="../../media/sa/way-clubhouse.jpg" alt="A visitor walking through a container" style="width:320px;height:240px;object-fit:cover"><h3 class="t t36" style="margin-top:24px">Clubhouse</h3><p class="small mute" style="margin-top:8px">Where your community finds each other.</p></div><div class="col"><img src="../../media/sa/way-live.jpg" alt="An artist painting live on a container" style="width:320px;height:240px;object-fit:cover"><h3 class="t t36" style="margin-top:24px">Live activation</h3><p class="small mute" style="margin-top:8px">Painting and drops in front of the crowd.</p></div><div class="col"><img src="../../media/sa/way-party.jpg" alt="A painted container on the plaza" style="width:320px;height:240px;object-fit:cover"><h3 class="t t36" style="margin-top:24px">Party spot</h3><p class="small mute" style="margin-top:8px">Doors open, sound on, the plaza fills up.</p></div></div>
+<p class="body mute in3">For galleries · platforms · marketplaces · projects · curators · studios · foundations · museums · brands · communities</p>
+<p class="foot">NFC Summit 2027 — NFC Street Activations</p>
+<p class="pg">21</p>
+<aside>One shell, five ways: a gallery (hang the collection, sell in the room), an installation (one immersive piece people queue for), a clubhouse (where your community finds each other), a live activation (painting and drops in front of the crowd), a party spot (doors open, sound on, the plaza fills up). For galleries, platforms, marketplaces, projects, curators, studios, foundations, museums, brands and communities.</aside>
+</section>
+<section id="house-canvas" class="s " data-transition="fade">
+<div class="col g24 in"><p class="lab acc">Community House · your canvas · 14.4 sqm · 27 — 28 May</p><h2 class="t t120">Three shells, one canvas: yours.</h2></div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(3, 1fr);column-gap:48px"><div class="col"><img src="../../media/sa/model-a.jpg" alt="Render of the Community House Model A, The gallery front" style="width:528px;height:297px;object-fit:cover"><p class="lab acc" style="margin-top:24px">Model A</p><h3 class="t t48" style="margin-top:8px">The gallery front</h3></div><div class="col"><img src="../../media/sa/model-b.jpg" alt="Render of the Community House Model B, The walk-in" style="width:528px;height:297px;object-fit:cover"><p class="lab acc" style="margin-top:24px">Model B</p><h3 class="t t48" style="margin-top:8px">The walk-in</h3></div><div class="col"><img src="../../media/sa/model-c.jpg" alt="Render of the Community House Model C, On quote" style="width:528px;height:297px;object-fit:cover"><p class="lab acc" style="margin-top:24px">Model C</p><h3 class="t t48" style="margin-top:8px">On quote</h3></div></div>
+<div class="in3" style="display:grid;grid-template-columns:repeat(3, 1fr);column-gap:48px"><div class="col g8 rule-d" style="padding-top:20px"><p class="lab">Your artwork, painted on one exterior side</p><p class="small mute">Paintable face ~6 × 2.5 m · to confirm</p></div><div class="col g8 rule-d" style="padding-top:20px"><p class="lab">Everything else in your colour</p><p class="small mute">100 % painted, inside and out</p></div><div class="col g8 rule-d" style="padding-top:20px"><p class="lab">Central plaza · highest-traffic</p><p class="small mute">Next to the main stage</p></div></div>
+<p class="foot">Painted, not wrapped</p>
+<p class="pg">22</p>
+<aside>Three shells, one canvas: yours. 14.4 sqm, 27 — 28 May. Model A, the gallery front. Model B, the walk-in. Model C, on quote. Your artwork, painted on one exterior side (paintable face about 6 × 2.5 m, to confirm). Everything else in your colour: 100% painted, inside and out. Central plaza, highest-traffic, next to the main stage. Painted, not wrapped.</aside>
+</section>
+<section id="house-offer" class="s yellow" data-transition="fade" style="padding-bottom:300px">
+<div style="position:absolute;left:0px;top:850px;width:1920px;height:230px;background:var(--ink)"></div>
+<div class="col g16 in" style="color:var(--ink)"><p class="lab">Offer 03 · Gold Sponsor · Top 14</p><h2 class="t t120" style="color:var(--ink)">Community House</h2><p class="lab">NFC 2026: 2,740 attendees from 79 countries</p></div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(4, 1fr);column-gap:48px"><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">14.4</p><p class="t t48" style="color:var(--ink)">m²</p></div>
+<p class="body" style="color:var(--ink)">A 20-ft container on the central plaza, 100% painted in your colour</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">2</p><p class="t t48" style="color:var(--ink)">days</p></div>
+<p class="body" style="color:var(--ink)">Your own programme in the house, 27 — 28 May</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">14</p><p class="t t48" style="color:var(--ink)">tickets</p></div>
+<p class="body" style="color:var(--ink)">4 VIP + 10 GA, from January 2027</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">6</p><p class="t t48" style="color:var(--ink)">screens</p></div>
+<p class="body" style="color:var(--ink)">Six 42" screens, power, Wi-Fi and air conditioning</p></div></div>
+<div class="row in3" style="position:absolute;left:96px;top:850px;width:1728px;height:230px;align-items:center;justify-content:space-between">
+<div class="row" style="align-items:center;gap:40px"><p class="t" style="font-size:112px;line-height:0.86;color:var(--yellow)">9 ETH</p>
+<p class="t" style="font-size:44px;line-height:1;padding:10px 18px 8px;background:var(--yellow);color:var(--ink);transform:rotate(-3deg)">4 available</p></div>
+<p class="lab" style="color:var(--yellow);text-align:right;width:640px">Talk to John first →</p></div>
+<aside>Community House, 9 ETH, 4 available: Gold Sponsor, Top 14. Talk to John first. Full list. The space: A 20-ft container on the central plaza, 27 — 28 May; Model A or B included, Model C on quote; 100% painted in your colour, inside and out; Your artwork hand-painted on one exterior side, approved by you; Six 42" screens · power, Wi-Fi and air conditioning; Lighting, stools and barrel tables. The status: Gold Sponsor status: Top 14 partners of the edition; 4 VIP + 10 GA tickets, claimable from January 2027; Your own programme in the house, both days; Your community put forward: photo session, spotlights through 2027; One hour before + the holders’ brunch; The NFT: your house in the on-chain network artwork.</aside>
+</section>
+<section id="anyone" class="s bottom" data-transition="fade" style="padding-bottom:110px">
+<img class="bg" src="../../media/videos-2026/place-totem-et-mur.jpg" data-video="../../media/videos-2026/place-totem-et-mur.mp4" alt="The pixel portraits of the Wall at NFC Summit 2026">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g24 in" style="width:1600px">
+<p class="lab acc">Offers 04 and 05</p>
+<h2 class="t" style="font-size:200px;line-height:0.88;letter-spacing:-4px">Anyone can<br>own a piece.</h2>
+</div>
+<aside>From a hand-painted name to a painted portrait: the walls of NFC are open to everyone.</aside>
+</section>
+<section id="pfp" class="s bottom" data-transition="fade">
+<img src="../../media/sa/pfp-wall.jpg" alt="The On The Wall façade with its grid of painted portraits" style="position:absolute;left:960px;top:0px;width:960px;height:1080px;object-fit:cover">
+<div style="position:absolute;left:960px;top:0px;width:320px;height:1080px;background:linear-gradient(90deg, rgba(11,11,11,1) 0%, rgba(11,11,11,0) 100%)"></div>
+<div class="col g32 in" style="width:800px">
+<p class="lab acc">Offer 04 · sold on the site</p>
+<h2 class="t t150">The PFP Wall.</h2>
+<p class="lead">50 squares, hand-painted in a prominent position at the top of the wall. Your PFP becomes part of the museum.</p>
+<p class="lab mute">Mint → upload your PFP → hand-painted for real</p>
+</div>
+<p class="foot">NFC Summit 2027 — NFC Street Activations</p>
+<p class="pg">25</p>
+<aside>Offer 04, sold on the site: the PFP Wall. 50 squares, hand-painted in a prominent position at the top of the wall. Your PFP becomes part of the museum. Mint, upload your PFP, hand-painted for real. 0.6 ETH each.</aside>
+</section>
+<section id="pfp-offer" class="s yellow" data-transition="fade" style="padding-bottom:300px">
+<div style="position:absolute;left:0px;top:850px;width:1920px;height:230px;background:var(--ink)"></div>
+<div class="col g16 in" style="color:var(--ink)"><p class="lab">Offer 04 · on the wall</p><h2 class="t t120" style="color:var(--ink)">The PFP Wall</h2><p class="lab">NFC 2026: 2,740 attendees from 79 countries</p></div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(4, 1fr);column-gap:48px"><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">1</p><p class="t t48" style="color:var(--ink)">square</p></div>
+<p class="body" style="color:var(--ink)">Your PFP hand-painted at the top of the wall</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">2</p><p class="t t48" style="color:var(--ink)">VIP</p></div>
+<p class="body" style="color:var(--ink)">Tickets for NFC 2027, you and your plus-one</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">1</p><p class="t t48" style="color:var(--ink)">hour</p></div>
+<p class="body" style="color:var(--ink)">A private hour at the venue before doors open</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">1</p><p class="t t48" style="color:var(--ink)">brunch</p></div>
+<p class="body" style="color:var(--ink)">The Wall private brunch, holders only</p></div></div>
+<div class="row in3" style="position:absolute;left:96px;top:850px;width:1728px;height:230px;align-items:center;justify-content:space-between">
+<div class="row" style="align-items:center;gap:40px"><p class="t" style="font-size:112px;line-height:0.86;color:var(--yellow)">0.6 ETH</p>
+<p class="t" style="font-size:44px;line-height:1;padding:10px 18px 8px;background:var(--yellow);color:var(--ink);transform:rotate(-3deg)">50 squares</p></div>
+<p class="lab" style="color:var(--yellow);text-align:right;width:640px">Mint 10 Sept — 30 Oct 2026 · onthewall.nfcsummit.com</p></div>
+<aside>The PFP Wall, 0.6 ETH, 50 squares. Mint 10 Sept — 30 Oct 2026 on onthewall.nfcsummit.com. Full list. The wall: One square in a prominent position at the top of the wall; Your PFP hand-painted by one of our artists, before doors open; Replaceable until 30 October; The NFT: your square among the fifty faces. The perks: 2 VIP tickets for NFC 2027, you and your plus-one; Your profile put forward: official picture, spotlights through 2027; One hour before: a private hour at the venue; The Wall private brunch, holders only; The post-event pack.</aside>
+</section>
+<section id="names" class="s " data-transition="fade">
+<img src="../../media/sa/name-wall-site.jpg" alt="The On The Wall site, with the names on the wall" class="frame" style="position:absolute;left:1104px;top:150px;width:720px;height:628px;object-fit:cover">
+<div class="col g24 in" style="width:920px"><p class="lab acc">Offer 05 · sold on the site</p><h2 class="t t150">The Name Wall.</h2></div>
+<div class="col in2" style="width:920px"><div class="row g20 rule-d" style="padding:16px 0"><p class="lab acc" style="width:40px;flex:none">01</p><p class="body">500 names, hand-painted on the venue.</p></div><div class="row g20 rule-d" style="padding:16px 0"><p class="lab acc" style="width:40px;flex:none">02</p><p class="body">Your number is your spot on the wall.</p></div><div class="row g20 rule-d" style="padding:16px 0"><p class="lab acc" style="width:40px;flex:none">03</p><p class="body">Editable until 30 October. One General Admission ticket included.</p></div><div class="row g20 rule-d" style="padding:16px 0"><p class="lab acc" style="width:40px;flex:none">04</p><p class="body">Each name gets a shareable azulejo card.</p></div></div>
+<div class="row g40 in3" style="align-items:flex-end;width:1728px;justify-content:space-between"><p class="lead" style="width:1100px">You won’t just sponsor NFC 2027. You’ll stand on its walls with 500 others.</p></div>
+<p class="foot">NFC Summit 2027 — NFC Street Activations</p>
+<p class="pg">27</p>
+<aside>Offer 05, sold on the site: the Name Wall. 500 names, hand-painted on the venue. Your number is your spot on the wall. Editable until 30 October; one General Admission ticket included. Each name gets a shareable azulejo card. You won’t just sponsor NFC 2027. You’ll stand on its walls with 500 others. 0.06 ETH.</aside>
+</section>
+<section id="names-offer" class="s yellow" data-transition="fade" style="padding-bottom:300px">
+<div style="position:absolute;left:0px;top:850px;width:1920px;height:230px;background:var(--ink)"></div>
+<div class="col g16 in" style="color:var(--ink)"><p class="lab">Offer 05 · on the wall</p><h2 class="t t120" style="color:var(--ink)">The Name Wall</h2><p class="lab">NFC 2026: 2,740 attendees from 79 countries</p></div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(4, 1fr);column-gap:48px"><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">1</p><p class="t t48" style="color:var(--ink)">name</p></div>
+<p class="body" style="color:var(--ink)">Hand-painted on the façade of Armazém 0108</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">1</p><p class="t t48" style="color:var(--ink)">GA</p></div>
+<p class="body" style="color:var(--ink)">General Admission ticket for NFC 2027</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">1</p><p class="t t48" style="color:var(--ink)">card</p></div>
+<p class="body" style="color:var(--ink)">Your azulejo card, ready to share from day one</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">1</p><p class="t t48" style="color:var(--ink)">brunch</p></div>
+<p class="body" style="color:var(--ink)">The Wall private brunch, holders only</p></div></div>
+<div class="row in3" style="position:absolute;left:96px;top:850px;width:1728px;height:230px;align-items:center;justify-content:space-between">
+<div class="row" style="align-items:center;gap:40px"><p class="t" style="font-size:112px;line-height:0.86;color:var(--yellow)">0.06 ETH</p>
+<p class="t" style="font-size:44px;line-height:1;padding:10px 18px 8px;background:var(--yellow);color:var(--ink);transform:rotate(-3deg)">500 names</p></div>
+<p class="lab" style="color:var(--yellow);text-align:right;width:640px">Mint 10 Sept — 30 Oct 2026 · onthewall.nfcsummit.com</p></div>
+<aside>The Name Wall, 0.06 ETH, 500 names. Mint 10 Sept — 30 Oct 2026 on onthewall.nfcsummit.com. Full list. The wall: Your name hand-painted on the façade of Armazém 0108; Editable until 30 October; Your azulejo card, ready to share from day one; The NFT: your name and panel number, on-chain. The perks: 1 General Admission ticket for NFC 2027; Your profile put forward: official picture, spotlights through 2027; One hour before: a private hour at the venue; The Wall private brunch, holders only; The post-event pack.</aside>
+</section>
+<section id="contact" class="s " data-transition="fade" style="justify-content:flex-start;padding-bottom:0px">
+<img src="../../media/dragons-2027/dragon-art-fun-fair.webp" alt="" style="position:absolute;left:0px;top:740px;width:341px;height:380px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-kawaii-summit.webp" alt="" style="position:absolute;left:240px;top:740px;width:343px;height:380px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-conference.webp" alt="" style="position:absolute;left:535px;top:740px;width:302px;height:380px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-ringmaster-hero.webp" alt="" style="position:absolute;left:670px;top:650px;width:580px;height:470px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-art-factory.webp" alt="" style="position:absolute;left:1069px;top:740px;width:331px;height:380px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-hackathon-ai-day.webp" alt="" style="position:absolute;left:1332px;top:760px;width:353px;height:360px;object-fit:contain">
+<img src="../../media/dragons-2027/dragon-parties.webp" alt="" style="position:absolute;left:1625px;top:720px;width:315px;height:400px;object-fit:contain">
+<div class="col g32 in" style="width:1728px">
+<p class="lab acc">NFC Street Activations · On The Wall</p>
+<h2 class="t t150">Talk to John.</h2>
+<p class="body mute">John Karp · onthewall.nfcsummit.com</p>
+<p class="lab">john@nonfungibleconference.com · t.me/thejonnkarp</p>
+</div>
+<div style="height:420px"></div>
+<aside>Talk to John Karp: john@nonfungibleconference.com, t.me/thejonnkarp. The walls of the campaign: onthewall.nfcsummit.com.</aside>
+</section>
+
+</div></div>
+
+<nav class="v-bar v-top" aria-label="Deck">
+  <a class="v-btn" href="../../" title="Tous les decks"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg><span class="v-hide-sm">Tous les decks</span></a>
+  <span class="v-sep"></span>
+  <span class="v-title">NFC Street Activations — On The Wall</span>
+</nav>
+<nav class="v-bar v-bottom" aria-label="Navigation">
+  <button class="v-btn" id="v-prev" type="button" title="Précédente (←)" aria-label="Slide précédente"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <span class="v-count" id="v-count" aria-live="polite">1 / 29</span>
+  <button class="v-btn" id="v-next" type="button" title="Suivante (→)" aria-label="Slide suivante"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  <span class="v-sep"></span>
+  <button class="v-btn" id="v-grid" type="button" title="Vue d’ensemble (G)" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg><span class="v-hide-sm">Slides</span></button>
+  <button class="v-btn" id="v-notes" type="button" title="Notes (N)" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 9h8M8 13h8M8 17h5"/></svg><span class="v-hide-sm">Notes</span></button>
+  <a class="v-btn" href="street-activations.pdf" download title="Télécharger le PDF"><svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span class="v-hide-sm">PDF</span></a>
+  <button class="v-btn" id="v-fs" type="button" title="Plein écran (F)" aria-label="Plein écran"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button>
+</nav>
+<div class="v-progress" id="v-progress"></div>
+
+<aside id="notes" hidden><h4>Notes · à dire</h4><p></p></aside>
+
+<div id="grid" hidden>
+  <div class="g-head"><h2>NFC Street Activations — On The Wall</h2><button class="v-btn" type="button" data-close>Fermer · Esc</button></div>
+  <ol><li><button type="button" data-i="0"><img src="thumbs/01.jpg" alt="Slide 1" loading="lazy" width="480" height="270">01</button></li><li><button type="button" data-i="1"><img src="thumbs/02.jpg" alt="Slide 2" loading="lazy" width="480" height="270">02</button></li><li><button type="button" data-i="2"><img src="thumbs/03.jpg" alt="Slide 3" loading="lazy" width="480" height="270">03</button></li><li><button type="button" data-i="3"><img src="thumbs/04.jpg" alt="Slide 4" loading="lazy" width="480" height="270">04</button></li><li><button type="button" data-i="4"><img src="thumbs/05.jpg" alt="Slide 5" loading="lazy" width="480" height="270">05</button></li><li><button type="button" data-i="5"><img src="thumbs/06.jpg" alt="Slide 6" loading="lazy" width="480" height="270">06</button></li><li><button type="button" data-i="6"><img src="thumbs/07.jpg" alt="Slide 7" loading="lazy" width="480" height="270">07</button></li><li><button type="button" data-i="7"><img src="thumbs/08.jpg" alt="Slide 8" loading="lazy" width="480" height="270">08</button></li><li><button type="button" data-i="8"><img src="thumbs/09.jpg" alt="Slide 9" loading="lazy" width="480" height="270">09</button></li><li><button type="button" data-i="9"><img src="thumbs/10.jpg" alt="Slide 10" loading="lazy" width="480" height="270">10</button></li><li><button type="button" data-i="10"><img src="thumbs/11.jpg" alt="Slide 11" loading="lazy" width="480" height="270">11</button></li><li><button type="button" data-i="11"><img src="thumbs/12.jpg" alt="Slide 12" loading="lazy" width="480" height="270">12</button></li><li><button type="button" data-i="12"><img src="thumbs/13.jpg" alt="Slide 13" loading="lazy" width="480" height="270">13</button></li><li><button type="button" data-i="13"><img src="thumbs/14.jpg" alt="Slide 14" loading="lazy" width="480" height="270">14</button></li><li><button type="button" data-i="14"><img src="thumbs/15.jpg" alt="Slide 15" loading="lazy" width="480" height="270">15</button></li><li><button type="button" data-i="15"><img src="thumbs/16.jpg" alt="Slide 16" loading="lazy" width="480" height="270">16</button></li><li><button type="button" data-i="16"><img src="thumbs/17.jpg" alt="Slide 17" loading="lazy" width="480" height="270">17</button></li><li><button type="button" data-i="17"><img src="thumbs/18.jpg" alt="Slide 18" loading="lazy" width="480" height="270">18</button></li><li><button type="button" data-i="18"><img src="thumbs/19.jpg" alt="Slide 19" loading="lazy" width="480" height="270">19</button></li><li><button type="button" data-i="19"><img src="thumbs/20.jpg" alt="Slide 20" loading="lazy" width="480" height="270">20</button></li><li><button type="button" data-i="20"><img src="thumbs/21.jpg" alt="Slide 21" loading="lazy" width="480" height="270">21</button></li><li><button type="button" data-i="21"><img src="thumbs/22.jpg" alt="Slide 22" loading="lazy" width="480" height="270">22</button></li><li><button type="button" data-i="22"><img src="thumbs/23.jpg" alt="Slide 23" loading="lazy" width="480" height="270">23</button></li><li><button type="button" data-i="23"><img src="thumbs/24.jpg" alt="Slide 24" loading="lazy" width="480" height="270">24</button></li><li><button type="button" data-i="24"><img src="thumbs/25.jpg" alt="Slide 25" loading="lazy" width="480" height="270">25</button></li><li><button type="button" data-i="25"><img src="thumbs/26.jpg" alt="Slide 26" loading="lazy" width="480" height="270">26</button></li><li><button type="button" data-i="26"><img src="thumbs/27.jpg" alt="Slide 27" loading="lazy" width="480" height="270">27</button></li><li><button type="button" data-i="27"><img src="thumbs/28.jpg" alt="Slide 28" loading="lazy" width="480" height="270">28</button></li><li><button type="button" data-i="28"><img src="thumbs/29.jpg" alt="Slide 29" loading="lazy" width="480" height="270">29</button></li></ol>
+</div>
+
+<script src="../../assets/viewer.js"></script>
+</body>
+</html>

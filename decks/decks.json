@@ -1,0 +1,27 @@
+[
+ {
+  "slug": "general-presentation",
+  "slides": 23,
+  "title": "General Presentation"
+ },
+ {
+  "slug": "cryptostamp-corner",
+  "slides": 9,
+  "title": "CryptoStamp Corner"
+ },
+ {
+  "slug": "artist-cards",
+  "slides": 11,
+  "title": "NFC Artist Cards — Kawaii × PHANTASM"
+ },
+ {
+  "slug": "collection-cards",
+  "slides": 14,
+  "title": "NFC Collection Cards"
+ },
+ {
+  "slug": "street-activations",
+  "slides": 29,
+  "title": "NFC Street Activations — On The Wall"
+ }
+]
