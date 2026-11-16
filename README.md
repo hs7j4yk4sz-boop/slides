@@ -1,49 +1,48 @@
-# NFC Summit 2027 — les decks de l'équipe
+# NFC Summit 2027 — team decks
 
-Le site interne où l'équipe NFC retrouve, présente et partage les cinq decks 2027 :
+The internal website where the NFC team finds, presents and shares the five 2027 decks:
 
-| Deck | Pour qui | Slides |
+| Deck | For | Slides |
 |---|---|---|
-| General Presentation | Tout le monde : partenaires, presse, sponsors, speakers | 23 |
-| CryptoStamp Corner | Postes et émetteurs de timbres numériques | 9 |
-| NFC Artist Cards — Kawaii × PHANTASM | Artistes invités à dessiner une carte | 11 |
-| NFC Collection Cards | Collections NFT et PFP | 14 |
-| NFC Street Activations — On The Wall | Sponsors, galeries, plateformes, communautés | 29 |
+| General Presentation | Everyone: partners, press, sponsors, speakers | 23 |
+| CryptoStamp Corner | Postal services and digital stamp issuers | 9 |
+| NFC Artist Cards — Kawaii × PHANTASM | Artists invited to draw a card | 11 |
+| NFC Collection Cards | NFT and PFP collections | 14 |
+| NFC Street Activations — On The Wall | Sponsors, galleries, platforms, communities | 29 |
 
-Chaque deck se présente en plein écran dans le navigateur (flèches, **F** plein écran, **N** notes, **G** toutes les slides, glisser sur téléphone), se télécharge en PDF, et a son propre lien à envoyer.
+Every deck plays full screen in the browser (arrow keys, **F** full screen, **N** speaker notes, **G** all slides, swipe on a phone), downloads as a PDF, and has its own link to send.
 
-## Mise en ligne
+## Going live
 
-Le site est statique : la page d'accueil est `index.html` à la racine, chaque deck est dans `decks/<nom>/`.
-Si le repo est déjà relié à Vercel (c'était le cas pour le deck v7), chaque `git push` sur `main` remet le site à jour tout seul.
-Sinon, une seule fois sur [vercel.com](https://vercel.com) : **Add New → Project**, importer `slides`, Framework **Other**, pas de commande de build, dossier de sortie : la racine. **Deploy**.
+The site is static: the home page is `index.html` at the root, each deck lives in `decks/<name>/`.
+The repo is connected to Vercel (team `nfcsummit`, project `slides`): every push to `main` updates the site within a minute.
 
-Le site n'est pas référencé par Google (`noindex`), mais toute personne qui a le lien peut l'ouvrir, et **le repo est public** : tout ce qui est commité ici est lisible sur GitHub. Pour un mot de passe sur le site, il faut l'option *Deployment Protection* de Vercel (plan Pro).
+The site is not indexed by search engines (`noindex`), but anyone with the link can open it, and **this repo is public**: everything committed here can be read on GitHub. A password on the site needs Vercel's *Deployment Protection* (Pro plan).
 
-## Modifier un deck avec Claude Code
+## Changing a deck with Claude Code
 
-Dans le dossier du repo, lancer `claude`, puis par exemple :
+In the repo folder, run `claude`, then for example:
 
 ```
-/update-deck Street Activations : remplace "Your wall is waiting." par "Pick your wall."
-/update-deck GP : ajoute une slide pause avec le dragon Parties avant "Every night, everywhere."
+/update-deck Street Activations: replace "Your wall is waiting." with "Pick your wall."
+/update-deck General Presentation: add a pause slide with the Parties dragon before "Every night, everywhere."
 ```
 
-Claude modifie la source du deck, reconstruit le site et les PDF, vérifie les slides touchées, puis pousse : Vercel publie dans la minute.
-Tout est expliqué pour Claude dans `CLAUDE.md` (organisation du repo, règles du design system).
+Claude edits the deck source, rebuilds the site and the PDFs, checks the slides it touched, then pushes: Vercel publishes within a minute.
+Everything Claude needs is in `CLAUDE.md` (repo layout, design-system rules).
 
-Sans Claude Code :
+Without Claude Code:
 
 ```bash
-pip3 install playwright pillow && python3 -m playwright install chromium   # la première fois
+pip3 install playwright pillow && python3 -m playwright install chromium   # first time only
 python3 src/build_site.py && python3 src/render.py
 git add -A && git commit -m "…" && git push
 ```
 
-## Les originaux sur claude.ai
+## The originals on claude.ai
 
-Les cinq decks existent aussi en version modifiable sur claude.ai (compte de John), reliés au design system NFC Summit 2027. Ce repo ne les met pas à jour : pour reporter un changement là-bas, le demander à Claude dans le projet « Nfc 27 ».
+The five decks also exist as editable Slides on claude.ai (John's account), linked to the NFC Summit 2027 Design System. This repo does not update them: to carry a change over, ask Claude in the "Nfc 27" project.
 
-## L'ancien deck Street Activations v7 (septembre 2026)
+## The old Street Activations v7 deck (September 2026)
 
-Les fichiers déjà présents à la racine avant le site (`NFC Street Activations.dc.html`, les `.mp4`, `compressed/`, `uploads/`, `_ds/`, `assets/dragons/`, `deck-stage.js`, `image-slot.js`, `support.js`) forment l'ancien deck v7. Il reste en ligne à son adresse (`/NFC Street Activations.dc.html`) ; seule la racine du site montre désormais la page d'équipe. Ne pas déplacer ces fichiers : ses vidéos sont chargées depuis `raw.githubusercontent.com/hs7j4yk4sz-boop/slides/main/…`. La version à jour du deck est `decks/street-activations/`.
+The files that were at the root before the site (`NFC Street Activations.dc.html`, the `.mp4` files, `compressed/`, `uploads/`, `_ds/`, `assets/dragons/`, `deck-stage.js`, `image-slot.js`, `support.js`) make up the old v7 deck. It stays online at its own address (`/NFC Street Activations.dc.html`); only the root of the site now shows the team page. Do not move these files: the deck loads its videos from `raw.githubusercontent.com/hs7j4yk4sz-boop/slides/main/…`. The current version of the deck is `decks/street-activations/`.

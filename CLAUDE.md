@@ -62,7 +62,7 @@ pause_video(d, 'street', 'videos-2026/mur-crane-pixel', 'On The Wall', 'The stre
 - **Never grade or recolour artworks** (Polygon1993, PHANTASM cards). 2026 photos and videos are already graded in their files: never grade them twice.
 - **No protected characters** (mascots, cartoon characters, brand figures) drawn or added.
 - **Contact on every deck**: John Karp · john@nonfungibleconference.com · t.me/thejonnkarp. No phone number.
-- Decks are in English; the home page is in French.
+- **English only for anything public or shared with the team**: decks, home page, viewer labels, README, commit messages, pull requests. (Chat with John can stay in French.)
 
 ## The claude.ai copies
 
