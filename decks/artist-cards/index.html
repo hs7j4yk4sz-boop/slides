@@ -230,26 +230,26 @@ section.paper .bar, section.paper2 .bar { background: var(--blue); }
 </div></div>
 
 <nav class="v-bar v-top" aria-label="Deck">
-  <a class="v-btn" href="../../" title="Tous les decks"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg><span class="v-hide-sm">Tous les decks</span></a>
+  <a class="v-btn" href="../../" title="All decks"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg><span class="v-hide-sm">All decks</span></a>
   <span class="v-sep"></span>
   <span class="v-title">NFC Artist Cards — Kawaii × PHANTASM</span>
 </nav>
-<nav class="v-bar v-bottom" aria-label="Navigation">
-  <button class="v-btn" id="v-prev" type="button" title="Précédente (←)" aria-label="Slide précédente"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+<nav class="v-bar v-bottom" aria-label="Slide controls">
+  <button class="v-btn" id="v-prev" type="button" title="Previous (←)" aria-label="Previous slide"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
   <span class="v-count" id="v-count" aria-live="polite">1 / 11</span>
-  <button class="v-btn" id="v-next" type="button" title="Suivante (→)" aria-label="Slide suivante"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  <button class="v-btn" id="v-next" type="button" title="Next (→)" aria-label="Next slide"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
   <span class="v-sep"></span>
-  <button class="v-btn" id="v-grid" type="button" title="Vue d’ensemble (G)" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg><span class="v-hide-sm">Slides</span></button>
+  <button class="v-btn" id="v-grid" type="button" title="All slides (G)" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg><span class="v-hide-sm">Slides</span></button>
   <button class="v-btn" id="v-notes" type="button" title="Notes (N)" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 9h8M8 13h8M8 17h5"/></svg><span class="v-hide-sm">Notes</span></button>
-  <a class="v-btn" href="artist-cards.pdf" download title="Télécharger le PDF"><svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span class="v-hide-sm">PDF</span></a>
-  <button class="v-btn" id="v-fs" type="button" title="Plein écran (F)" aria-label="Plein écran"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button>
+  <a class="v-btn" href="artist-cards.pdf" download title="Download the PDF"><svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span class="v-hide-sm">PDF</span></a>
+  <button class="v-btn" id="v-fs" type="button" title="Full screen (F)" aria-label="Full screen"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button>
 </nav>
 <div class="v-progress" id="v-progress"></div>
 
-<aside id="notes" hidden><h4>Notes · à dire</h4><p></p></aside>
+<aside id="notes" hidden><h4>Notes · what to say</h4><p></p></aside>
 
 <div id="grid" hidden>
-  <div class="g-head"><h2>NFC Artist Cards — Kawaii × PHANTASM</h2><button class="v-btn" type="button" data-close>Fermer · Esc</button></div>
+  <div class="g-head"><h2>NFC Artist Cards — Kawaii × PHANTASM</h2><button class="v-btn" type="button" data-close>Close · Esc</button></div>
   <ol><li><button type="button" data-i="0"><img src="thumbs/01.jpg" alt="Slide 1" loading="lazy" width="480" height="270">01</button></li><li><button type="button" data-i="1"><img src="thumbs/02.jpg" alt="Slide 2" loading="lazy" width="480" height="270">02</button></li><li><button type="button" data-i="2"><img src="thumbs/03.jpg" alt="Slide 3" loading="lazy" width="480" height="270">03</button></li><li><button type="button" data-i="3"><img src="thumbs/04.jpg" alt="Slide 4" loading="lazy" width="480" height="270">04</button></li><li><button type="button" data-i="4"><img src="thumbs/05.jpg" alt="Slide 5" loading="lazy" width="480" height="270">05</button></li><li><button type="button" data-i="5"><img src="thumbs/06.jpg" alt="Slide 6" loading="lazy" width="480" height="270">06</button></li><li><button type="button" data-i="6"><img src="thumbs/07.jpg" alt="Slide 7" loading="lazy" width="480" height="270">07</button></li><li><button type="button" data-i="7"><img src="thumbs/08.jpg" alt="Slide 8" loading="lazy" width="480" height="270">08</button></li><li><button type="button" data-i="8"><img src="thumbs/09.jpg" alt="Slide 9" loading="lazy" width="480" height="270">09</button></li><li><button type="button" data-i="9"><img src="thumbs/10.jpg" alt="Slide 10" loading="lazy" width="480" height="270">10</button></li><li><button type="button" data-i="10"><img src="thumbs/11.jpg" alt="Slide 11" loading="lazy" width="480" height="270">11</button></li></ol>
 </div>
 

@@ -22,4 +22,4 @@ Follow these steps in order. Read `CLAUDE.md` first if you have not in this sess
 
 5. **Commit and push**: one commit per request, message in English starting with the deck, e.g. `street-activations: new pause slide before the offers`. Then `git push`. Vercel deploys `main` by itself within a minute.
 
-6. **Report** in two or three short lines in French: what changed, on which slides (numbers), and the deck link on the site. Mention that the claude.ai copy of the deck was not updated, if the change matters there too.
+6. **Report** in two or three short lines, in the language the request was written in: what changed, on which slides (numbers), and the deck link on the site. Mention that the claude.ai copy of the deck was not updated, if the change matters there too.

@@ -14,32 +14,32 @@ sys.path.insert(0, SRC)
 os.chdir(SRC)   # the deck specs import nfclib from the current folder
 from nfclib import DECK_CSS, LOCAL, MEDIA   # noqa: E402
 
-# The five decks, in the order the team sees them. 'claude' is the editable original on claude.ai (John's account).
+# The five decks, in the order the team sees them. Everything shown on the site is in English. 'claude' is the editable original on claude.ai (John's account).
 DECKS = [
     dict(slug='general-presentation', mod='gp', title='General Presentation',
-         audience='Tout le monde : partenaires, presse, sponsors, speakers',
-         desc='Le festival en une traversée : la vision, 2026 en chiffres, les six univers, le site, les trois jours de mai.',
+         audience='Everyone: partners, press, sponsors, speakers',
+         desc='The festival in one journey: the vision, 2026 in figures, the six worlds, the venue, the three days in May.',
          claude='https://claude.ai/artifact/PyY8ZiYEzwmsxWSxPL2YTT'),
     dict(slug='cryptostamp-corner', mod='cs', title='CryptoStamp Corner',
-         audience='Postes et émetteurs de timbres numériques',
-         desc='Le corner des timbres numériques, sixième édition : le lieu, le meetup du 27 mai, le stand pré-équipé.',
+         audience='Postal services and digital stamp issuers',
+         desc='The digital stamp corner, sixth edition: the place, the 27 May meetup, the turnkey booth.',
          claude='https://claude.ai/artifact/BRmKeS1PLUSXbYPYccMKp1'),
     dict(slug='artist-cards', mod='ac', title='NFC Artist Cards — Kawaii × PHANTASM',
-         audience='Artistes invités à dessiner une carte',
-         desc='Une carte PHANTASM dessinée avec Polygon1993, éditée, géante au mur, révélée sur scène le 27 mai.',
+         audience='Artists invited to draw a card',
+         desc='A PHANTASM card drawn with Polygon1993: a numbered edition, a giant on the wall, revealed on stage on 27 May.',
          claude='https://claude.ai/artifact/SJKvtPbYDA2RSVChtMvYmj'),
     dict(slug='collection-cards', mod='cc', title='NFC Collection Cards',
-         audience='Collections NFT et PFP',
-         desc='La carte d’une collection : deux façons d’entrer, trois vies, le partage des ventes et le calendrier.',
+         audience='NFT and PFP collections',
+         desc='A card for your collection: two ways in, three lives, the revenue split and the timeline.',
          claude='https://claude.ai/artifact/Y6P6MjqFHPssV83iATjxBR'),
     dict(slug='street-activations', mod='sa', title='NFC Street Activations — On The Wall',
-         audience='Sponsors, galeries, plateformes, communautés',
-         desc='Les murs du festival : le mural phare, les murals d’artistes, les maisons communautaires, les murs PFP et des noms.',
+         audience='Sponsors, galleries, platforms, communities',
+         desc='The walls of the festival: the flagship mural, the artist murals, the community houses, the PFP and Name walls.',
          claude='https://claude.ai/artifact/KQPvnq4mh9NKDwVif9UWAV'),
 ]
 
 FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300..700&display=swap">'
-MONTHS = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.']
+MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 ICON = {
     'back': '<svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>',
     'prev': '<svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>',
@@ -51,7 +51,7 @@ ICON = {
 }
 
 
-def today_fr():
+def today_en():
     t = datetime.date.today()
     return f'{t.day} {MONTHS[t.month - 1]} {t.year}'
 
@@ -104,26 +104,26 @@ def deck_page(spec, d):
 </div></div>
 
 <nav class="v-bar v-top" aria-label="Deck">
-  <a class="v-btn" href="../../" title="Tous les decks">{ICON['back']}<span class="v-hide-sm">Tous les decks</span></a>
+  <a class="v-btn" href="../../" title="All decks">{ICON['back']}<span class="v-hide-sm">All decks</span></a>
   <span class="v-sep"></span>
   <span class="v-title">{title}</span>
 </nav>
-<nav class="v-bar v-bottom" aria-label="Navigation">
-  <button class="v-btn" id="v-prev" type="button" title="Précédente (←)" aria-label="Slide précédente">{ICON['prev']}</button>
+<nav class="v-bar v-bottom" aria-label="Slide controls">
+  <button class="v-btn" id="v-prev" type="button" title="Previous (←)" aria-label="Previous slide">{ICON['prev']}</button>
   <span class="v-count" id="v-count" aria-live="polite">1 / {n}</span>
-  <button class="v-btn" id="v-next" type="button" title="Suivante (→)" aria-label="Slide suivante">{ICON['next']}</button>
+  <button class="v-btn" id="v-next" type="button" title="Next (→)" aria-label="Next slide">{ICON['next']}</button>
   <span class="v-sep"></span>
-  <button class="v-btn" id="v-grid" type="button" title="Vue d’ensemble (G)" aria-pressed="false">{ICON['grid']}<span class="v-hide-sm">Slides</span></button>
+  <button class="v-btn" id="v-grid" type="button" title="All slides (G)" aria-pressed="false">{ICON['grid']}<span class="v-hide-sm">Slides</span></button>
   <button class="v-btn" id="v-notes" type="button" title="Notes (N)" aria-pressed="false">{ICON['notes']}<span class="v-hide-sm">Notes</span></button>
-  <a class="v-btn" href="{spec['slug']}.pdf" download title="Télécharger le PDF">{ICON['pdf']}<span class="v-hide-sm">PDF</span></a>
-  <button class="v-btn" id="v-fs" type="button" title="Plein écran (F)" aria-label="Plein écran">{ICON['fs']}</button>
+  <a class="v-btn" href="{spec['slug']}.pdf" download title="Download the PDF">{ICON['pdf']}<span class="v-hide-sm">PDF</span></a>
+  <button class="v-btn" id="v-fs" type="button" title="Full screen (F)" aria-label="Full screen">{ICON['fs']}</button>
 </nav>
 <div class="v-progress" id="v-progress"></div>
 
-<aside id="notes" hidden><h4>Notes · à dire</h4><p></p></aside>
+<aside id="notes" hidden><h4>Notes · what to say</h4><p></p></aside>
 
 <div id="grid" hidden>
-  <div class="g-head"><h2>{title}</h2><button class="v-btn" type="button" data-close>Fermer · Esc</button></div>
+  <div class="g-head"><h2>{title}</h2><button class="v-btn" type="button" data-close>Close · Esc</button></div>
   <ol>{grid}</ol>
 </div>
 
@@ -143,33 +143,33 @@ def hub_page(entries):
         strip = ''.join(f'<img src="decks/{slug}/thumbs/{j:02d}.jpg" alt="" loading="lazy" width="480" height="270">' for j in range(2, min(n, 6) + 1))
         cards.append(f'''
 <li class="deck">
-  <a class="thumb" href="decks/{slug}/" aria-label="Présenter {html.escape(spec['title'])}">
+  <a class="thumb" href="decks/{slug}/" aria-label="Present {html.escape(spec['title'])}">
     <img src="decks/{slug}/cover.jpg" alt="" width="1280" height="720" loading="{'eager' if i == 1 else 'lazy'}">
-    <span class="play">Présenter</span>
+    <span class="play">Present</span>
   </a>
   <div class="info">
     <p class="num">{i:02d}</p>
     <h2>{html.escape(spec['title'])}</h2>
     <p class="aud">{html.escape(spec['audience'])}</p>
     <p class="desc">{html.escape(spec['desc'])}</p>
-    <p class="meta">{n} slides · en anglais · notes de présentation incluses</p>
+    <p class="meta">{n} slides · speaker notes included</p>
     <div class="actions">
-      <a class="btn primary" href="decks/{slug}/">Présenter</a>
+      <a class="btn primary" href="decks/{slug}/">Present</a>
       <a class="btn" href="decks/{slug}/{slug}.pdf" download>PDF</a>
-      <button class="btn" type="button" data-copy="decks/{slug}/">Copier le lien</button>
+      <button class="btn" type="button" data-copy="decks/{slug}/">Copy link</button>
     </div>
     <div class="strip" aria-hidden="true">{strip}</div>
   </div>
 </li>''')
     total = sum(len(d.slides) for _, d in entries)
     return f'''<!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>Decks NFC Summit 2027</title>
-<meta name="description" content="Les présentations officielles de NFC Summit 2027, pour l’équipe.">
+<title>NFC Summit 2027 Decks</title>
+<meta name="description" content="The official NFC Summit 2027 decks, for the team.">
 <link rel="icon" href="assets/favicon.png">
 {FONTS}
 <link rel="stylesheet" href="assets/hub.css">
@@ -178,23 +178,23 @@ def hub_page(entries):
 <header class="hero">
   <div class="hero-in">
     <img class="logo" src="{media_url('logos-2027/logo-nfc-jaune.png', '')}" alt="NFC Summit">
-    <p class="lab">Usage interne · équipe NFC Summit</p>
-    <h1>Les decks 2027</h1>
-    <p class="lead">Sixième édition, cinquième anniversaire. 27 — 29 mai 2027, Unicorn Factory, Beato, Lisbonne.</p>
-    <p class="sub">{len(entries)} decks · {total} slides · mis à jour le {today_fr()}</p>
+    <p class="lab">Internal · NFC Summit team</p>
+    <h1>The 2027 decks</h1>
+    <p class="lead">Sixth edition, fifth anniversary. 27 — 29 May 2027, Unicorn Factory, Beato, Lisbon.</p>
+    <p class="sub">{len(entries)} decks · {total} slides · updated {today_en()}</p>
   </div>
   <div class="dragons" aria-hidden="true">{dragons}</div>
 </header>
 
-<section class="howto" aria-label="Comment présenter">
+<section class="howto" aria-label="How to present">
   <div class="howto-in">
-    <p class="howto-t">Pour présenter</p>
+    <p class="howto-t">To present</p>
     <ul>
-      <li><kbd>F</kbd> plein écran</li>
-      <li><kbd>←</kbd> <kbd>→</kbd> changer de slide</li>
-      <li><kbd>N</kbd> notes : ce qu’il faut dire</li>
-      <li><kbd>G</kbd> toutes les slides</li>
-      <li>Sur téléphone : glisser</li>
+      <li><kbd>F</kbd> full screen</li>
+      <li><kbd>←</kbd> <kbd>→</kbd> change slide</li>
+      <li><kbd>N</kbd> notes: what to say</li>
+      <li><kbd>G</kbd> all slides</li>
+      <li>On a phone: swipe</li>
     </ul>
   </div>
 </section>
@@ -207,12 +207,12 @@ def hub_page(entries):
 <footer>
   <div class="foot-in">
     <div>
-      <p class="lab">Contact sur tous les decks</p>
+      <p class="lab">Contact on every deck</p>
       <p class="contact">John Karp · john@nonfungibleconference.com · t.me/thejonnkarp</p>
     </div>
     <div>
-      <p class="lab">À savoir</p>
-      <p>Ce site est réservé à l’équipe : on envoie un deck à l’extérieur en PDF ou avec le lien de ce deck seul. Les originaux modifiables sont sur claude.ai, dans le compte de John.</p>
+      <p class="lab">Good to know</p>
+      <p>This site is for the team. To share a deck outside, send its PDF or the link to that deck only. The editable originals are on claude.ai, in John’s account.</p>
     </div>
   </div>
 </footer>
@@ -224,8 +224,8 @@ document.addEventListener('click', function (e) {{
   var t = document.getElementById('toast');
   function done(msg) {{ t.textContent = msg; t.classList.add('on'); clearTimeout(t._h); t._h = setTimeout(function () {{ t.classList.remove('on'); }}, 2200); }}
   if (navigator.clipboard && navigator.clipboard.writeText) {{
-    navigator.clipboard.writeText(url).then(function () {{ done('Lien copié'); }}, function () {{ prompt('Lien du deck', url); }});
-  }} else {{ prompt('Lien du deck', url); }}
+    navigator.clipboard.writeText(url).then(function () {{ done('Link copied'); }}, function () {{ prompt('Deck link', url); }});
+  }} else {{ prompt('Deck link', url); }}
 }});
 </script>
 </body>
