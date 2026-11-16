@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>CryptoStamp Corner · NFC Summit 2027</title>
+<meta property="og:title" content="CryptoStamp Corner · NFC Summit 2027">
+<meta property="og:image" content="cover.jpg">
+<link rel="icon" href="../../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300..700&display=swap">
+<link rel="stylesheet" href="../../assets/viewer.css">
+<style>
+:root {
+  --ink: #0B0B0B; --graphite: #1A1A1A; --chalk: #F2F0EB; --grey: #B0ACA2; --grey-deep: #6B685F;
+  --paper: #FFFFFF; --paper-2: #F3F6FF; --rule-paper: #D5DCEE;
+  --yellow: #F6B800; --blue: #1442B2; --ink-blue: #0E2A6E;
+}
+body { font-family: 'Space Grotesk', Arial, sans-serif; }
+section.s { background: var(--ink); color: var(--chalk); padding: 96px 96px 160px; display: flex; flex-direction: column; justify-content: space-between; }
+section.paper { background: var(--paper); color: var(--ink); }
+section.paper2 { background: var(--paper-2); color: var(--ink); }
+section.yellow { background: var(--yellow); color: var(--ink-blue); }
+section.blue { background: var(--blue); color: var(--paper); }
+section.bottom { justify-content: flex-end; }
+.bg { position: absolute; left: 0px; top: 0px; width: 1920px; height: 1080px; object-fit: cover; }
+.shade-l { position: absolute; left: 0px; top: 0px; width: 1920px; height: 1080px; background: linear-gradient(90deg, rgba(11,11,11,0.9) 0%, rgba(11,11,11,0.55) 45%, rgba(11,11,11,0) 75%); }
+.shade-b { position: absolute; left: 0px; top: 0px; width: 1920px; height: 1080px; background: linear-gradient(0deg, rgba(11,11,11,0.92) 0%, rgba(11,11,11,0.45) 40%, rgba(11,11,11,0) 70%); }
+.shade-r { position: absolute; left: 0px; top: 0px; width: 1920px; height: 1080px; background: linear-gradient(270deg, rgba(11,11,11,1) 0%, rgba(11,11,11,0.97) 42%, rgba(11,11,11,0.6) 60%, rgba(11,11,11,0) 80%); }
+.shade-dark { position: absolute; left: 0px; top: 0px; width: 1920px; height: 1080px; background: linear-gradient(0deg, rgba(11,11,11,0.96) 0%, rgba(11,11,11,0.8) 60%, rgba(11,11,11,0.45) 100%); }
+.t { font-family: 'Anton', Arial, sans-serif; font-weight: 400; text-transform: uppercase; line-height: 0.86; }
+.t200 { font-size: 200px; letter-spacing: -4px; line-height: 0.84; }
+.t168 { font-size: 168px; letter-spacing: -3px; }
+.t150 { font-size: 150px; letter-spacing: -3px; }
+.t120 { font-size: 120px; letter-spacing: -2px; }
+.t112 { font-size: 112px; letter-spacing: -2px; line-height: 0.9; }
+.t88 { font-size: 88px; letter-spacing: -2px; line-height: 0.9; }
+.t64 { font-size: 64px; letter-spacing: -1px; line-height: 0.92; }
+.t48 { font-size: 48px; letter-spacing: -1px; line-height: 0.95; }
+.t36 { font-size: 36px; line-height: 1; }
+section.paper .t, section.paper2 .t { color: var(--ink-blue); }
+.lab { font-size: 26px; font-weight: 600; line-height: 1.2; }
+.acc { color: var(--yellow); }
+section.paper .acc, section.paper2 .acc { color: var(--blue); }
+section.yellow .acc { color: var(--ink-blue); }
+.lead { font-size: 40px; font-weight: 300; line-height: 1.3; }
+.body { font-size: 28px; font-weight: 400; line-height: 1.4; }
+.small { font-size: 24px; font-weight: 400; line-height: 1.35; }
+.mute { color: var(--grey); }
+section.paper .mute, section.paper2 .mute { color: var(--grey-deep); }
+.foot { position: absolute; left: 96px; bottom: 56px; width: 1300px; font-size: 24px; font-weight: 500; line-height: 1.2; color: var(--grey); }
+.pg { position: absolute; left: 1704px; bottom: 56px; width: 120px; text-align: right; font-size: 24px; font-weight: 500; line-height: 1.2; color: var(--grey); }
+section.paper .foot, section.paper .pg, section.paper2 .foot, section.paper2 .pg { color: var(--grey-deep); }
+section.yellow .foot, section.yellow .pg { color: var(--ink-blue); }
+section.blue .foot, section.blue .pg { color: var(--paper); }
+section.yellow .mute { color: #3C4658; }
+section.yellow .rule, section.yellow .rule-d { border-top-color: rgba(14,42,110,0.28); }
+section.yellow .bar, section.yellow .sq, section.yellow .ysq { background: var(--blue); }
+section.yellow .frame { border-color: var(--ink-blue); }
+.col { display: flex; flex-direction: column; }
+.row { display: flex; flex-direction: row; }
+.g8 { gap: 8px; } .g12 { gap: 12px; } .g16 { gap: 16px; } .g20 { gap: 20px; } .g24 { gap: 24px; } .g32 { gap: 32px; } .g40 { gap: 40px; } .g48 { gap: 48px; } .g64 { gap: 64px; }
+.bar { width: 72px; height: 6px; background: var(--yellow); }
+section.paper .bar, section.paper2 .bar { background: var(--blue); }
+.sq { width: 20px; height: 20px; background: var(--yellow); }
+.bsq { width: 12px; height: 12px; background: var(--blue); margin-top: 14px; flex: none; }
+.ysq { width: 12px; height: 12px; background: var(--yellow); margin-top: 14px; flex: none; }
+.rule { border-top: 1px solid var(--rule-paper); }
+.rule-d { border-top: 1px solid #2E2E2E; }
+.panel { position: absolute; left: 880px; top: 96px; width: 3px; height: 824px; background: var(--ink-blue); }
+.frame { border: 2px solid var(--chalk); }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0px); } }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+.in { animation: rise 600ms ease-out both; }
+.in2 { animation: rise 600ms ease-out 180ms both; }
+.in3 { animation: rise 600ms ease-out 360ms both; }
+
+</style>
+</head>
+<body>
+<div id="stage"><div id="deck">
+<section id="cover" class="s bottom" data-transition="fade">
+<img class="bg" src="../../media/photos-2026/stand-la-poste-cryptostamps.jpg" alt="The French Post’s CryptoStamps booth at NFC Summit 2026">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div style="position:absolute;left:96px;top:96px;width:176px;height:100px;overflow:hidden"><img src="../../media/logos-2027/logo-nfc-blanc.png" alt="NFC Summit logo" style="position:absolute;left:-10px;top:-47px;width:196px;height:196px;object-fit:contain"></div>
+<div class="col g32 in" style="width:1500px">
+<p class="lab acc">NFC Summit 2027</p>
+<h1 class="t t200">CryptoStamp Corner</h1>
+<p class="lead">Discover CryptoStamps, understand how they work, collect them on site.</p>
+<p class="lab">27 — 29 May 2027 · Unicorn Factory, Beato, Lisbon</p>
+</div>
+<aside>The French Post’s CryptoStamps booth at NFC Summit 2026.</aside>
+</section>
+<section id="back" class="s bottom" data-transition="fade" style="padding-bottom:144px">
+<img class="bg" src="../../media/videos-2026/salle-kawaii-cartes-et-stamps.jpg" data-video="../../media/videos-2026/salle-kawaii-cartes-et-stamps.mp4" alt="The Kawaii Summit hall in 2026: card sellers, game tables and stamps">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g40 in" style="width:1500px">
+<h2 class="t t150">CryptoStamp Corner is back.</h2>
+<p class="lead">Bigger area, bigger programme, more collectors.</p>
+</div>
+<aside>NFC aims to introduce and trial new practices around digital collectibles. CryptoStamps are a key focus this year: we’re enlarging the area and programme so more digital art collectors can try and collect them, while the emerging Digital Stamp Collectibles community gathers to share and discuss together.</aside>
+</section>
+<section id="meets" class="s bottom" data-transition="fade" style="padding-bottom:144px">
+<img class="bg" src="../../media/videos-2026/place-totem-et-mur.jpg" data-video="../../media/videos-2026/place-totem-et-mur.mp4" alt="The central plaza of NFC Summit 2026: a digital art totem in front of the pixel portraits of the Wall">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g40 in" style="width:1500px">
+<h2 class="t t150">When philately meets digital art.</h2>
+<p class="lead">Discover, understand, collect. On site.</p>
+</div>
+<aside>Visitors discover the series, understand how they work, then buy at the booth or online.</aside>
+</section>
+<section id="small" class="s " data-transition="fade">
+<img src="../../media/dragons-2027/dragon-kawaii-summit.webp" alt="The kawaii summit dragon" style="position:absolute;left:1105px;top:230px;width:885px;height:980px;object-fit:contain">
+<div class="col g24 in" style="position:absolute;left:96px;top:0px;width:1000px;height:1080px;justify-content:center">
+<p class="lab acc">CryptoStamp Corner · 2027</p>
+<h2 class="t" style="font-size:150px;line-height:0.92;letter-spacing:-3px">Small stamps.<br>Big collectors.</h2>
+</div>
+<aside>A pause. The smallest artworks of the festival draw some of its most dedicated collectors.</aside>
+</section>
+<section id="corner" class="s " data-transition="fade">
+<img class="bg" src="../../media/cs/crowd.jpg" alt="The CryptoStamp Corner at NFC Summit 2026, full of visitors">
+<div class="shade-dark"></div>
+<div class="col g32 in" style="width:1400px">
+<p class="lab acc">Sixth edition · 2027</p>
+<h2 class="t t120">A whole corner for digital stamps</h2>
+<p class="lead">Following the success of last year’s edition, NFC is back in 2027 with a dedicated area where visitors discover CryptoStamps, understand how they work, and buy them on site.</p>
+</div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(3, 1fr);column-gap:48px"><div class="col g16 rule-d" style="padding-top:28px"><p class="lab acc">Where</p><p class="lead" style="font-size:36px;line-height:1.25">Unicorn Factory, Beato, Lisbon</p></div><div class="col g16 rule-d" style="padding-top:28px"><p class="lab acc">When</p><p class="lead" style="font-size:36px;line-height:1.25">27 & 28 May 2027, 10:00 — 18:00. 29 May: closing day in Caparica</p></div><div class="col g16 rule-d" style="padding-top:28px"><p class="lab acc">Who</p><p class="lead" style="font-size:36px;line-height:1.25">Digital art fans and digital stamp collectors</p></div></div>
+<p class="foot">NFC Summit 2027 — CryptoStamp Corner</p>
+<p class="pg">05</p>
+<aside>Who: digital art fans and digital stamp collectors. The emerging Digital Stamp Collectibles community gathers to share and discuss together.</aside>
+</section>
+<section id="corner3" class="s " data-transition="fade">
+<div class="col g24 in"><p class="lab acc">CryptoStamp Corner</p><h2 class="t t120">On site, three ways</h2></div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(3, 1fr);column-gap:48px"><div class="col">
+<img src="../../media/cs/aerial.jpg" alt="Aerial view of the Unicorn Factory in Beato" style="width:528px;height:300px;object-fit:cover">
+<p class="lab acc" style="margin-top:32px">Prime location</p>
+<h3 class="t t48" style="margin-top:12px">The most visible zone</h3>
+<div class="col g8" style="margin-top:20px"><p class="body mute">— Next to the main art exhibition</p><p class="body mute">— Next to the main stage</p></div>
+</div><div class="col">
+<img src="../../media/cs/booth-stamps.jpg" alt="CryptoStamps on a booth table" style="width:528px;height:300px;object-fit:cover">
+<p class="lab acc" style="margin-top:32px">The booths</p>
+<h3 class="t t48" style="margin-top:12px">Exhibit, sell, activate</h3>
+<div class="col g8" style="margin-top:20px"><p class="body mute">— Packaged booths for postal services</p><p class="body mute">— Discover the series, buy on site or online</p></div>
+</div><div class="col">
+<img src="../../media/cs/meetup.jpg" alt="A talk at the CryptoStamp meetup" style="width:528px;height:300px;object-fit:cover">
+<p class="lab acc" style="margin-top:32px">The meetup</p>
+<h3 class="t t48" style="margin-top:12px">Talks on 27 May</h3>
+<div class="col g8" style="margin-top:20px"><p class="body mute">— Why CryptoStamps matter</p><p class="body mute">— Case studies and best practices</p><p class="body mute">— A late-afternoon collectors’ meet-up</p></div>
+</div></div>
+<p class="foot">NFC Summit 2027 — CryptoStamp Corner</p>
+<p class="pg">06</p>
+<aside>Prime location: CryptoStamp Corner containers will sit in the most visible zone, next to the main art exhibition and the main stage. The booths: on site, postal services book packaged booths where they can exhibit, sell, and support activations. The visitor journey is straightforward: discover the series, then buy at the booth or online. The meetup: on 27 May we run a focused programme of talks and panels: an opening session on why CryptoStamps matter; case studies from leading postal services, a panel with best practices and a late-afternoon collectors’ meet-up.</aside>
+</section>
+<section id="meet" class="s bottom" data-transition="fade" style="padding-bottom:110px">
+<img class="bg" src="../../media/px/expo-crowd.jpg" data-video="../../media/videos-2026/expo-art-factory-etage.mp4" alt="Visitors in an exhibition room at NFC Summit 2026">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g24 in" style="width:1600px">
+<p class="lab acc">27 — 29 May 2027 · Lisbon</p>
+<h2 class="t" style="font-size:200px;line-height:0.88;letter-spacing:-4px">Meet the collectors.</h2>
+</div>
+<aside>Three days in front of the people who collect digital stamps and digital art.</aside>
+</section>
+<section id="offer" class="s yellow" data-transition="fade" style="padding-bottom:300px">
+<div style="position:absolute;left:0px;top:850px;width:1920px;height:230px;background:var(--ink)"></div>
+<div class="col g16 in" style="color:var(--ink)"><p class="lab">Pre-packed booth · Bronze sponsorship</p><h2 class="t t120" style="color:var(--ink)">Your booth in the corner</h2><p class="lab">Next to the main art exhibition and the main stage</p></div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(4, 1fr);column-gap:48px"><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">1.5</p><p class="t t48" style="color:var(--ink)">m²</p></div>
+<p class="body" style="color:var(--ink)">A furnished booth: table, screen, backdrop, power, internet</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">4</p><p class="t t48" style="color:var(--ink)">tickets</p></div>
+<p class="body" style="color:var(--ink)">NFC tickets for your team</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">3</p><p class="t t48" style="color:var(--ink)">logos</p></div>
+<p class="body" style="color:var(--ink)">On CryptoStamp prints, NFC websites, the meetup page</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">1</p><p class="t t48" style="color:var(--ink)">tweet</p></div>
+<p class="body" style="color:var(--ink)">A dedicated post by NFC Summit, and a spot in the April newsletter</p></div></div>
+<div class="row in3" style="position:absolute;left:96px;top:850px;width:1728px;height:230px;align-items:center;justify-content:space-between">
+<div class="row" style="align-items:center;gap:40px"><p class="t" style="font-size:112px;line-height:0.86;color:var(--yellow)">€6,000</p>
+<p class="t" style="font-size:44px;line-height:1;padding:10px 18px 8px;background:var(--yellow);color:var(--ink);transform:rotate(-3deg)">Before 31 Dec 2026</p></div>
+<p class="lab" style="color:var(--yellow);text-align:right;width:640px">Talk to John first →</p></div>
+<aside>Special offer for sign-up before 31 December 2026. For national post services, collectors’ associations and independent artists with a digital stamps project in 2027. Who can apply: national post services, collectors’ associations, independent artists. Applicants need at least one digital stamps project released or planned for release in 2027. Newsletter: up to 400 characters. Custom offers: if you want a larger footprint, a co-produced stamp drop with NFC, special collaborations with NFC artists, speaking slots on the main stage or side stages, or a private event produced by NFC, contact us and we will tailor a proposal. Full list. The booth: Footprint 1.0 m × 1.5 m; 2 stools, 1 table, 1 screen, 1 printed backdrop; Power and stable internet; Setup and teardown included. Bronze sponsorship: Your logo on all CryptoStamp on-site prints; Your logo on the NFC websites; Your logo on the meetup webpage; One dedicated tweet by NFC Summit; A spot in the CryptoStamp newsletter, April 2027; Four NFC tickets for your team.</aside>
+</section>
+<section id="contact" class="s bottom" data-transition="fade">
+<img class="bg" src="../../media/videos-2026/salle-kawaii-cartes-et-stamps.jpg" data-video="../../media/videos-2026/salle-kawaii-cartes-et-stamps.mp4" alt="The Kawaii Summit hall in 2026">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g32 in" style="width:1400px">
+<p class="lab acc">CryptoStamp Corner · NFC Summit 2027</p>
+<h2 class="t t150">Talk to John</h2>
+<div class="col g12"><p class="lead">John Karp</p><p class="lab">john@nonfungibleconference.com · t.me/thejonnkarp</p></div>
+</div>
+<p class="foot">NFC Summit 2027 — CryptoStamp Corner</p>
+<p class="pg">09</p>
+<aside>Custom offers on request: larger footprint, co-produced stamp drop, artist collaborations, speaking slots, private events.</aside>
+</section>
+
+</div></div>
+
+<nav class="v-bar v-top" aria-label="Deck">
+  <a class="v-btn" href="../../" title="Tous les decks"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg><span class="v-hide-sm">Tous les decks</span></a>
+  <span class="v-sep"></span>
+  <span class="v-title">CryptoStamp Corner</span>
+</nav>
+<nav class="v-bar v-bottom" aria-label="Navigation">
+  <button class="v-btn" id="v-prev" type="button" title="Précédente (←)" aria-label="Slide précédente"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <span class="v-count" id="v-count" aria-live="polite">1 / 9</span>
+  <button class="v-btn" id="v-next" type="button" title="Suivante (→)" aria-label="Slide suivante"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  <span class="v-sep"></span>
+  <button class="v-btn" id="v-grid" type="button" title="Vue d’ensemble (G)" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg><span class="v-hide-sm">Slides</span></button>
+  <button class="v-btn" id="v-notes" type="button" title="Notes (N)" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 9h8M8 13h8M8 17h5"/></svg><span class="v-hide-sm">Notes</span></button>
+  <a class="v-btn" href="cryptostamp-corner.pdf" download title="Télécharger le PDF"><svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span class="v-hide-sm">PDF</span></a>
+  <button class="v-btn" id="v-fs" type="button" title="Plein écran (F)" aria-label="Plein écran"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button>
+</nav>
+<div class="v-progress" id="v-progress"></div>
+
+<aside id="notes" hidden><h4>Notes · à dire</h4><p></p></aside>
+
+<div id="grid" hidden>
+  <div class="g-head"><h2>CryptoStamp Corner</h2><button class="v-btn" type="button" data-close>Fermer · Esc</button></div>
+  <ol><li><button type="button" data-i="0"><img src="thumbs/01.jpg" alt="Slide 1" loading="lazy" width="480" height="270">01</button></li><li><button type="button" data-i="1"><img src="thumbs/02.jpg" alt="Slide 2" loading="lazy" width="480" height="270">02</button></li><li><button type="button" data-i="2"><img src="thumbs/03.jpg" alt="Slide 3" loading="lazy" width="480" height="270">03</button></li><li><button type="button" data-i="3"><img src="thumbs/04.jpg" alt="Slide 4" loading="lazy" width="480" height="270">04</button></li><li><button type="button" data-i="4"><img src="thumbs/05.jpg" alt="Slide 5" loading="lazy" width="480" height="270">05</button></li><li><button type="button" data-i="5"><img src="thumbs/06.jpg" alt="Slide 6" loading="lazy" width="480" height="270">06</button></li><li><button type="button" data-i="6"><img src="thumbs/07.jpg" alt="Slide 7" loading="lazy" width="480" height="270">07</button></li><li><button type="button" data-i="7"><img src="thumbs/08.jpg" alt="Slide 8" loading="lazy" width="480" height="270">08</button></li><li><button type="button" data-i="8"><img src="thumbs/09.jpg" alt="Slide 9" loading="lazy" width="480" height="270">09</button></li></ol>
+</div>
+
+<script src="../../assets/viewer.js"></script>
+</body>
+</html>

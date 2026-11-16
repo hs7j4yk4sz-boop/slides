@@ -1,0 +1,68 @@
+/* NFC Summit 2027 — deck viewer. The slides keep their own deck.css (inlined in each page). */
+:root { --v-ink: #0B0B0B; --v-chalk: #F2F0EB; --v-yellow: #F6B800; --v-grey: #8F8B82; --v-bar: rgba(11,11,11,0.82); color-scheme: dark; }
+html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+body { font-family: 'Space Grotesk', Arial, sans-serif; color: var(--v-chalk); -webkit-font-smoothing: antialiased; }
+
+/* the same box model as the claude.ai Slides renderer */
+section { position: relative; width: 1920px; height: 1080px; overflow: hidden; box-sizing: border-box; margin: 0; }
+section * { box-sizing: content-box; margin: 0; }
+section > * { position: relative; }
+h1, h2, h3, p { margin: 0; }
+section aside { display: none; }
+
+#stage { position: fixed; inset: 0; }
+#deck { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; }
+#deck > section { position: absolute; left: 0; top: 0; opacity: 0; visibility: hidden; transition: opacity 380ms ease, visibility 0s linear 380ms; }
+#deck > section.active { opacity: 1; visibility: visible; transition: opacity 380ms ease, visibility 0s; z-index: 1; }
+#deck > section:not(.active) .in, #deck > section:not(.active) .in2, #deck > section:not(.active) .in3 { animation: none; }
+#deck video.bg-video { pointer-events: none; }
+
+/* controls */
+.v-bar { position: fixed; z-index: 10; display: flex; align-items: center; gap: 6px; padding: 8px; background: var(--v-bar);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transition: opacity 300ms ease, transform 300ms ease; }
+.v-top { top: calc(12px + env(safe-area-inset-top, 0px)); left: calc(12px + env(safe-area-inset-left, 0px)); max-width: calc(100vw - 24px); }
+.v-bottom { bottom: calc(12px + env(safe-area-inset-bottom, 0px)); left: 50%; transform: translateX(-50%); }
+body.idle .v-bar { opacity: 0; pointer-events: none; }
+body.idle .v-bottom { transform: translate(-50%, 8px); }
+body.idle { cursor: none; }
+.v-btn { appearance: none; border: 0; background: transparent; color: var(--v-chalk); font: 600 15px/1 'Space Grotesk', Arial, sans-serif;
+  height: 40px; min-width: 40px; padding: 0 12px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; text-decoration: none; white-space: nowrap; }
+.v-btn:hover, .v-btn:focus-visible { background: rgba(242,240,235,0.12); outline: none; }
+.v-btn[aria-pressed="true"] { background: var(--v-yellow); color: var(--v-ink); }
+.v-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: square; }
+.v-count { font: 600 15px/1 'Space Grotesk', Arial, sans-serif; font-variant-numeric: tabular-nums; min-width: 72px; text-align: center; color: var(--v-chalk); }
+.v-count b { color: var(--v-yellow); font-weight: 600; }
+.v-title { font: 600 15px/1.2 'Space Grotesk', Arial, sans-serif; padding: 0 10px 0 4px; color: var(--v-grey); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.v-sep { width: 1px; height: 22px; background: rgba(242,240,235,0.2); margin: 0 2px; }
+.v-progress { position: fixed; left: 0; bottom: 0; height: 3px; background: var(--v-yellow); z-index: 11; transition: width 300ms ease; }
+
+/* speaker notes */
+#notes { position: fixed; z-index: 12; right: calc(12px + env(safe-area-inset-right, 0px)); top: calc(12px + env(safe-area-inset-top, 0px)); width: min(440px, calc(100vw - 24px));
+  max-height: calc(100vh - 100px); overflow: auto; background: rgba(11,11,11,0.92); border-left: 3px solid var(--v-yellow); padding: 20px 22px 22px;
+  font: 400 17px/1.5 'Space Grotesk', Arial, sans-serif; color: var(--v-chalk); box-sizing: border-box; }
+#notes h4 { margin: 0 0 10px; font: 600 13px/1 'Space Grotesk', Arial, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; color: var(--v-yellow); }
+#notes p { margin: 0; }
+
+/* overview grid */
+#grid { position: fixed; inset: 0; z-index: 20; background: rgba(11,11,11,0.97); overflow: auto; padding: 72px max(24px, env(safe-area-inset-right, 0px)) 40px max(24px, env(safe-area-inset-left, 0px)); box-sizing: border-box; }
+#grid .g-head { display: flex; justify-content: space-between; align-items: center; max-width: 1600px; margin: 0 auto 24px; gap: 16px; }
+#grid .g-head h2 { margin: 0; font: 400 40px/1 Anton, Impact, sans-serif; text-transform: uppercase; color: var(--v-chalk); }
+#grid ol { list-style: none; margin: 0 auto; padding: 0; max-width: 1600px; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+#grid li button { appearance: none; border: 0; padding: 0; background: none; cursor: pointer; width: 100%; text-align: left; color: var(--v-grey); font: 600 14px/1 'Space Grotesk', Arial, sans-serif; }
+#grid li img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; outline: 2px solid transparent; outline-offset: 3px; margin-bottom: 10px; background: #1A1A1A; }
+#grid li button:hover img, #grid li button:focus-visible img { outline-color: rgba(242,240,235,0.5); }
+#grid li button.cur img { outline-color: var(--v-yellow); }
+#grid li button.cur { color: var(--v-yellow); }
+
+@media (max-width: 720px) {
+  .v-hide-sm { display: none !important; }
+  .v-btn { padding: 0 9px; }
+  .v-title, .v-top .v-sep { display: none; }
+}
+
+/* print / PDF: every slide on its own 1920 x 1080 page */
+@page { size: 1920px 1080px; margin: 0; }
+body.print, body.print #stage, body.print #deck { position: static; overflow: visible; height: auto; transform: none !important; background: none; }
+body.print #deck > section { position: relative; opacity: 1; visibility: visible; transition: none; break-after: page; page-break-after: always; }
+body.print .in, body.print .in2, body.print .in3 { animation: none !important; }
+body.print .v-bar, body.print .v-progress, body.print #notes, body.print #grid { display: none !important; }
