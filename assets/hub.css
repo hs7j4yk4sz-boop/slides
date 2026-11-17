@@ -74,6 +74,8 @@ main { max-width: calc(1440px + 2 * var(--gutter)); margin: 0 auto; padding-left
 .offers-head .lead { font-size: 19px; line-height: 1.5; color: rgba(242, 240, 235, 0.88); }
 .offers { list-style: none; margin: clamp(28px, 4vw, 48px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 48px 28px; }
 .offer { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.offer .desc { flex: 1 1 auto; }
+.offer .aud { min-height: 2.6em; }
 .o-thumb { position: relative; display: block; aspect-ratio: 9 / 16; overflow: hidden; background: var(--graphite); margin-bottom: 8px; }
 .o-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms ease; }
 .o-thumb:hover img, .o-thumb:focus-visible img { transform: scale(1.025); }

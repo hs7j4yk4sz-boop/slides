@@ -66,6 +66,9 @@ OFFERS = [
     dict(slug='on-the-wall', title='On The Wall', audience='Supporters, collectors and brands',
          desc='Season 1 in figures, your name on the wall, the Supporter pack and your own mural.',
          claude='https://claude.ai/artifact/6dDpjp4yzYCnL8HjWEQ1Qe'),
+    dict(slug='cryptostamp-corner', title='CryptoStamp Corner', audience='Postal services and stamp collectors',
+         desc='A whole corner for digital stamps: three ways in, a ready-to-use booth at Bronze, and bigger custom formats.',
+         claude='https://claude.ai/artifact/TEw6o6H57ctfDETihDicFY'),
 ]
 
 FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300..700&display=swap">'
@@ -228,7 +231,6 @@ def offers_section(offers):
 <li class="offer">
   <a class="o-thumb" href="offers/{slug}/" aria-label="Open {title}">
     <img src="offers/{slug}/cover.jpg" alt="" width="540" height="960" loading="lazy">
-    <span class="play">Open</span>
   </a>
   <p class="num">{i:02d}</p>
   <h3>{title}</h3>
