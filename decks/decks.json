@@ -1,8 +1,13 @@
 [
  {
   "slug": "general-presentation",
-  "slides": 23,
+  "slides": 24,
   "title": "General Presentation"
+ },
+ {
+  "slug": "ai-residency",
+  "slides": 15,
+  "title": "NFC Residency 27 — for AI labs"
  },
  {
   "slug": "cryptostamp-corner",

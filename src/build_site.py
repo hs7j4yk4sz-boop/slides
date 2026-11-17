@@ -20,6 +20,10 @@ DECKS = [
          audience='Everyone: partners, press, sponsors, speakers',
          desc='The festival in one journey: the vision, 2026 in figures, the six worlds, the venue, the three days in May.',
          claude='https://claude.ai/artifact/PyY8ZiYEzwmsxWSxPL2YTT'),
+    dict(slug='ai-residency', mod='ai', title='NFC Residency 27 — for AI labs',
+         audience='AI labs: image, video, code',
+         desc='One hundred NFC artists create with your model for 90 days, then an exhibition in Lisbon. Plus four more formats and the price list.',
+         claude=''),
     dict(slug='cryptostamp-corner', mod='cs', title='CryptoStamp Corner',
          audience='Postal services and digital stamp issuers',
          desc='The digital stamp corner, sixth edition: the place, the 27 May meetup, the turnkey booth.',
@@ -54,15 +58,9 @@ OFFERS = [
     dict(slug='kawaii-summit', title='Kawaii Summit', audience='Card games, collections and characters',
          desc='Your card, made with an artist and sold together: four ways to sell it, two ways in, the split.',
          claude='https://claude.ai/artifact/S5uQG7teB1fPz1YtVEG8q4'),
-    dict(slug='stands', title='Stands', audience='Brands with a product to sell',
-         desc='Four container stands, Bronze to Platinum, each with its set-up, its passes and its visibility.',
-         claude='https://claude.ai/artifact/XZbcGhLMvggxxBjZuTeMGu'),
-    dict(slug='side-events', title='Side Events', audience='Brands that want their own moment',
-         desc='Host the Opening Brunch, co-host the Final Party, or run your own side event inside the festival.',
+    dict(slug='side-events', title='Side Events', audience='Brands and projects that want their own moment',
+         desc='Five venues inside NFC, from a shared event at Casa Capitão to your own stage: packages, menus, prices.',
          claude='https://claude.ai/artifact/5g3jCjirNMkr644jmZQgYv'),
-    dict(slug='branding', title='Branding', audience='Brands that want to be seen everywhere',
-         desc='Your name on what everyone uses: wristbands, cups, Wi-Fi, transition slides. One brand per item.',
-         claude='https://claude.ai/artifact/XuB8c6fJBeH1oLrasvbqLP'),
     dict(slug='on-the-wall', title='On The Wall', audience='Supporters, collectors and brands',
          desc='Season 1 in figures, your name on the wall, the Supporter pack and your own mural.',
          claude='https://claude.ai/artifact/6dDpjp4yzYCnL8HjWEQ1Qe'),
@@ -246,9 +244,9 @@ def offers_section(offers):
     return f'''
 <section class="offers-sec" id="offers" aria-labelledby="offers-t">
   <div class="offers-head">
-    <p class="lab">Partner offers 2027</p>
-    <h2 id="offers-t">The catalogue and its decks</h2>
-    <p class="lead">Vertical, to send to partners. Start with the catalogue, then the deck of the offer they want. Early-bird prices until 31 December.</p>
+    <p class="lab">Vertical · for partners</p>
+    <h2 id="offers-t">Business</h2>
+    <p class="lead">One deck per business, with prices excl. VAT. Send the catalogue first, then the deck of the business they want. Early-bird prices until 31 December.</p>
   </div>
   <ol class="offers">{''.join(cards)}
   </ol>
@@ -303,8 +301,8 @@ def hub_page(entries, offers=()):
     <p class="lab">Internal · NFC Summit team</p>
     <h1>The 2027 decks</h1>
     <p class="lead">Sixth edition, fifth anniversary. 27 — 29 May 2027, Unicorn Factory, Beato, Lisbon.</p>
-    <p class="sub">{len(entries)} presentation decks · {len(offers)} partner-offer decks · updated {today_en()}</p>
-    <p class="jump"><a href="#decks">Presentations</a><a href="#offers">Partner offers</a></p>
+    <p class="sub">{len(entries)} presentations · {len(offers)} business decks · updated {today_en()}</p>
+    <p class="jump"><a href="#decks">Presentations</a><a href="#offers">Business</a></p>
   </div>
   <div class="dragons" aria-hidden="true">{dragons}</div>
 </header>
@@ -323,7 +321,12 @@ def hub_page(entries, offers=()):
 </section>
 
 <main>
-  <ol class="decks" id="decks">{''.join(cards)}
+  <div class="offers-head floor" id="decks">
+    <p class="lab">Horizontal · for everyone</p>
+    <h2>Presentations</h2>
+    <p class="lead">To present on a screen or send to anyone: speakers, press, artists, partners. No prices. The event decks include their offers.</p>
+  </div>
+  <ol class="decks">{''.join(cards)}
   </ol>
 {offers_section(offers) if offers else ''}
 </main>

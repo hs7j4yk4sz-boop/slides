@@ -72,6 +72,7 @@ main { max-width: calc(1440px + 2 * var(--gutter)); margin: 0 auto; padding-left
 .offers-head { display: flex; flex-direction: column; gap: 14px; max-width: 46em; }
 .offers-head h2 { font: 400 clamp(44px, 6vw, 96px)/0.9 Anton, Impact, sans-serif; text-transform: uppercase; text-wrap: balance; }
 .offers-head .lead { font-size: 19px; line-height: 1.5; color: rgba(242, 240, 235, 0.88); }
+.offers-head.floor { padding-block: clamp(16px, 3vw, 40px) clamp(20px, 3vw, 36px); scroll-margin-top: 24px; }
 .offers { list-style: none; margin: clamp(28px, 4vw, 48px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 48px 28px; }
 .offer { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 .offer .desc { flex: 1 1 auto; }

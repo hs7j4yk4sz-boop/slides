@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>NFC Residency 27 — for AI labs · NFC Summit 2027</title>
+<meta property="og:title" content="NFC Residency 27 — for AI labs · NFC Summit 2027">
+<meta property="og:image" content="cover.jpg">
+<link rel="icon" href="../../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300..700&display=swap">
+<link rel="stylesheet" href="../../assets/viewer.css">
+<style>
+:root {
+  --ink: #0B0B0B; --graphite: #1A1A1A; --chalk: #F2F0EB; --grey: #B0ACA2; --grey-deep: #6B685F;
+  --paper: #FFFFFF; --paper-2: #F3F6FF; --rule-paper: #D5DCEE;
+  --yellow: #F6B800; --blue: #1442B2; --ink-blue: #0E2A6E;
+}
+body { font-family: 'Space Grotesk', Arial, sans-serif; }
+section.s { background: var(--ink); color: var(--chalk); padding: 96px 96px 160px; display: flex; flex-direction: column; justify-content: space-between; }
+section.paper { background: var(--paper); color: var(--ink); }
+section.paper2 { background: var(--paper-2); color: var(--ink); }
+section.yellow { background: var(--yellow); color: var(--ink-blue); }
+section.blue { background: var(--blue); color: var(--paper); }
+section.bottom { justify-content: flex-end; }
+.bg { position: absolute; left: 0px; top: 0px; width: 1920px; height: 1080px; object-fit: cover; }
+.shade-l { position: absolute; left: 0px; top: 0px; width: 1920px; height: 1080px; background: linear-gradient(90deg, rgba(11,11,11,0.9) 0%, rgba(11,11,11,0.55) 45%, rgba(11,11,11,0) 75%); }
+.shade-b { position: absolute; left: 0px; top: 0px; width: 1920px; height: 1080px; background: linear-gradient(0deg, rgba(11,11,11,0.92) 0%, rgba(11,11,11,0.45) 40%, rgba(11,11,11,0) 70%); }
+.shade-r { position: absolute; left: 0px; top: 0px; width: 1920px; height: 1080px; background: linear-gradient(270deg, rgba(11,11,11,1) 0%, rgba(11,11,11,0.97) 42%, rgba(11,11,11,0.6) 60%, rgba(11,11,11,0) 80%); }
+.shade-dark { position: absolute; left: 0px; top: 0px; width: 1920px; height: 1080px; background: linear-gradient(0deg, rgba(11,11,11,0.96) 0%, rgba(11,11,11,0.8) 60%, rgba(11,11,11,0.45) 100%); }
+.t { font-family: 'Anton', Arial, sans-serif; font-weight: 400; text-transform: uppercase; line-height: 0.86; }
+.t200 { font-size: 200px; letter-spacing: -4px; line-height: 0.84; }
+.t168 { font-size: 168px; letter-spacing: -3px; }
+.t150 { font-size: 150px; letter-spacing: -3px; }
+.t120 { font-size: 120px; letter-spacing: -2px; }
+.t112 { font-size: 112px; letter-spacing: -2px; line-height: 0.9; }
+.t88 { font-size: 88px; letter-spacing: -2px; line-height: 0.9; }
+.t64 { font-size: 64px; letter-spacing: -1px; line-height: 0.92; }
+.t48 { font-size: 48px; letter-spacing: -1px; line-height: 0.95; }
+.t36 { font-size: 36px; line-height: 1; }
+section.paper .t, section.paper2 .t { color: var(--ink-blue); }
+.lab { font-size: 26px; font-weight: 600; line-height: 1.2; }
+.acc { color: var(--yellow); }
+section.paper .acc, section.paper2 .acc { color: var(--blue); }
+section.yellow .acc { color: var(--ink-blue); }
+.lead { font-size: 40px; font-weight: 300; line-height: 1.3; }
+.body { font-size: 28px; font-weight: 400; line-height: 1.4; }
+.small { font-size: 24px; font-weight: 400; line-height: 1.35; }
+.mute { color: var(--grey); }
+section.paper .mute, section.paper2 .mute { color: var(--grey-deep); }
+.foot { position: absolute; left: 96px; bottom: 56px; width: 1300px; font-size: 24px; font-weight: 500; line-height: 1.2; color: var(--grey); }
+.pg { position: absolute; left: 1704px; bottom: 56px; width: 120px; text-align: right; font-size: 24px; font-weight: 500; line-height: 1.2; color: var(--grey); }
+section.paper .foot, section.paper .pg, section.paper2 .foot, section.paper2 .pg { color: var(--grey-deep); }
+section.yellow .foot, section.yellow .pg { color: var(--ink-blue); }
+section.blue .foot, section.blue .pg { color: var(--paper); }
+section.yellow .mute { color: #3C4658; }
+section.yellow .rule, section.yellow .rule-d { border-top-color: rgba(14,42,110,0.28); }
+section.yellow .bar, section.yellow .sq, section.yellow .ysq { background: var(--blue); }
+section.yellow .frame { border-color: var(--ink-blue); }
+.col { display: flex; flex-direction: column; }
+.row { display: flex; flex-direction: row; }
+.g8 { gap: 8px; } .g12 { gap: 12px; } .g16 { gap: 16px; } .g20 { gap: 20px; } .g24 { gap: 24px; } .g32 { gap: 32px; } .g40 { gap: 40px; } .g48 { gap: 48px; } .g64 { gap: 64px; }
+.bar { width: 72px; height: 6px; background: var(--yellow); }
+section.paper .bar, section.paper2 .bar { background: var(--blue); }
+.sq { width: 20px; height: 20px; background: var(--yellow); }
+.bsq { width: 12px; height: 12px; background: var(--blue); margin-top: 14px; flex: none; }
+.ysq { width: 12px; height: 12px; background: var(--yellow); margin-top: 14px; flex: none; }
+.rule { border-top: 1px solid var(--rule-paper); }
+.rule-d { border-top: 1px solid #2E2E2E; }
+.panel { position: absolute; left: 880px; top: 96px; width: 3px; height: 824px; background: var(--ink-blue); }
+.frame { border: 2px solid var(--chalk); }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0px); } }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+.in { animation: rise 600ms ease-out both; }
+.in2 { animation: rise 600ms ease-out 180ms both; }
+.in3 { animation: rise 600ms ease-out 360ms both; }
+
+</style>
+</head>
+<body>
+<div id="stage"><div id="deck">
+<section id="cover" class="s bottom" data-transition="fade">
+<img class="bg" src="../../media/videos-2026/art-factory-premier-etage.jpg" data-video="../../media/videos-2026/art-factory-premier-etage.mp4" alt="Artworks shown on the first floor of the Art Factory in 2026">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div style="position:absolute;left:96px;top:96px;width:176px;height:100px;overflow:hidden"><img src="../../media/logos-2027/logo-nfc-blanc.png" alt="NFC Summit logo" style="position:absolute;left:-10px;top:-47px;width:196px;height:196px;object-fit:contain"></div>
+<div class="col g32 in" style="width:1500px">
+<p class="lab acc">NFC Summit 2027 · for AI labs</p>
+<h1 class="t t200">NFC Residency 27</h1>
+<p class="lead">Put your model in the hands of the best artists of their generation.</p>
+<p class="lab">90 days online · 100 artists · an exhibition in Lisbon, 27 — 29 May 2027</p>
+</div>
+<aside>NFC Residency 27, presented by one AI lab. Ninety days online, from late February to 27 May 2027: one hundred artists from the NFC community create with the lab’s tools, with a weekly session. It ends with an exhibition during NFC Summit in Lisbon, prizes on the main stage, content and creators who talk about it.</aside>
+</section>
+<section id="demo" class="s bottom" data-transition="fade" style="padding-bottom:144px">
+<img class="bg" src="../../media/videos-2026/mur-crane-pixel.jpg" data-video="../../media/videos-2026/mur-crane-pixel.mp4" alt="A giant pixel skull painted on a facade at the Unicorn Factory, filmed by drone">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g40 in" style="width:1500px">
+<h2 class="t t150">The best demo of a model is an artwork.</h2>
+<p class="lead">Made by an artist people already follow.</p>
+</div>
+<aside>What image, video and code labs already pay for elsewhere: artists who adopt their tool, and works that show what the tool can do. Higgsfield, Runway, Google, OpenAI all run artist programmes. NFC has both: artists who are already committed, and a stage in Lisbon to show the result.</aside>
+</section>
+<section id="community" class="s bottom" data-transition="fade" style="padding-bottom:144px">
+<img class="bg" src="../../media/videos-2026/place-totem-et-mur.jpg" data-video="../../media/videos-2026/place-totem-et-mur.mp4" alt="The central plaza of NFC Summit 2026: a digital art totem in front of the pixel portraits of the Wall">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g40 in" style="width:1500px">
+<h2 class="t t150">A community that pays to be here.</h2>
+<p class="lead">325 patrons paid to be painted on our walls in seven weeks.</p>
+</div>
+<aside>You can buy ads and prizes. You cannot buy a community of artists who already know each other. 325 people paid to be painted on the Wall in seven weeks; around 1,000 artists in the NFC network, many already fluent with AI; 200+ artists exhibited in 2026.</aside>
+</section>
+<section id="assets" class="s " data-transition="fade">
+<img class="bg" src="../../media/photos-2026/place-centrale-visiteuses.jpg" alt="Visitors on the central plaza of the Unicorn Factory, NFC Summit 2026">
+<div class="shade-dark"></div>
+<div class="col g24 in">
+<p class="lab acc">What NFC brings</p>
+<h2 class="t t120">Artists, a stage, an audience</h2>
+</div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(4, 1fr);row-gap:56px;column-gap:48px"><div class="col g16"><div class="bar"></div><p class="t t112">1,000</p><p class="lab mute">Artists in the NFC network</p></div><div class="col g16"><div class="bar"></div><p class="t t112">325</p><p class="lab mute">Patrons on the Wall</p></div><div class="col g16"><div class="bar"></div><p class="t t112">200+</p><p class="lab mute">Artists exhibited in 2026</p></div><div class="col g16"><div class="bar"></div><p class="t t112">2,740</p><p class="lab mute">Visitors in 2026</p></div><div class="col g16"><div class="bar"></div><p class="t t112">79</p><p class="lab mute">Countries</p></div><div class="col g16"><div class="bar"></div><p class="t t112">6M+</p><p class="lab mute">Organic impressions</p></div><div class="col g16"><div class="bar"></div><p class="t t112">32</p><p class="lab mute">People of the Wall podcast episodes</p></div></div>
+<p class="foot">Source: NFC Summit 2026 final report and On The Wall season 1</p>
+<p class="pg">04</p>
+<aside>Artists already committed, not free sign-ups. A public ending in Lisbon: 2,740 visitors from 79 countries in 2026, a four-floor Art Factory to exhibit, a main stage for the awards. Our own media: People of the Wall (32 episodes), NFT Morning (the first French-language NFT podcast, close to 1,000 episodes), 6M+ organic impressions in 2026. Collectors: the NFC audience buys digital art, so residency works can sell. Europe: most of these programmes happen in New York, Los Angeles or Seoul; Lisbon in May is a ready-made European date.</aside>
+</section>
+<section id="pause" class="s " data-transition="fade">
+<img src="../../media/dragons-2027/dragon-hackathon-ai-day.webp" alt="The hackathon ai day dragon" style="position:absolute;left:1030px;top:230px;width:960px;height:980px;object-fit:contain">
+<div class="col g24 in" style="position:absolute;left:96px;top:0px;width:1000px;height:1080px;justify-content:center">
+<p class="lab acc">NFC Residency 27</p>
+<h2 class="t" style="font-size:150px;line-height:0.92;letter-spacing:-3px">Ninety days.<br>One exhibition.</h2>
+</div>
+<aside>A pause before the programme. One lab, one hundred artists, three months online, three days in Lisbon.</aside>
+</section>
+<section id="how" class="s " data-transition="fade">
+<div class="col g24 in"><p class="lab acc">The residency</p><h2 class="t t120">Ninety days, then Lisbon</h2></div>
+<div class="col g40">
+<div class="in2" style="display:grid;grid-template-columns:repeat(4, 1fr);column-gap:40px;border-top:2px solid var(--graphite);padding-top:0px"><div class="col g20"><div class="sq"></div><p class="t t48">February</p><p class="body mute">Open call: 100 artists from the Wall and the NFC network</p></div><div class="col g20"><div class="sq"></div><p class="t t48">Every week</p><p class="body mute">One live session: a masterclass by your team, peer critique</p></div><div class="col g20"><div class="sq"></div><p class="t t48">Every month</p><p class="body mute">An open studio, live. Three submissions in all</p></div><div class="col g20"><div class="sq"></div><p class="t t48">27 — 29 May</p><p class="body mute">The exhibition at NFC, prizes on the main stage, editions for sale</p></div></div>
+<p class="lead">Selected on application. The artists keep their rights.</p>
+</div>
+<p class="foot">NFC Residency 27 — for AI labs</p>
+<p class="pg">06</p>
+<aside>Format: 90 days online, from late February to 27 May. 100 artists selected from the Wall and the NFC network, on application, never by default. Rhythm: one online session a week (a masterclass by an engineer or an artist of the lab, peer critique), a live open studio every month, three submissions. The end: a selection of 20 to 30 works shown during NFC on a floor of the Art Factory in the lab’s name, prizes on the main stage, editions for sale.</aside>
+</section>
+<section id="getback" class="s yellow" data-transition="fade" style="flex-direction:row;gap:96px">
+<div class="col" style="width:760px;justify-content:space-between">
+<p class="lab acc">What your lab gets</p>
+<div class="col g32"><h2 class="t t150">Adoption you can show</h2><p class="lead">Not a logo on a wall. Proof, made by artists.</p></div>
+</div>
+<div class="col in2" style="flex:1;justify-content:flex-end"><div class="row g32 rule" style="padding:24px 0;align-items:baseline"><p class="lab acc">01</p><h3 class="t t48">100 artists trained on your tool</h3></div><div class="row g32 rule" style="padding:24px 0;align-items:baseline"><p class="lab acc">02</p><h3 class="t t48">Hundreds of signed works</h3></div><div class="row g32 rule" style="padding:24px 0;align-items:baseline"><p class="lab acc">03</p><h3 class="t t48">A licence to use them in your marketing</h3></div><div class="row g32 rule" style="padding:24px 0;align-items:baseline"><p class="lab acc">04</p><h3 class="t t48">Structured product feedback</h3></div><div class="row g32 rule" style="padding:24px 0;align-items:baseline"><p class="lab acc">05</p><h3 class="t t48">A floor of the Art Factory in your name</h3></div><div class="row g32 rule" style="padding:24px 0;align-items:baseline"><p class="lab acc">06</p><h3 class="t t48">A keynote on the main stage</h3></div></div>
+<p class="foot">NFC Residency 27 — for AI labs</p>
+<p class="pg">07</p>
+<aside>What the lab gets back: 100 artists trained on its tool, hundreds of signed works, a licence to reuse them in marketing (limited to promoting the programme), structured product feedback, a keynote. Nothing is used to train a model without the written agreement of the artist.</aside>
+</section>
+<section id="noise" class="s bottom" data-transition="fade">
+<img class="bg" src="../../media/photos-2026/scene-speakeuse.jpg" alt="A speaker on the main stage of NFC Summit 2026">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g32 in" style="width:1180px">
+<p class="lab acc">The noise</p>
+<h2 class="t t120">Three months of stories.</h2>
+<p class="lead">One podcast episode a month, ten creators who make and tell, a live at every submission.</p>
+</div>
+<p class="foot">NFC Residency 27 — for AI labs</p>
+<p class="pg">08</p>
+<aside>Media and influence: one People of the Wall episode a month, 10 creator-influencers who create during the programme and tell the story, a live at every submission, then the exhibition and the awards in Lisbon.</aside>
+</section>
+<section id="residency" class="s yellow" data-transition="fade" style="padding-bottom:300px">
+<div style="position:absolute;left:0px;top:850px;width:1920px;height:230px;background:var(--ink)"></div>
+<div class="col g16 in" style="color:var(--ink)"><p class="lab">NFC Residency 27 · presented by your lab</p><h2 class="t t120" style="color:var(--ink)">One lab. One residency.</h2><p class="lab">90 days online, then the exhibition at NFC Summit, 27 — 29 May 2027</p></div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(4, 1fr);column-gap:48px"><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">100</p><p class="t t48" style="color:var(--ink)">artists</p></div>
+<p class="body" style="color:var(--ink)">Selected from the Wall and the NFC network, on application</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">90</p><p class="t t48" style="color:var(--ink)">days</p></div>
+<p class="body" style="color:var(--ink)">Weekly sessions, monthly open studios, three submissions</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">€30K</p><p class="t t48" style="color:var(--ink)">to artists</p></div>
+<p class="body" style="color:var(--ink)">20 grants of €1,000 and €10,000 in prizes</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">1</p><p class="t t48" style="color:var(--ink)">floor</p></div>
+<p class="body" style="color:var(--ink)">Of the Art Factory, in your name, for the exhibition</p></div></div>
+<div class="row in3" style="position:absolute;left:96px;top:850px;width:1728px;height:230px;align-items:center;justify-content:space-between">
+<div class="row" style="align-items:center;gap:40px"><p class="t" style="font-size:112px;line-height:0.86;color:var(--yellow)">€90,000</p>
+<p class="t" style="font-size:44px;line-height:1;padding:10px 18px 8px;background:var(--yellow);color:var(--ink);transform:rotate(-3deg)">Platinum · 1 lab</p></div>
+<p class="lab" style="color:var(--yellow);text-align:right;width:640px">Signed before 31 January →</p></div>
+<aside>Where the €90,000 goes, roughly: €30,000 to the artists (20 grants of €1,000 and €10,000 in prizes), about €15,000 of exhibition production, about €10,000 of media and influence, the rest for NFC (one full-time person for three months to run the programme, the platform, curation). Exclusive: one lab only. 50% at signature. Must be signed before the end of January, or the open call cannot go out in time.</aside>
+</section>
+<section id="more" class="s bottom" data-transition="fade" style="padding-bottom:110px">
+<img class="bg" src="../../media/videos-2026/art-factory-rez-de-chaussee.jpg" data-video="../../media/videos-2026/art-factory-rez-de-chaussee.mp4" alt="The flour mill machines of the Art Factory at NFC Summit 2026">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g24 in" style="width:1600px">
+<p class="lab acc">Not a residency?</p>
+<h2 class="t" style="font-size:200px;line-height:0.88;letter-spacing:-4px">Four more<br>ways in.</h2>
+</div>
+<aside>For labs that do not take the residency: a hackathon, the engine of the fair, a model launch, an academy.</aside>
+</section>
+<section id="formats" class="s " data-transition="fade">
+<div class="col g24 in"><p class="lab acc">One lab per format</p><h2 class="t t120">Four more formats</h2></div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(4, 1fr);column-gap:48px"><div class="col g16 rule-d" style="padding-top:28px"><p class="lab mute">02</p><h3 class="t t64">Build the fair</h3><p class="lab acc">Online hackathon</p><p class="body mute">Artist and developer teams build the games of the Art Fun Fair with your model or API. The winners run in the fair for three days.</p></div><div class="col g16 rule-d" style="padding-top:28px"><p class="lab mute">03</p><h3 class="t t64">Powered by</h3><p class="lab acc">The engine of the fair</p><p class="body mute">Every machine turns the player’s photo and score into a printed artwork, generated by your model.</p></div><div class="col g16 rule-d" style="padding-top:28px"><p class="lab mute">04</p><h3 class="t t64">Model launch</h3><p class="lab acc">On the main stage</p><p class="body mute">Announce or demo a new model at NFC: keynote, demo in the Art Factory, a 48-hour sprint with the artists.</p></div><div class="col g16 rule-d" style="padding-top:28px"><p class="lab mute">05</p><h3 class="t t64">Academy</h3><p class="lab acc">For 1,000 artists</p><p class="body mute">Four online masterclasses, recorded, with a “Certified artist” badge. Or a squad of 10 creators for three months.</p></div></div>
+<p class="foot">NFC Residency 27 — for AI labs</p>
+<p class="pg">11</p>
+<aside>One principle for every format: put the lab’s tool in the hands of the best artists of the community, and end with public proof at NFC. One lab per format, so exclusivity means something. Build the fair: six to eight weeks before NFC; the final runs during the Hackathon · AI Day at Escola 42, on site; the ideal format for a code lab. Powered by: “Powered by” on every machine and print, a demo screen, generation figures shared after the event; one category per lab (image, video, sound). Model launch: May is a release season; can be sold alone or as an option of the residency. Academy: four masterclasses for the 1,000 artists of the network. Creator squad: 10 to 20 NFC artist-influencers who create with the tool for three months and post on a fixed calendar, plus two podcast episodes.</aside>
+</section>
+<section id="founding" class="s yellow" data-transition="fade" style="padding-bottom:300px">
+<div style="position:absolute;left:0px;top:850px;width:1920px;height:230px;background:var(--ink)"></div>
+<div class="col g16 in" style="color:var(--ink)"><p class="lab">Founding lab · the whole programme</p><h2 class="t t120" style="color:var(--ink)">Own the season.</h2><p class="lab">The residency, the hackathon and the engine of the fair, for one lab</p></div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(4, 1fr);column-gap:48px"><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">100</p><p class="t t48" style="color:var(--ink)">artists</p></div>
+<p class="body" style="color:var(--ink)">The residency, 90 days online</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">1</p><p class="t t48" style="color:var(--ink)">hackathon</p></div>
+<p class="body" style="color:var(--ink)">Build the fair, presented by you</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">1</p><p class="t t48" style="color:var(--ink)">engine</p></div>
+<p class="body" style="color:var(--ink)">Every print of the fair, generated by your model</p></div><div class="col g12" style="border-top:3px solid var(--ink);padding-top:24px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:150px;line-height:0.84;color:var(--ink)">€45K</p><p class="t t48" style="color:var(--ink)">to artists</p></div>
+<p class="body" style="color:var(--ink)">Grants and prizes</p></div></div>
+<div class="row in3" style="position:absolute;left:96px;top:850px;width:1728px;height:230px;align-items:center;justify-content:space-between">
+<div class="row" style="align-items:center;gap:40px"><p class="t" style="font-size:112px;line-height:0.86;color:var(--yellow)">€150,000</p>
+<p class="t" style="font-size:44px;line-height:1;padding:10px 18px 8px;background:var(--yellow);color:var(--ink);transform:rotate(-3deg)">Platinum · 1 lab</p></div>
+<p class="lab" style="color:var(--yellow);text-align:right;width:640px">Talk to John first →</p></div>
+<aside>Founding lab: residency + hackathon + fair engine, one lab only. €45,000 goes to the artists as grants and prizes. Platinum perks: category exclusivity, a talk on the main stage, 20 three-day passes, 8 VIP passes. 50% at signature.</aside>
+</section>
+<section id="prices" class="s yellow" data-transition="fade" style="justify-content:flex-start;gap:40px">
+<div class="col g16 in" style="color:var(--ink)"><p class="lab">Every format · excl. VAT</p><h2 class="t t120" style="color:var(--ink)">The price list</h2></div>
+<div class="col in2" style="color:var(--ink)"><div style="display:grid;grid-template-columns:420px 1fr 240px 200px 260px;column-gap:24px;align-items:baseline;padding:16px 0;border-top:1px solid rgba(14,42,110,0.28)">
+<h3 class="t t48" style="color:var(--ink)">Founding lab</h3><p class="body">Residency + hackathon + fair engine</p><p class="body">1 lab</p><p class="lab">Platinum</p><p class="t t48" style="color:var(--ink);text-align:right">€150,000</p></div><div style="display:grid;grid-template-columns:420px 1fr 240px 200px 260px;column-gap:24px;align-items:baseline;padding:16px 0;border-top:1px solid rgba(14,42,110,0.28)">
+<h3 class="t t48" style="color:var(--ink)">NFC Residency 27</h3><p class="body">100 artists, 90 days, the exhibition</p><p class="body">1 lab</p><p class="lab">Platinum</p><p class="t t48" style="color:var(--ink);text-align:right">€90,000</p></div><div style="display:grid;grid-template-columns:420px 1fr 240px 200px 260px;column-gap:24px;align-items:baseline;padding:16px 0;border-top:1px solid rgba(14,42,110,0.28)">
+<h3 class="t t48" style="color:var(--ink)">Build the fair</h3><p class="body">Online hackathon, final on site</p><p class="body">1 lab</p><p class="lab">Platinum</p><p class="t t48" style="color:var(--ink);text-align:right">€50,000</p></div><div style="display:grid;grid-template-columns:420px 1fr 240px 200px 260px;column-gap:24px;align-items:baseline;padding:16px 0;border-top:1px solid rgba(14,42,110,0.28)">
+<h3 class="t t48" style="color:var(--ink)">Powered by</h3><p class="body">The engine of the fair</p><p class="body">1 per category</p><p class="lab">Platinum</p><p class="t t48" style="color:var(--ink);text-align:right">€40,000</p></div><div style="display:grid;grid-template-columns:420px 1fr 240px 200px 260px;column-gap:24px;align-items:baseline;padding:16px 0;border-top:1px solid rgba(14,42,110,0.28)">
+<h3 class="t t48" style="color:var(--ink)">Model launch</h3><p class="body">Keynote, demo, 48-hour sprint</p><p class="body">1 per day</p><p class="lab">Platinum</p><p class="t t48" style="color:var(--ink);text-align:right">€35,000</p></div><div style="display:grid;grid-template-columns:420px 1fr 240px 200px 260px;column-gap:24px;align-items:baseline;padding:16px 0;border-top:1px solid rgba(14,42,110,0.28)">
+<h3 class="t t48" style="color:var(--ink)">Tool partner</h3><p class="body">Of the residency or the hackathon</p><p class="body">3 max</p><p class="lab">Gold</p><p class="t t48" style="color:var(--ink);text-align:right">€25,000</p></div><div style="display:grid;grid-template-columns:420px 1fr 240px 200px 260px;column-gap:24px;align-items:baseline;padding:16px 0;border-top:1px solid rgba(14,42,110,0.28)">
+<h3 class="t t48" style="color:var(--ink)">Academy</h3><p class="body">4 masterclasses, 1,000 artists</p><p class="body">1 lab</p><p class="lab">Gold</p><p class="t t48" style="color:var(--ink);text-align:right">€20,000</p></div><div style="display:grid;grid-template-columns:420px 1fr 240px 200px 260px;column-gap:24px;align-items:baseline;padding:16px 0;border-top:1px solid rgba(14,42,110,0.28)">
+<h3 class="t t48" style="color:var(--ink)">Creator squad</h3><p class="body">10 creators, 3 months</p><p class="body">Open</p><p class="lab">Silver</p><p class="t t48" style="color:var(--ink);text-align:right">€15,000</p></div></div>
+<p class="foot">NFC Residency 27 — for AI labs</p>
+<p class="pg">13</p>
+<aside>Anchor high, show where the money goes, one lab per format. Labs do not compare NFC with €3,000 stands; they compare it with their own six- or seven-figure festivals. Model launch: €20,000 as an option of the residency. Tool partner: a €5,000 “Best use of your tool” prize. Creator squad: €5,000 shared between the creators. Early-bird until 31 December like the rest of the catalogue, 50% at signature.</aside>
+</section>
+<section id="calendar" class="s " data-transition="fade">
+<div class="col g24 in"><p class="lab acc">The calendar</p><h2 class="t t120">Signed by 31 January</h2></div>
+<div class="col g40">
+<div class="in2" style="display:grid;grid-template-columns:repeat(5, 1fr);column-gap:40px;border-top:2px solid var(--graphite);padding-top:0px"><div class="col g20"><div class="sq"></div><p class="t t48">December</p><p class="body mute">Proposals to two or three labs</p></div><div class="col g20"><div class="sq"></div><p class="t t48">31 January</p><p class="body mute">The residency is signed</p></div><div class="col g20"><div class="sq"></div><p class="t t48">February</p><p class="body mute">The open call goes out</p></div><div class="col g20"><div class="sq"></div><p class="t t48">March — May</p><p class="body mute">Ninety days online</p></div><div class="col g20"><div class="sq"></div><p class="t t48">27 — 29 May</p><p class="body mute">The exhibition at NFC</p></div></div>
+<p class="lead">The residency has one seat. The hackathon can wait until February.</p>
+</div>
+<p class="foot">NFC Residency 27 — for AI labs</p>
+<p class="pg">14</p>
+<aside>Everything is decided before the end of January: without a lab signed by then, the open call cannot go out in time and the residency moves to 2028. The hackathon, shorter, can still be signed until the end of February. The academy, the creator squad and the fair engine can sell until April.</aside>
+</section>
+<section id="contact" class="s bottom" data-transition="fade">
+<img class="bg" src="../../media/px/expo-crowd.jpg" data-video="../../media/videos-2026/expo-art-factory-etage.mp4" alt="Visitors in an exhibition room at NFC Summit 2026">
+<div class="shade-l"></div>
+<div class="shade-b"></div>
+<div class="col g32 in" style="width:1400px">
+<p class="lab acc">NFC Residency 27 · NFC Summit 2027</p>
+<h2 class="t t150">Talk to John</h2>
+<div class="col g12"><p class="lead">John Karp</p><p class="lab">john@nonfungibleconference.com · t.me/thejonnkarp</p></div>
+</div>
+<p class="foot">NFC Residency 27 — for AI labs</p>
+<p class="pg">15</p>
+<aside>Next step: a 20-minute call, then a proposal for your lab, with your format first and the Founding lab as an option.</aside>
+</section>
+
+</div></div>
+
+<nav class="v-bar v-top" aria-label="Deck">
+  <a class="v-btn" href="../../" title="All decks"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg><span class="v-hide-sm">All decks</span></a>
+  <span class="v-sep"></span>
+  <span class="v-title">NFC Residency 27 — for AI labs</span>
+</nav>
+<nav class="v-bar v-bottom" aria-label="Slide controls">
+  <button class="v-btn" id="v-prev" type="button" title="Previous (←)" aria-label="Previous slide"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <span class="v-count" id="v-count" aria-live="polite">1 / 15</span>
+  <button class="v-btn" id="v-next" type="button" title="Next (→)" aria-label="Next slide"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  <span class="v-sep"></span>
+  <button class="v-btn" id="v-grid" type="button" title="All slides (G)" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg><span class="v-hide-sm">Slides</span></button>
+  <button class="v-btn" id="v-notes" type="button" title="Notes (N)" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 9h8M8 13h8M8 17h5"/></svg><span class="v-hide-sm">Notes</span></button>
+  <a class="v-btn" href="ai-residency.pdf" download title="Download the PDF"><svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span class="v-hide-sm">PDF</span></a>
+  <button class="v-btn" id="v-fs" type="button" title="Full screen (F)" aria-label="Full screen"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button>
+</nav>
+<div class="v-progress" id="v-progress"></div>
+
+<aside id="notes" hidden><h4>Notes · what to say</h4><p></p></aside>
+
+<div id="grid" hidden>
+  <div class="g-head"><h2>NFC Residency 27 — for AI labs</h2><button class="v-btn" type="button" data-close>Close · Esc</button></div>
+  <ol><li><button type="button" data-i="0"><img src="thumbs/01.jpg" alt="Slide 1" loading="lazy" width="480" height="270">01</button></li><li><button type="button" data-i="1"><img src="thumbs/02.jpg" alt="Slide 2" loading="lazy" width="480" height="270">02</button></li><li><button type="button" data-i="2"><img src="thumbs/03.jpg" alt="Slide 3" loading="lazy" width="480" height="270">03</button></li><li><button type="button" data-i="3"><img src="thumbs/04.jpg" alt="Slide 4" loading="lazy" width="480" height="270">04</button></li><li><button type="button" data-i="4"><img src="thumbs/05.jpg" alt="Slide 5" loading="lazy" width="480" height="270">05</button></li><li><button type="button" data-i="5"><img src="thumbs/06.jpg" alt="Slide 6" loading="lazy" width="480" height="270">06</button></li><li><button type="button" data-i="6"><img src="thumbs/07.jpg" alt="Slide 7" loading="lazy" width="480" height="270">07</button></li><li><button type="button" data-i="7"><img src="thumbs/08.jpg" alt="Slide 8" loading="lazy" width="480" height="270">08</button></li><li><button type="button" data-i="8"><img src="thumbs/09.jpg" alt="Slide 9" loading="lazy" width="480" height="270">09</button></li><li><button type="button" data-i="9"><img src="thumbs/10.jpg" alt="Slide 10" loading="lazy" width="480" height="270">10</button></li><li><button type="button" data-i="10"><img src="thumbs/11.jpg" alt="Slide 11" loading="lazy" width="480" height="270">11</button></li><li><button type="button" data-i="11"><img src="thumbs/12.jpg" alt="Slide 12" loading="lazy" width="480" height="270">12</button></li><li><button type="button" data-i="12"><img src="thumbs/13.jpg" alt="Slide 13" loading="lazy" width="480" height="270">13</button></li><li><button type="button" data-i="13"><img src="thumbs/14.jpg" alt="Slide 14" loading="lazy" width="480" height="270">14</button></li><li><button type="button" data-i="14"><img src="thumbs/15.jpg" alt="Slide 15" loading="lazy" width="480" height="270">15</button></li></ol>
+</div>
+
+<script src="../../assets/viewer.js"></script>
+</body>
+</html>

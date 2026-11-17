@@ -1,6 +1,6 @@
 # NFC Summit 2027 — team deck site
 
-This repo (`hs7j4yk4sz-boop/slides`, **public**) is the internal website where the NFC team finds, presents and shares the five 2027 decks.
+This repo (`hs7j4yk4sz-boop/slides`, **public**) is the internal website where the NFC team finds, presents and shares the 2027 decks: horizontal presentations (general, no prices; event decks with their offers) and vertical business decks (`offers/`, with prices).
 It is a static site (no framework, no build on the server): Vercel serves the files as they are.
 The decks themselves are generated from Python specs in `src/`, so every change goes through the source, never through the generated HTML.
 
@@ -10,7 +10,7 @@ The decks themselves are generated from Python specs in `src/`, so every change 
 
 | Path | What it is | Edit by hand? |
 |---|---|---|
-| `src/gp.py` `src/cs.py` `src/ac.py` `src/cc.py` `src/sa.py` | One spec per deck: the slides in order, their text, their media and their speaker notes | **Yes — this is where content changes** |
+| `src/gp.py` `src/ai.py` `src/cs.py` `src/ac.py` `src/cc.py` `src/sa.py` | One spec per deck: the slides in order, their text, their media and their speaker notes | **Yes — this is where content changes** |
 | `src/nfclib.py` | The slide templates (cover, statement, pause_video, pause_dragon, value_offer, closing…) and `DECK_CSS` | Only for a design change that applies to every deck |
 | `src/build_site.py` | Builds `index.html` and `decks/<slug>/index.html`; the `DECKS` list holds titles, audiences and descriptions shown on the home page | Yes, for the home page texts or a new deck |
 | `src/render.py` | Thumbnails, covers and PDFs (Playwright) | Rarely |
@@ -21,7 +21,7 @@ The decks themselves are generated from Python specs in `src/`, so every change 
 | `offers/<slug>/` | The vertical partner-offer decks (catalogue + one deck per offer, 1080 × 1920): `pages/NN.jpg`, thumbnails `NN-s.jpg`, `cover.jpg`, the PDF and `pages.json`, exported from their Claude Design canvases. `index.html` in each folder is generated (`OFFERS` in `src/build_site.py`) | No: export the pages again from the canvas |
 | `NFC Street Activations.dc.html`, root `*.mp4`, `compressed/`, `uploads/`, `_ds/`, `assets/dragons/`, `deck-stage.js`, `image-slot.js`, `support.js` | The old Street Activations v7 deck (Sept 2026), still online at its own address. Its videos load from `raw.githubusercontent.com/hs7j4yk4sz-boop/slides/main/…` | **No — never move, rename or delete** |
 
-Deck slugs: `general-presentation` (gp), `cryptostamp-corner` (cs), `artist-cards` (ac), `collection-cards` (cc), `street-activations` (sa).
+Deck slugs: `general-presentation` (gp), `ai-residency` (ai), `cryptostamp-corner` (cs), `artist-cards` (ac), `collection-cards` (cc), `street-activations` (sa).
 
 ## Build
 

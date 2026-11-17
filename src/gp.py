@@ -68,6 +68,13 @@ reasons = [('01', 'You meet the people you only knew online'), ('02', 'You see i
 rr = ''.join(f'<div class="row g32 rule" style="padding:28px 0;align-items:baseline"><p class="lab acc">{n}</p><h3 class="t t64">{t}</h3></div>' for n, t in reasons)
 statement_light(d, 'comeback', 'Why people come back', 'Three days people keep', rr,
       '01 — Years of messages, one handshake. It changes how you work with them afterwards. 02 — The work shown in May is the work everyone quotes in November. 03 — A project, a friendship, a collaboration. Usually all three, decided on a staircase.', 19)
+ways = [('Art Fun Fair', 'Artists, galleries, brands'), ('Kawaii Summit', 'Card games and collections'), ('On The Wall', 'Supporters and collectors'),
+        ('Side events', 'Your own moment at NFC'), ('CryptoStamp Corner', 'Postal services, stamp artists'), ('AI Residency', 'AI labs'), ('Stands and branding', 'Brands that want to be seen')]
+wc = ''.join(f'<div class="col g12 rule-d" style="padding-top:28px"><h3 class="t t64">{w}</h3><p class="lab mute">{c}</p></div>' for w, c in ways)
+wc += '<div class="col g12" style="padding-top:28px;border-top:3px solid var(--yellow)"><h3 class="t t64 acc">The catalogue</h3><p class="lab">Ask John for it</p></div>'
+d.add('partner', sec('partner', '', f'''<div class="col g24 in"><p class="lab acc">Partner with NFC</p><h2 class="t t120">Seven ways in</h2></div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(4, 1fr);column-gap:48px;row-gap:56px">{wc}</div>
+{d.foot(20)}''', 'How to be part of NFC 2027. Each way in has its own deck, and the catalogue gathers them all with the partner levels and how to book. Contact: John Karp, john@nonfungibleconference.com, t.me/thejonnkarp. No prices in this presentation: they are in the catalogue and in each deck.'))
 closing(d, 'close', '27 — 29 May 2027 · Unicorn Factory, Beato, Lisbon', 'See you in Beato', ['Gold sponsors 2027 · JPEG-FRENS · Yuga Labs · Adam Weitsman'],
       'Close on the dates and the seven dragons: the ringmaster in the middle, one dragon per world around him.')
 # fix page numbers of slides built with explicit numbers (world slides etc. use their position)
