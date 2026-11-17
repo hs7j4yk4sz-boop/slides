@@ -18,6 +18,7 @@ The decks themselves are generated from Python specs in `src/`, so every change 
 | `media/` | Every image and video the decks use, already graded and compressed | Through `optimize_media.py` |
 | `assets/` | Viewer (`viewer.js`, `viewer.css`), home page style (`hub.css`), favicon | For viewer or home page changes |
 | `decks/`, `index.html` | **Generated.** Never edit: rebuild instead | No |
+| `offers/<slug>/` | The vertical partner-offer decks (catalogue + one deck per offer, 1080 × 1920): `pages/NN.jpg`, thumbnails `NN-s.jpg`, `cover.jpg`, the PDF and `pages.json`, exported from their Claude Design canvases. `index.html` in each folder is generated (`OFFERS` in `src/build_site.py`) | No: export the pages again from the canvas |
 | `NFC Street Activations.dc.html`, root `*.mp4`, `compressed/`, `uploads/`, `_ds/`, `assets/dragons/`, `deck-stage.js`, `image-slot.js`, `support.js` | The old Street Activations v7 deck (Sept 2026), still online at its own address. Its videos load from `raw.githubusercontent.com/hs7j4yk4sz-boop/slides/main/…` | **No — never move, rename or delete** |
 
 Deck slugs: `general-presentation` (gp), `cryptostamp-corner` (cs), `artist-cards` (ac), `collection-cards` (cc), `street-activations` (sa).
@@ -65,6 +66,9 @@ pause_video(d, 'street', 'videos-2026/mur-crane-pixel', 'On The Wall', 'The stre
 - **English only for anything public or shared with the team**: decks, home page, viewer labels, README, commit messages, pull requests. (Chat with John can stay in French.)
 
 ## The claude.ai copies
+
+The vertical offer decks (`offers/`) have no Python spec: their source is a Claude Design canvas on claude.ai (links in `OFFERS` in `src/build_site.py`). Each canvas has two pages: Yellow (the one on this site) and a colour variant. To change one, change the canvas, export its pages into `offers/<slug>/`, then run `python3 src/build_site.py`.
+
 
 Each deck also exists as an editable Slides artifact on claude.ai (links in `DECKS` in `src/build_site.py`, John's account), linked to the NFC Summit 2027 Design System artifact.
 This repo does not update them. When a change made here should also appear there, ask Claude in the "Nfc 27" project to republish that deck from the same spec.

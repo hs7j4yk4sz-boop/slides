@@ -1,0 +1,14 @@
+/* NFC Summit 2027 — viewer for the vertical offer decks (one page image at a time). Reuses the bars of viewer.css. */
+#pages { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; padding: calc(68px + env(safe-area-inset-top, 0px)) 12px calc(72px + env(safe-area-inset-bottom, 0px)); box-sizing: border-box; }
+#pages img { display: none; max-width: 100%; max-height: 100%; width: auto; height: auto; aspect-ratio: 9 / 16; object-fit: contain; background: #111; box-shadow: 0 0 0 1px rgba(242,240,235,0.08); user-select: none; -webkit-user-drag: none; }
+#pages img.active { display: block; }
+body.full #pages { padding: 0; }
+#o-grid { position: fixed; inset: 0; z-index: 20; background: rgba(0,0,0,0.94); overflow-y: auto; padding: calc(20px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) calc(32px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); box-sizing: border-box; }
+#o-grid[hidden] { display: none; }
+#o-grid .g-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; max-width: 1400px; margin: 0 auto 20px; }
+#o-grid h2 { margin: 0; font: 400 clamp(28px, 4vw, 44px)/1 Anton, Impact, sans-serif; text-transform: uppercase; color: #F2F0EB; }
+#o-grid ol { list-style: none; margin: 0 auto; padding: 0; max-width: 1400px; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; }
+#o-grid button { appearance: none; border: 0; padding: 0; background: none; color: #9A968C; font: 600 14px/1 'Space Grotesk', Arial, sans-serif; cursor: pointer; display: flex; flex-direction: column; gap: 8px; width: 100%; text-align: left; }
+#o-grid button img { width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; outline: 2px solid transparent; }
+#o-grid button:hover img, #o-grid button:focus-visible img, #o-grid button[aria-current="true"] img { outline-color: #F6B800; }
+#o-grid button:focus-visible { outline: none; }

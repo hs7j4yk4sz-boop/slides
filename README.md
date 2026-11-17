@@ -14,7 +14,7 @@ Every deck plays full screen in the browser (arrow keys, **F** full screen, **N*
 
 ## Going live
 
-The site is static: the home page is `index.html` at the root, each deck lives in `decks/<name>/`.
+The site is static: the home page is `index.html` at the root, each deck lives in `decks/<name>/`. The vertical partner-offer decks (the 2027 catalogue and one deck per offer) live in `offers/<name>/`, as page images and a PDF exported from their Claude Design canvases.
 The repo is connected to Vercel (team `nfcsummit`, project `slides`): every push to `main` updates the site within a minute.
 
 The site is not indexed by search engines (`noindex`), but anyone with the link can open it, and **this repo is public**: everything committed here can be read on GitHub. A password on the site needs Vercel's *Deployment Protection* (Pro plan).

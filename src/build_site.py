@@ -38,6 +38,36 @@ DECKS = [
          claude='https://claude.ai/artifact/KQPvnq4mh9NKDwVif9UWAV'),
 ]
 
+# The vertical partner-offer decks (1080 × 1920). Their source is a Claude Design canvas on claude.ai (John's account):
+# the pages are exported as images into offers/<slug>/pages/NN.jpg (+ NN-s.jpg thumbnails), with cover.jpg and nfc27-<slug>.pdf.
+# To update one: export its pages again from the canvas, then run this script.
+OFFERS = [
+    dict(slug='catalogue', title='NFC Catalogue 27', audience='Every partner, first',
+         desc='The whole offer, one page per way in: why, what, from how much. Then the perks by level and how to book.',
+         claude='https://claude.ai/artifact/GJ6ioVUkjnRqteGzEKqWPK'),
+    dict(slug='art-fun-fair', title='Art Fun Fair', audience='Artists, galleries and brands',
+         desc='The fairground at the heart of NFC: a shared machine, your own attraction, or the whole fair in your name.',
+         claude='https://claude.ai/artifact/UfidEw1U8GBT2v21KCwe12'),
+    dict(slug='attractions', title='Attractions', audience='Artists who want to build a ride',
+         desc='How every machine works, the three to start with, the wild ones, who does what, and the two ways in.',
+         claude='https://claude.ai/artifact/TQDjVcmtETSZEg1h6xExQf'),
+    dict(slug='kawaii-summit', title='Kawaii Summit', audience='Card games, collections and characters',
+         desc='Your card, made with an artist and sold together: four ways to sell it, two ways in, the split.',
+         claude='https://claude.ai/artifact/S5uQG7teB1fPz1YtVEG8q4'),
+    dict(slug='stands', title='Stands', audience='Brands with a product to sell',
+         desc='Four container stands, Bronze to Platinum, each with its set-up, its passes and its visibility.',
+         claude='https://claude.ai/artifact/XZbcGhLMvggxxBjZuTeMGu'),
+    dict(slug='side-events', title='Side Events', audience='Brands that want their own moment',
+         desc='Host the Opening Brunch, co-host the Final Party, or run your own side event inside the festival.',
+         claude='https://claude.ai/artifact/5g3jCjirNMkr644jmZQgYv'),
+    dict(slug='branding', title='Branding', audience='Brands that want to be seen everywhere',
+         desc='Your name on what everyone uses: wristbands, cups, Wi-Fi, transition slides. One brand per item.',
+         claude='https://claude.ai/artifact/XuB8c6fJBeH1oLrasvbqLP'),
+    dict(slug='on-the-wall', title='On The Wall', audience='Supporters, collectors and brands',
+         desc='Season 1 in figures, your name on the wall, the Supporter pack and your own mural.',
+         claude='https://claude.ai/artifact/6dDpjp4yzYCnL8HjWEQ1Qe'),
+]
+
 FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300..700&display=swap">'
 MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 ICON = {
@@ -133,7 +163,97 @@ def deck_page(spec, d):
 '''
 
 
-def hub_page(entries):
+def offer_pages(spec):
+    info = os.path.join(ROOT, 'offers', spec['slug'], 'pages.json')
+    if not os.path.exists(info):
+        raise SystemExit(f"Missing offers/{spec['slug']}/pages.json: export the pages of this deck first")
+    return json.load(open(info))['pages']
+
+
+def offer_page(spec, n):
+    title, slug = html.escape(spec['title']), spec['slug']
+    imgs = ''.join(f'<img {"src" if i == 1 else "data-src"}="pages/{i:02d}.jpg" alt="{title}, page {i}" width="1080" height="1920" draggable="false">'
+                   for i in range(1, n + 1))
+    grid = ''.join(f'<li><button type="button" data-i="{i - 1}"><img src="pages/{i:02d}-s.jpg" alt="" loading="lazy" width="360" height="640">{i:02d}</button></li>'
+                   for i in range(1, n + 1))
+    return f'''<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>{title} · NFC Summit 2027</title>
+<meta property="og:title" content="{title} · NFC Summit 2027">
+<meta property="og:image" content="cover.jpg">
+<link rel="icon" href="../../assets/favicon.png">
+{FONTS}
+<link rel="stylesheet" href="../../assets/viewer.css">
+<link rel="stylesheet" href="../../assets/offers.css">
+</head>
+<body>
+<div id="pages">{imgs}</div>
+
+<nav class="v-bar v-top" aria-label="Deck">
+  <a class="v-btn" href="../../#offers" title="All decks">{ICON['back']}<span class="v-hide-sm">All decks</span></a>
+  <span class="v-sep"></span>
+  <span class="v-title">{title}</span>
+</nav>
+<nav class="v-bar v-bottom" aria-label="Page controls">
+  <button class="v-btn" id="v-prev" type="button" title="Previous (←)" aria-label="Previous page">{ICON['prev']}</button>
+  <span class="v-count" id="v-count" aria-live="polite">01 / {n:02d}</span>
+  <button class="v-btn" id="v-next" type="button" title="Next (→)" aria-label="Next page">{ICON['next']}</button>
+  <span class="v-sep"></span>
+  <button class="v-btn" id="v-grid" type="button" title="All pages (G)" aria-pressed="false">{ICON['grid']}<span class="v-hide-sm">Pages</span></button>
+  <a class="v-btn" href="nfc27-{slug}.pdf" download title="Download the PDF">{ICON['pdf']}<span class="v-hide-sm">PDF</span></a>
+  <button class="v-btn" id="v-fs" type="button" title="Full screen (F)" aria-label="Full screen">{ICON['fs']}</button>
+</nav>
+<div class="v-progress" id="v-progress"></div>
+
+<div id="o-grid" hidden>
+  <div class="g-head"><h2>{title}</h2><button class="v-btn" type="button" data-close>Close · Esc</button></div>
+  <ol>{grid}</ol>
+</div>
+
+<script src="../../assets/offers.js"></script>
+</body>
+</html>
+'''
+
+
+def offers_section(offers):
+    cards = []
+    for i, (spec, n) in enumerate(offers, 1):
+        slug, title = spec['slug'], html.escape(spec['title'])
+        cards.append(f'''
+<li class="offer">
+  <a class="o-thumb" href="offers/{slug}/" aria-label="Open {title}">
+    <img src="offers/{slug}/cover.jpg" alt="" width="540" height="960" loading="lazy">
+    <span class="play">Open</span>
+  </a>
+  <p class="num">{i:02d}</p>
+  <h3>{title}</h3>
+  <p class="aud">{html.escape(spec['audience'])}</p>
+  <p class="desc">{html.escape(spec['desc'])}</p>
+  <p class="meta">{n} pages · vertical · prices excl. VAT</p>
+  <div class="actions">
+    <a class="btn primary" href="offers/{slug}/">Open</a>
+    <a class="btn" href="offers/{slug}/nfc27-{slug}.pdf" download>PDF</a>
+    <button class="btn" type="button" data-copy="offers/{slug}/">Copy link</button>
+  </div>
+</li>''')
+    return f'''
+<section class="offers-sec" id="offers" aria-labelledby="offers-t">
+  <div class="offers-head">
+    <p class="lab">Partner offers 2027</p>
+    <h2 id="offers-t">The catalogue and its decks</h2>
+    <p class="lead">Vertical, to send to partners. Start with the catalogue, then the deck of the offer they want. Early-bird prices until 31 December.</p>
+  </div>
+  <ol class="offers">{''.join(cards)}
+  </ol>
+</section>'''
+
+
+def hub_page(entries, offers=()):
     # the seven dragons along the bottom of the header, as on the closing slides
     order = [('art-fun-fair', 70), ('kawaii-summit', 70), ('conference', 72), ('ringmaster-hero', 92), ('art-factory', 70), ('hackathon-ai-day', 66), ('parties', 74)]
     dragons = ''.join(f'<img src="{media_url("dragons-2027/dragon-" + k + ".png", "")}" alt="" style="height:{h}%">' for k, h in order)
@@ -181,7 +301,8 @@ def hub_page(entries):
     <p class="lab">Internal · NFC Summit team</p>
     <h1>The 2027 decks</h1>
     <p class="lead">Sixth edition, fifth anniversary. 27 — 29 May 2027, Unicorn Factory, Beato, Lisbon.</p>
-    <p class="sub">{len(entries)} decks · {total} slides · updated {today_en()}</p>
+    <p class="sub">{len(entries)} presentation decks · {len(offers)} partner-offer decks · updated {today_en()}</p>
+    <p class="jump"><a href="#decks">Presentations</a><a href="#offers">Partner offers</a></p>
   </div>
   <div class="dragons" aria-hidden="true">{dragons}</div>
 </header>
@@ -200,8 +321,9 @@ def hub_page(entries):
 </section>
 
 <main>
-  <ol class="decks">{''.join(cards)}
+  <ol class="decks" id="decks">{''.join(cards)}
   </ol>
+{offers_section(offers) if offers else ''}
 </main>
 
 <footer>
@@ -242,7 +364,13 @@ def main():
         open(os.path.join(out, 'index.html'), 'w').write(deck_page(spec, d))
         entries.append((spec, d))
         print(f"decks/{spec['slug']}/  {len(d.slides)} slides")
-    open(os.path.join(ROOT, 'index.html'), 'w').write(hub_page(entries))
+    offers = []
+    for spec in OFFERS:
+        n = offer_pages(spec)
+        open(os.path.join(ROOT, 'offers', spec['slug'], 'index.html'), 'w').write(offer_page(spec, n))
+        offers.append((spec, n))
+        print(f"offers/{spec['slug']}/  {n} pages")
+    open(os.path.join(ROOT, 'index.html'), 'w').write(hub_page(entries, offers))
     json.dump([dict(slug=s['slug'], slides=len(d.slides), title=s['title']) for s, d in entries],
               open(os.path.join(ROOT, 'decks', 'decks.json'), 'w'), ensure_ascii=False, indent=1)
     print('index.html')
