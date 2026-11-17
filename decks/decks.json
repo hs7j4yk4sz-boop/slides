@@ -5,9 +5,19 @@
   "title": "General Presentation"
  },
  {
+  "slug": "art-fun-fair",
+  "slides": 13,
+  "title": "Art Fun Fair"
+ },
+ {
+  "slug": "kawaii-summit",
+  "slides": 14,
+  "title": "Kawaii Summit"
+ },
+ {
   "slug": "ai-residency",
   "slides": 15,
-  "title": "NFC Residency 27 — for AI labs"
+  "title": "AI Residency"
  },
  {
   "slug": "cryptostamp-corner",
