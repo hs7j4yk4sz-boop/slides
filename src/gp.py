@@ -29,15 +29,15 @@ figures(d, 'numbers', PH('place-centrale-visiteuses'), '2026 edition — final r
 quote(d, 'voices', PH('visiteur-casque-ar'), 'Amazing 48 hours at NFC Summit in Lisbon.', 'One of the best 2 days of my life.', 'Adam Weitsman', 'Collector · Gold sponsor 2027',
       'Other voices from 2026. DANAE.io: “NFC Summit exceeded everything we hoped for. The crowd, the wonder, the children’s laughter echoing in the room, moments we won’t forget.” Matt Medved: “NFC’s always been an important event for digital art, bringing Europe and the Americas together.” Giannis Sourdis: “A level up compared to the last few years. The vibes are also better than last year.”',
       'A visitor trying an augmented reality headset at NFC Summit 2026', 7)
-worlds = [('01', 'Art Fun Fair', 'Art × Play'), ('02', 'Kawaii Summit', 'Cards × Art'), ('03', 'Conference', 'Ideas × Action'), ('04', 'Art Factory', 'Art × Collecting'), ('05', 'Hackathon · AI Day', 'Builders × AI'), ('06', 'Parties', 'Internet × Real life')]
+worlds = [('01', 'FAIR PLAY', 'Art × Play'), ('02', 'Kawaii Summit', 'Cards × Art'), ('03', 'Conference', 'Ideas × Action'), ('04', 'Art Factory', 'Art × Collecting'), ('05', 'Hackathon · AI Day', 'Builders × AI'), ('06', 'Parties', 'Internet × Real life')]
 cells = ''.join(f'<div class="col g12 rule-d" style="padding-top:28px"><p class="lab mute">{n}</p><h3 class="t t64">{w}</h3><p class="lab acc">{c}</p></div>' for n, w, c in worlds)
 pause_dragon(d, 'welcome', 'ringmaster-hero', 'Six worlds · 27 — 29 May 2027', 'Welcome to the fairground.',
-      'The ringmaster opens the six worlds of 2027: Art Fun Fair, Kawaii Summit, Conference, Art Factory, Hackathon · AI Day, Parties.', side='right', h=980)
+      'The ringmaster opens the six worlds of 2027: FAIR PLAY, Kawaii Summit, Conference, Art Factory, Hackathon · AI Day, Parties.', side='right', h=980)
 d.add('worlds', sec('worlds', '', f'''<div class="col g24 in"><p class="lab acc">The programme</p><h2 class="t t120">Six worlds</h2></div>
 <div class="in2" style="display:grid;grid-template-columns:repeat(3, 1fr);column-gap:64px;row-gap:56px">{cells}</div>
 {d.foot(8)}''', 'The six worlds of the site, each with its crossover. The containers now live in the On The Wall story (slide 4).'))
 divider(d, 'fair', '', 'art-fun-fair', 'World 01 · Art × Play', 'Play the art.', 'A fairground where artists build the rides: a screen, a score, a print to take home.',
-      'Every stand is an Artistic Digital Activation: play, win, keep. Photobooths, arcades, claws and shooting stands designed by artists.', 'The Art Fun Fair dragon, riso-printed in yellow and blue', 9)
+      'Every stand is an Artistic Digital Activation: play, win, keep. Photobooths, arcades, claws and shooting stands designed by artists.', 'The FAIR PLAY dragon, riso-printed in yellow and blue', 9)
 world(d, 'kawaii', VID('salle-kawaii-cartes-et-stamps'), 'World 02 · Cards × Art', 'Where cards become art.', 'Tournaments on the tables, the card as an artwork on the walls.',
       'Kawaii Summit 2026: 20 exhibitors, 3 TCG tournaments, its own stage. Trading floors next to drawing tables. Collectors of ten and collectors of forty, trading with each other.', 'The Kawaii Summit hall in 2026: card sellers, game tables and tournaments', 10)
 world(d, 'conference', PH('scene-speakeuse'), 'World 03 · Ideas × Action', 'One day to think. One day to listen.', 'Day one, working groups. Day two, the symposium and the big names.',
@@ -52,7 +52,7 @@ world(d, 'parties', PH('fete-dj-palmiers'), 'World 06 · Internet × Real life',
 pause_video(d, 'play', VID('mur-crane-pixel'), 'Every stand is an artistic activation', 'Play. Win. Keep.',
       'Play the art, win a prize, keep a print. Every stand of the fair is designed by an artist.', 'A pixel skull mural on the walls of NFC Summit 2026')
 mapslide(d, 'venue', 'The venue', 'One site, one fairground',
-      [('Art Fun Fair', 'The fair, at the heart of the plaza'), ('Art Factory', 'Four floors of exhibitions'), ('Main stage', 'Two days of conference'), ('Kawaii Summit', 'Cards, players, artists'), ('The Wall', 'The names of the community'), ('Escola 42', 'Hackathon · AI Day')],
+      [('FAIR PLAY', 'The fair, at the heart of the plaza'), ('Art Factory', 'Four floors of exhibitions'), ('Main stage', 'Two days of conference'), ('Kawaii Summit', 'Cards, players, artists'), ('The Wall', 'The names of the community'), ('Escola 42', 'Hackathon · AI Day')],
       'The Unicorn Factory in Beato: the Art Factory on the left, the Wall along the right building, the main stage and the Kawaii Summit at the bottom, the fair in the middle of the plaza. The hackathon is in the Escola 42 building, on site.', 15)
 programme(d, 'days', '27 — 29 May 2027', 'Three days in May', [
       ('hall-galeries', 'The galleries hall of NFC Summit 2026', 'Thursday 27', 'The working day', ['Working groups', 'Fair, cards and Art Factory open', 'The hackathon starts']),
@@ -68,7 +68,7 @@ reasons = [('01', 'You meet the people you only knew online'), ('02', 'You see i
 rr = ''.join(f'<div class="row g32 rule" style="padding:28px 0;align-items:baseline"><p class="lab acc">{n}</p><h3 class="t t64">{t}</h3></div>' for n, t in reasons)
 statement_light(d, 'comeback', 'Why people come back', 'Three days people keep', rr,
       '01 — Years of messages, one handshake. It changes how you work with them afterwards. 02 — The work shown in May is the work everyone quotes in November. 03 — A project, a friendship, a collaboration. Usually all three, decided on a staircase.', 19)
-ways = [('Art Fun Fair', 'Artists, galleries, brands'), ('Kawaii Summit', 'Card games and collections'), ('On The Wall', 'Supporters and collectors'),
+ways = [('FAIR PLAY', 'Artists, galleries, brands'), ('Kawaii Summit', 'Card games and collections'), ('On The Wall', 'Supporters and collectors'),
         ('Side events', 'Your own moment at NFC'), ('CryptoStamp Corner', 'Postal services, stamp artists'), ('AI Residency', 'AI labs'), ('Stands and branding', 'Brands that want to be seen')]
 wc = ''.join(f'<div class="col g12 rule-d" style="padding-top:28px"><h3 class="t t64">{w}</h3><p class="lab mute">{c}</p></div>' for w, c in ways)
 wc += '<div class="col g12" style="padding-top:28px;border-top:3px solid var(--yellow)"><h3 class="t t64 acc">The catalogue</h3><p class="lab">Ask John for it</p></div>'

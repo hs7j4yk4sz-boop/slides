@@ -1,11 +1,11 @@
 import sys; sys.path.insert(0, '.')
 from nfclib import *
-d = Deck('aff', 'NFC Summit 2027 — Art Fun Fair')
+d = Deck('aff', 'NFC Summit 2027 — FAIR PLAY')
 
-cover(d, 'cover', 'aff/fair-drone.jpg', 'New at NFC Summit 2027 · 27 — 29 May · Lisbon', 'Art Fun Fair',
+cover(d, 'cover', 'aff/fair-drone.jpg', 'New at NFC Summit 2027 · 27 — 29 May · Lisbon', 'FAIR PLAY',
       'Play the art. A fairground in the middle of the festival, where every ride is built by an artist.', 'Concept visual · the fair at sunset',
-      'Art Fun Fair is new in 2027: a fairground on the central plaza of the Unicorn Factory, open all three days. Every ride is built with an artist: a claw, an arcade, a photobooth. Every player leaves with a print. This deck presents the fair, then the three ways in: for artists, for galleries, for one brand.',
-      'Concept visual: the Art Fun Fair at sunset, seen from above, its stalls wrapped in artwork')
+      'FAIR PLAY is new in 2027: a fairground on the central plaza of the Unicorn Factory, open all three days. Every ride is built with an artist: a claw, an arcade, a photobooth. Every player leaves with a print. This deck presents the fair, then the three ways in: for artists, for galleries, for one brand.',
+      'Concept visual: FAIR PLAY at sunset, seen from above, its stalls wrapped in artwork')
 vstatement(d, 'plaza', VID('place-totem-et-mur'), 'Everyone walks through it.', 'The fair sits on the central plaza, between the stages and the Art Factory.',
       'Location: the central plaza of the Unicorn Factory. Every visitor crosses it between the main stage, the Art Factory and Kawaii Summit. 2,740 visitors in 2026, from 79 countries.',
       'The central plaza of NFC Summit 2026: a digital art totem in front of the pixel portraits of the Wall')
@@ -38,7 +38,7 @@ d.add('wild', sec('wild', '', f'''<div class="col g24 in"><p class="lab acc">For
 deal(d, 'split', ['10 to 20 works that define your style.', 'The art for your booth and your print frame.', 'Prizes: a small edition and a 1/1.'],
      [('The machine', 'Built, tested, and a wooden booth dressed in your colours.'), ('The tech', 'Contactless payment and colour printing.'), ('The crowd', 'The software, the staff and every visitor of NFC.')],
      'Who does what. You bring the world: 10 to 20 works that define your style, the art for your booth and your print frame, the prizes (a small edition and a 1/1), and for the arcade a game or its art. We bring the machine: built and tested, a wooden booth in your colours, contactless payment and colour printing, the software, the staff and the crowd. The ask is files, not hardware.', 8, label='Who does what')
-pause_video(d, 'ways', VID('art-factory-rez-de-chaussee'), 'Art Fun Fair 2027', 'Three ways in.',
+pause_video(d, 'ways', VID('art-factory-rez-de-chaussee'), 'FAIR PLAY 2027', 'Three ways in.',
       'Three ways in: a shared machine for artists, your own stand for artists and galleries, and the whole fair for one brand.', 'The flour mill machines of the Art Factory at NFC Summit 2026', poster='px/factory-immersive.jpg')
 value_offer(d, 'shared', 'For artists · 1 of 3', 'Shared attraction', 'The easy way in: your art inside a machine you share with other artists',
       [('1', 'machine', 'Your world on a machine shared with other artists'), ('50/50', 'plays', 'The revenue of your plays, shared with NFC'),
@@ -50,12 +50,12 @@ value_offer(d, 'dedicated', 'For artists and galleries · 2 of 3', 'Your own rid
        ('100%', 'of plays', 'The play revenue is yours'), ('100', 'prints', 'Included. Your best score wins a 1/1')],
       '€3,000', 'Bronze',
       'Dedicated attraction, €3,000, Bronze level: your own 1 × 2 m stand dressed in your universe, one machine built on our base, 100% of the play revenue, 100 prints included. Bronze perks: 6 three-day passes, 10 codes at −50% for your community, your logo on the website.')
-value_offer(d, 'presenting', 'For brands · 3 of 3', 'Presenting partner', '“Art Fun Fair presented by you”. One brand only',
+value_offer(d, 'presenting', 'For brands · 3 of 3', 'Presenting partner', '“FAIR PLAY presented by you”. One brand only',
       [('1', 'brand', 'Category exclusivity across the festival'), ('All', 'signage', 'Your name on signage, agenda, Luma and posts'),
        ('10', 'minutes', 'On the main stage'), ('20', 'passes', 'Plus 8 VIP, 4 posts and a video, a dedicated email')],
       '€30,000', 'Platinum · 1 partner',
-      'Presenting partner, €30,000, Platinum, one brand only: “Art Fun Fair presented by you” on signage, agenda, Luma and posts; category exclusivity across the festival; 10 minutes on the main stage; Platinum perks: 20 passes, 8 VIP, 4 posts and a video, a dedicated email. Bigger machines, like a shooting gallery or paintball, or an attraction built by an artist in your brand’s world: ask us.')
-closing(d, 'close', 'Art Fun Fair · NFC Summit 2027', 'Build a ride', ['Early-bird prices until 31 December, excl. VAT. From 1 January, every price goes up by 25%.'],
+      'Presenting partner, €30,000, Platinum, one brand only: “FAIR PLAY presented by you” on signage, agenda, Luma and posts; category exclusivity across the festival; 10 minutes on the main stage; Platinum perks: 20 passes, 8 VIP, 4 posts and a video, a dedicated email. Bigger machines, like a shooting gallery or paintball, or an attraction built by an artist in your brand’s world: ask us.')
+closing(d, 'close', 'FAIR PLAY · NFC Summit 2027', 'Build a ride', ['Early-bird prices until 31 December, excl. VAT. From 1 January, every price goes up by 25%.'],
       'Next step: tell John which way in you want. He confirms what is left and sends the contract.', contact='John Karp · john@nonfungibleconference.com · t.me/thejonnkarp')
 SECTIONS = {"fair": {"description": "The fair: where it is and how it works.", "start": "cover"},
             "machines": {"description": "The machines and who does what.", "start": "rule"},

@@ -242,7 +242,7 @@ def facts_row(d, sid, label, title, facts, line, note, n, sprites=12):
 
 def mapslide(d, sid, label, title, zones, note, n, labs=None):
     px0, py0, pw = 40, 160, 1130; ph = round(pw / 1.5)
-    labs = labs or [('Art Factory', 44, 28, 0), ('The Wall', 61.6, 43, 0), ('Main stage', 23, 75.5, 0), ('Kawaii Summit', 46, 86.5, 0), ('Art Fun Fair', 55.4, 57.6, 1), ('Side events', 47, 10.5, 0), ('Parties', 82.5, 31, 0), ('Galleries', 24.7, 52.6, 0)]
+    labs = labs or [('Art Factory', 44, 28, 0), ('The Wall', 61.6, 43, 0), ('Main stage', 23, 75.5, 0), ('Kawaii Summit', 46, 86.5, 0), ('FAIR PLAY', 55.4, 57.6, 1), ('Side events', 47, 10.5, 0), ('Parties', 82.5, 31, 0), ('Galleries', 24.7, 52.6, 0)]
     lab = ''
     for name, x, y, hi in labs:
         w = round(len(name) * 15 + 40); X = px0 + x / 100 * pw; Y = py0 + y / 100 * ph
