@@ -7,8 +7,8 @@ d = Deck('fp', 'FAIR PLAY — the art show you can play')
 
 
 cover(d, 'cover', VID('art-factory-a'), 'Lisbon · 2027', 'FAIR PLAY',
-      'The first art fairground that runs on AI. Artists build the rides, you play, you leave with art.', 'By NFC Summit, the digital art festival of Lisbon',
-      'FAIR PLAY is an art exhibition in the shape of a fairground, and the first one that runs on AI. Artists build the rides, AI runs inside them, and every visitor leaves with an artwork. It starts online in January 2027, opens at NFC Summit in Lisbon, 27 to 29 May, and lives through the year until Devcon week in October. The footage is the Art Factory at NFC Summit 2026.',
+      'An art fairground that runs on AI. Artists build the rides, you play, you leave with art.', 'By NFC Summit, the digital art festival of Lisbon',
+      'FAIR PLAY is an art exhibition in the shape of a fairground, in the line of Calder’s Circus, Tinguely’s drawing machines and Luna Luna, with the machines of our time: AI. Artists build the rides, AI runs inside them, and every visitor leaves with an artwork. It starts online in January 2027, opens at NFC Summit in Lisbon, 27 to 29 May, and lives through the year until Devcon week in October. The footage is the Art Factory at NFC Summit 2026.',
       'A visitor in front of an immersive artwork in the Art Factory at NFC Summit 2026')
 vstatement(d, 'lisbon', VID('place-totem-et-mur'), 'In 2027, Lisbon is the city of AI and creativity.', 'A museum show on AI, Devcon, Web Summit and NFC Summit, in one year.',
       'Why now and why here. In 2027 Lisbon hosts, in the same year: NFC Summit in May, the opening of the exhibition “Energies of AI” at MAAT in September, Devcon in October and Web Summit in November. The whole world of art, AI and technology walks through one city.',
@@ -16,15 +16,17 @@ vstatement(d, 'lisbon', VID('place-totem-et-mur'), 'In 2027, Lisbon is the city 
 vstatement(d, 'show', VID('art-factory-b'), 'FAIR PLAY is its art show.', 'The one you can play.',
       'Most exhibitions about AI ask the public to look, and to worry. FAIR PLAY asks you to play: a joyful, optimistic exhibition where people put their hands on the machines, for locals and for every crowd that comes to Lisbon in 2027.',
       'Three artworks on screens in the Art Factory at NFC Summit 2026')
-firsts = [('1987', 'Luna Luna', 'Hamburg. The first art amusement park: Basquiat, Haring, Dalí. 240,000 visitors.', ''),
-          ('2026', 'Dataland', 'Los Angeles. Opens as the first museum of AI art.', ''),
-          ('2027', 'FAIR PLAY', 'Lisbon. The first art fairground that runs on AI.', ' acc')]
-ff = ''.join(f'<div class="col g16"><div class="bar"></div><p class="t t112{c}">{y}</p><h3 class="t t64{c}">{n}</h3><p class="body">{b}</p></div>' for y, n, b, c in firsts)
-d.add('first', sec('first', '', f"""<div class="col g24 in"><p class="lab acc">Never done before</p><h2 class="t t120">The first of its kind</h2></div>
-<div class="in2" style="display:grid;grid-template-columns:repeat(3, 1fr);column-gap:64px">{ff}</div>
-<p class="lead">Art about machines, made with machines, for everyone.</p>
+firsts = [('1926', 'Calder’s Circus', 'Paris. A miniature fair, performed by the artist himself.', ''),
+          ('1959', 'Tinguely’s machines', 'Paris. Machines that draw. Visitors made 4,000 drawings.', ''),
+          ('1968', 'Cybernetic Serendipity', 'London. Art made with computers. The public plays with it.', ''),
+          ('1987', 'Luna Luna', 'Hamburg. Haring’s carousel, Basquiat’s Ferris wheel, Dalí’s pavilion.', ''),
+          ('2027', 'FAIR PLAY', 'Lisbon. The same fair, with the machines of our time.', ' acc')]
+ff = ''.join(f'<div class="col g16"><div class="bar"></div><p class="t t112{c}">{y}</p><h3 class="t t48{c}" style="line-height:1.08;min-height:104px">{n}</h3><p class="body">{b}</p></div>' for y, n, b, c in firsts)
+d.add('first', sec('first', '', f"""<div class="col g24 in"><p class="lab acc">Our family in art history</p><h2 class="t t120">Artists have always played</h2></div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(5, 1fr);column-gap:48px">{ff}</div>
+<p class="lead">FAIR PLAY is the next chapter: art about machines, made with machines, for everyone.</p>
 {d.foot(4)}""",
-      'The claim, and why it holds. Artists have built a fairground once: Luna Luna, in Hamburg in 1987, the first art amusement park, with rides by Jean-Michel Basquiat, Keith Haring and Salvador Dalí and about 240,000 visitors; it was restored and shown again in Los Angeles in 2023 and New York in 2024. AI art has had its own museum since June 2026: Dataland, by Refik Anadol, in Los Angeles, with Google Arts &amp; Culture among its partners. Nobody has put the two together: a fairground where every ride is an artwork and every ride runs on AI. We looked for one and found none. The tone is the other difference: most exhibitions about AI ask the public to look and to worry; here you play with the machines and you leave with something you made. Sources: Smithsonian Magazine (Luna Luna); The Art Newspaper, 18 June 2026 (Dataland).'))
+      'FAIR PLAY belongs to a family, and we say so. 1926: Alexander Calder builds his Circus in Paris, a miniature fair he performs himself; it is now at the Whitney Museum. 1959: Jean Tinguely shows his Méta-Matics at Galerie Iris Clert in Paris, machines that draw; visitors make about 4,000 drawings, with a prize judged by Hans Arp, Yves Klein and Pierre Restany. 1961: Niki de Saint Phalle turns the shooting gallery into painting with her Tirs, and lets the public shoot. 1968: Cybernetic Serendipity, at the ICA in London, curated by Jasia Reichardt, the first large exhibition of art made with computers, with Tinguely’s painting machines and Nam June Paik’s robot; a joyful show where visitors left with drawings made by machines. 1987: Luna Luna, in Hamburg, by André Heller, the first art amusement park, with a carousel by Keith Haring, a Ferris wheel by Jean-Michel Basquiat, a pavilion by Salvador Dalí and works by Hockney, Lichtenstein, Delaunay and Tinguely again; restored and shown in Los Angeles in 2023 and New York in 2024. 2015: Banksy’s Dismaland, the dark version of the fair. 2026: Dataland opens in Los Angeles as the first museum of AI art, with Google Arts &amp; Culture among its partners. FAIR PLAY is the next chapter and the optimistic one: the same fair, with the machines of our time. For the press: to our knowledge, it is the first art fairground that runs on AI. Sources: Whitney Museum; Wikipedia (Métamatic, Cybernetic Serendipity, Luna Luna); Smithsonian Magazine; The Art Newspaper, 18 June 2026.'))
 rows = ''.join(f'<div class="row g32 rule" style="padding:26px 0;align-items:baseline"><h3 class="t t48" style="width:330px;flex:none">{t}</h3><p class="body">{s}</p></div>' for t, s in [
       ('An art exhibition', 'Curated. Every ride is a work by an artist.'),
       ('You can play', 'One minute per ride. AI turns your game into an artwork.'),
@@ -66,6 +68,17 @@ d.add('rides', sec('rides', '', f'''{photo(d, 'fp/oracle.jpg', 'Concept visual: 
 <div class="col in2" style="width:900px;margin-top:28px">{sg}
 <p class="small mute rule" style="padding-top:18px">And the Two-Hand Claw, the Agents’ Arena, the Train of Layers…</p></div>
 {d.foot(9)}''', 'Next to the machines, the signature rides: each takes a fairground classic and turns it into a question about how AI decides. The Oracle is a fortune-teller’s cabin: you step in and the curtain closes behind you, so what it tells you is for you alone. It comes in three characters: a slightly scary fortune-teller who asks you questions and names your best match; one who tells your future from nothing; and one who, with your consent, shows what the public web says about you from your name alone. The Hall of Doubles: a corridor of mirrors, each one a different model’s idea of you. The Wheel of Odds: the model announces its prediction before each spin; bets are in points, never money. The Robot Portraitist: a drawing robot on the path of the fair. Also in development: the Two-Hand Claw (you, the AI or the crowd at the controls), the Train of Layers (a dark ride through a model, in a shipping container), the Agents’ Arena (agents under rules the crowd rewrites) and the Dance Mirror (a choreography to copy).'))
+anc = [('The photobooth', 'The Surrealists’ Photomaton portraits', '1929'),
+       ('The arcade', 'MoMA collects Pac-Man and Tetris', '2012'),
+       ('The Hall of Doubles', 'Yayoi Kusama’s Infinity Mirror Room', '1965'),
+       ('The Wheel of Odds', 'Marcel Duchamp’s roulette, the Monte Carlo Bond', '1924'),
+       ('The Robot Portraitist', 'Jean Tinguely’s drawing machines, the Méta-Matics', '1959'),
+       ('The shooting gallery', 'Niki de Saint Phalle’s Tirs, paintings made by rifle shots', '1961'),
+       ('The fair itself', 'Luna Luna, by Haring, Basquiat, Dalí and thirty artists', '1987')]
+aa = ''.join(f'<div class="row g32 rule" style="padding:13px 0;align-items:baseline"><h3 class="t" style="font-size:40px;line-height:1.1;width:520px;flex:none">{r}</h3><p class="body" style="flex:1">{w}</p><p class="t acc" style="font-size:40px;line-height:1.1;width:120px;flex:none;text-align:right">{y}</p></div>' for r, w, y in anc)
+d.add('ancestors', sec('ancestors', '', f"""<div class="col g24 in"><p class="lab acc">In art history</p><h2 class="t t120">Every ride has an ancestor</h2></div>
+<div class="col in2">{aa}</div>
+{d.foot(11)}""", 'None of these rides comes from nowhere. The photobooth: in 1928 the Photomaton arrives in Paris and the Surrealists adopt it; their booth portraits are published in La Révolution surréaliste in 1929. The arcade: in 2012 the Museum of Modern Art in New York acquires fourteen video games, Pac-Man and Tetris among them. The Hall of Doubles: Yayoi Kusama’s first Infinity Mirror Room, 1965. The Wheel of Odds: in 1924 Marcel Duchamp issues his Monte Carlo Bond to finance a system for playing roulette. The Robot Portraitist: Jean Tinguely’s Méta-Matics, 1959, machines that draw. The shooting gallery: Niki de Saint Phalle’s Tirs, from 1961, where the shot makes the painting. The fair itself: Luna Luna, 1987. FAIR PLAY does not copy these works: each ride answers one of them with the machines of 2027.'))
 pause_video(d, 'builders', VID('art-factory-d'), 'Who builds it', 'The artists.',
       'Three slides on the artists: who already shows at NFC, the rides one by one with the artist we imagine for each, and who could sign the machines.', 'A generative artwork on a tall LED screen in the Art Factory at NFC Summit 2026')
 names = ['XCOPY', 'Dmitri Cherniak', 'Larva Labs', 'Jack Butcher', 'Kim Asendorf', 'Gretchen Andrew', 'Vhils', 'Hackatao', 'Botto', 'Efdot', 'Coldie', 'Operator']

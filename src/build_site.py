@@ -34,7 +34,7 @@ DECKS = [
          claude=''),
     dict(slug='fair-play', home=False, mod='fp', title='FAIR PLAY — the art show you can play',
          audience='AI labs, founding and season partners',
-         desc='The season in one deck: the first art fairground that runs on AI, why Lisbon in 2027, the rides, the artists, the audience and what a partner gets.',
+         desc='The season in one deck: an art fairground that runs on AI and its family in art history, why Lisbon in 2027, the rides, the artists, the audience and what a partner gets.',
          claude=''),
     dict(slug='cryptostamp-corner', home=False, mod='cs', title='CryptoStamp Corner',
          audience='Postal services and digital stamp issuers',
