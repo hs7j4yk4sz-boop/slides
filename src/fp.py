@@ -44,27 +44,28 @@ d.add('rides', sec('rides', '', f'''<div class="col g24 in"><p class="lab acc">T
 pause_video(d, 'upclose', VID('art-factory-premier-etage'), 'Up close', 'Three<br>examples.',
       'Three machines, one after the other, to show what a visitor lives in one minute.', 'Artworks shown on the first floor of the Art Factory at NFC Summit 2026')
 def example(sid, n, img, alt, k, title, lead, steps, leave, note):
-    st = ''.join(f'<div class="row g32 rule" style="padding:22px 0;align-items:baseline"><p class="lab acc" style="width:44px;flex:none">{i:02d}</p><p class="body">{s}</p></div>' for i, s in enumerate(steps, 1))
-    d.add(sid, sec(sid, '', f'''<img src="{d.m(img)}" alt="{alt}" style="position:absolute;left:0;top:0;width:840px;height:1080px;object-fit:cover">
-<div class="col g24 in" style="margin-left:840px"><p class="lab acc">Example {k} of 3 · concept visual</p><h2 class="t t120">{title}</h2><p class="lead">{lead}</p></div>
-<div class="col in2" style="margin-left:840px">{st}
-<div class="row g32 rule" style="padding:22px 0;align-items:baseline"><p class="lab acc" style="width:44px;flex:none">→</p><p class="lead">{leave}</p></div></div>
-{d.foot(n, start=936)}''', note))
-example('ex-photobooth', 10, 'aff/at-photobooth.jpg', 'Concept visual: an artist photobooth, a wooden cabin wrapped in artwork', 1, 'The photobooth',
+    st = ''.join(f'<div class="row g32 rule" style="padding:20px 0;align-items:baseline"><p class="lab acc" style="width:44px;flex:none">{i:02d}</p><p class="body">{s}</p></div>' for i, s in enumerate(steps, 1))
+    d.add(sid, sec(sid, '', f'''{photo(d, img, alt)}
+<div class="shade-l"></div>
+<div class="col g24 in" style="width:860px"><p class="lab acc">Example {k} of 3 · concept visual</p><h2 class="t t120">{title}</h2><p class="lead">{lead}</p></div>
+<div class="col in2" style="width:860px">{st}
+<div class="row g32 rule" style="padding:20px 0;align-items:baseline"><p class="lab acc" style="width:44px;flex:none">→</p><p class="lead">{leave}</p></div></div>
+{d.foot(n)}''', note))
+example('ex-photobooth', 10, 'fp/photobooth.jpg', 'Concept visual: an Art Deco photobooth wrapped in an abstract artwork, a visitor stepping in, at blue hour in an old mill courtyard', 1, 'The photobooth',
       'A wooden cabin, a curtain, an artist’s world.',
       ['You sit down and pull the curtain.', 'The camera takes your portrait.', 'The artist’s model remakes it in their style.'],
       'You leave with your portrait, printed.',
-      'The simplest machine and the one everybody understands. The artist brings ten to twenty works that define a style; the model is tuned on them, with their agreement. One portrait in ten comes out as a rare edition.')
-example('ex-arcade', 11, 'aff/at-arcade.jpg', 'Concept visual: an arcade cabinet wrapped in an artist’s work', 2, 'The arcade',
+      'The simplest machine and the one everybody understands. The artist brings ten to twenty works that define a style; the model is tuned on them, with their agreement. One portrait in ten comes out as a rare edition. About ten booths, one artist each.')
+example('ex-arcade', 11, 'fp/arcade.jpg', 'Concept visual: an Art Deco arcade cabinet wrapped in an abstract artwork, a player at the joystick, a print coming out', 2, 'The arcade',
       'A cabinet in the artist’s colours, a 90-second game.',
       ['You play a short game designed with the artist.', 'Your score and your face go to the model.', 'It generates a piece that only this game could make.'],
       'You leave with the artwork your score made.',
       'Ten cabinets, ten artists, ten games. The score decides the artwork: a low score and a high score do not give the same piece. Beat the target score for an edition, top the board of the day for a 1/1.')
-example('ex-claw', 12, 'aff/at-claw.jpg', 'Concept visual: a claw machine full of capsules, wrapped in an artist’s work', 3, 'The claw',
-      'A real claw machine, presented as an installation.',
-      ['You steer the claw over a sea of capsules.', 'Each capsule holds a work: a print, an object, an edition.', 'One capsule holds a unique piece.'],
-      'You leave with what you caught.',
-      'The claw is the most popular machine of any fair. Here every capsule is an artwork. In its signature version, the Two-Hand Claw, you can let the AI steer, or let the crowd vote, and compare the three success rates on the board.')
+example('ex-oracle', 12, 'fp/oracle.jpg', 'Concept visual: an Art Deco fortune-teller booth with a glowing generative screen, a visitor at the handle, a printed strip coming out', 3, 'The Oracle',
+      'A fortune-teller that shows how it thinks.',
+      ['You ask a question, out loud.', 'It answers, and shows its reasoning on the glass.', 'You decide whether you believe it.'],
+      'You leave with your fortune, as an artwork.',
+      'A signature ride, in three characters: a slightly scary fortune-teller who asks you questions and names your best match; one who tells your future from nothing; and one who, with your consent and on a private screen, shows what the public web says about you from your name alone. The question it asks: why do we trust a voice?')
 names = ['XCOPY', 'Dmitri Cherniak', 'Larva Labs', 'Jack Butcher', 'Kim Asendorf', 'Gretchen Andrew', 'Vhils', 'Hackatao', 'Botto', 'Efdot', 'Coldie', 'Operator']
 nn = ' <span style="color:var(--yellow)">·</span> '.join(names)
 d.add('artists', sec('artists', 'bottom', f'''{photo(d, 'px/expo-crowd.jpg', 'Visitors in an exhibition room at NFC Summit 2026')}
