@@ -23,9 +23,9 @@ timeline(d, 'year', 'Why Lisbon, why 2027', 'One city, one year', [
       ('February', 'Online hackathon and art jams open the season'),
       ('27 — 29 May', 'Premiere at NFC Summit, with the Hackathon · AI Day'),
       ('15 September', 'MAAT opens “Energies of AI”. We host a panel and activations'),
-      ('October', 'Devcon comes to Lisbon. Our finale'),
-      ('November', 'Web Summit')],
-      'One calendar for the city and for FAIR PLAY. February: an online hackathon and four art jams open the season; the best prototypes win a residency. March to May: residencies, eight to twelve projects built with the partner’s tools. 27 to 29 May: the fair opens on the central plaza of NFC Summit, at the Unicorn Factory, with the Hackathon · AI Day on site. Summer: the fair travels across Lisbon. 15 September: MAAT, the Museum of Art, Architecture and Technology, opens “Energies of AI”, curated by Antonio Somaini, with Hito Steyerl, Trevor Paglen, Kate Crawford and Vladan Joler; we host a panel and activations of our own that week. October: Devcon, and our finale. November: Web Summit.', 5,
+      ('12 — 14 October', 'Devcon, at the Lisbon Congress Centre. Our finale'),
+      ('8 — 11 November', 'Web Summit')],
+      'One calendar for the city and for FAIR PLAY. February: an online hackathon and four art jams open the season; the best prototypes win a residency. March to May: residencies, eight to twelve projects built with the partner’s tools. 27 to 29 May: the fair opens on the central plaza of NFC Summit, at the Unicorn Factory, with the Hackathon · AI Day on site. Summer: the fair travels across Lisbon. 15 September: MAAT, the Museum of Art, Architecture and Technology, opens “Energies of AI”, curated by Antonio Somaini, with Hito Steyerl, Trevor Paglen, Kate Crawford and Vladan Joler; we host a panel and activations of our own that week. 12 to 14 October: Devcon IX, at the Lisbon Congress Centre, and our finale that week. 8 to 11 November: Web Summit.', 5,
       line='Residencies from March to May. The fair travels across Lisbon all summer.')
 pause_video(d, 'rule', VID('art-factory-c'), 'The rule', 'Everyone leaves<br>with art.',
       'You always pay for an artwork, never for a chance. Every play gives a print. The target score gives an edition. The best score of the day takes the 1/1.', 'An artwork on a screen set into a flour mill machine in the Art Factory at NFC Summit 2026')
