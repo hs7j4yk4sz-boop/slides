@@ -12,18 +12,18 @@ vstatement(d, 'belief', VID('place-totem-et-mur'), 'The future belongs to crosso
 vstatement(d, 'thesis', VID('mur-crane-pixel'), 'Art at the service of entertainment.', '2027, our fifth anniversary: the festival becomes a fairground.',
       'The line for 2027, the fifth anniversary: art at the service of entertainment. The festival becomes a fairground: Play the art.',
       'A giant pixel skull painted on a facade at the Unicorn Factory, filmed by drone')
-spr = ''.join(f'<img src="{d.m(f"people-of-the-wall/sprite-{i:02d}.png")}" alt="" style="width:120px;height:120px">' for i in range(12))
+spr = ''.join(f'<img src="{d.m(f"people-of-the-wall/wall-{i:02d}.png")}" alt="" style="width:52px;height:80px;image-rendering:pixelated">' for i in range(1, 59))
 d.add('started', sec('started', '', f"""<div class="col g24 in">
 <p class="lab acc">On The Wall · since September 2026</p>
 <h2 class="t t150">It has already started.</h2>
 </div>
 <p class="in2" style="font-size:56px;font-weight:300;line-height:1.18;letter-spacing:-.5px;max-width:1560px">We asked the community to fund the festival and put their name on its walls. <b style="font-weight:500">More than 325 people already did, giving from $150 to $25,000.</b></p>
 <div class="col g32">
-<div class="row" style="justify-content:space-between" aria-label="People of the Wall pixel avatars">{spr}</div>
-<p class="lead mute">And it keeps going. Every week, something new with this community: a podcast, new video games, new ideas.</p>
+<div aria-label="People of the Wall pixel avatars" style="display:grid;grid-template-columns:repeat(29, 1fr);row-gap:14px;justify-items:start">{spr}</div>
+<p class="lead mute">It keeps going, every week: <a href="https://onthewall.nfcsummit.com" target="_blank" rel="noopener" style="color:var(--yellow);text-decoration:none">onthewall.nfcsummit.com</a></p>
 </div>
 {d.foot(4)}""",
-      'On The Wall is our crowdfunding: people pay to have their name, their portrait or their house painted by hand on the walls of NFC 2027. More than 325 people have joined so far, from $150 for a name to $25,000 for the biggest wall. The pixel portraits are theirs. The campaign opened on 10 September 2026 and reached “Today’s News” on X on its last day, 30 October. Since then, something happens every week with this community: People of the Wall, the podcast, every Friday, 32 episodes so far; new video games; new ideas brought by the members. The Yearbook is made with Alpha Labs and handed out on 27 May.'))
+      'On The Wall is our crowdfunding: people pay to have their name, their portrait or their house painted by hand on the walls of NFC 2027. More than 325 people have joined so far, from $150 for a name to $25,000 for the biggest wall. The pixel portraits are theirs: the 58 members who have drawn their sprite so far. The campaign opened on 10 September 2026 and reached “Today’s News” on X on its last day, 30 October. Since then, something happens every week with this community: People of the Wall, the podcast, every Friday, 32 episodes so far; new video games; new ideas brought by the members. The Yearbook is made with Alpha Labs and handed out on 27 May.'))
 pairs = [('Art', 'Finance'), ('Builders', 'Creators'), ('Communities', 'Institutions'), ('Internet', 'Real life'), ('Technology', 'Culture'), ('Collecting', 'Belonging')]
 rows = ''.join(f'<div class="row g20 rule" style="padding:22px 0;align-items:center"><h3 class="t t48">{a}</h3><p class="lead acc" style="line-height:1">×</p><h3 class="t t48">{b}</h3></div>' for a, b in pairs)
 statement_light(d, 'definition', 'Definition', 'Digital Pop Culture', rows,
