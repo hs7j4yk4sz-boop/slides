@@ -30,7 +30,7 @@ DECKS = [
          claude=''),
     dict(slug='kawaii-summit', mod='ks', title='Kawaii Summit',
          audience='Card games, collections, artists',
-         desc='The trading card part of NFC with PHANTASM and Polygon1993: your card made with an artist, from €5,000. Then five more ways in, from a table at €250 to the stage in your name.',
+         desc='The trading card part of NFC with PHANTASM and Polygon1993: your card made with an artist, from €5,000. Then four more ways in, from a stand at €3,000 to the stage in your name.',
          claude=''),
     dict(slug='ai-residency', mod='ai', title='AI Residency',
          audience='AI labs: image, video, code',
