@@ -59,7 +59,7 @@ DECKS = [
 # To update one: export its pages again from the canvas, then run this script.
 OFFERS = [
     dict(slug='catalogue', title='NFC Catalogue 27', audience='Every partner, first',
-         desc='The whole offer, one page per way in: why, what, from how much. Then the perks by level and how to book.',
+         desc='The whole offer: co-organizer from €100,000, then one page per way in, with why, what and from how much. Then the perks by level and how to book.',
          claude='https://claude.ai/artifact/GJ6ioVUkjnRqteGzEKqWPK'),
     dict(slug='art-fun-fair', home=False, title='Art Fun Fair', audience='Artists, galleries and brands',
          desc='The fairground at the heart of NFC: a shared machine, your own attraction, or the whole fair in your name.',
