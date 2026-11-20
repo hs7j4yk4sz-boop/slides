@@ -66,8 +66,8 @@ mapslide(d, 'venue', 'The venue', 'One site, one fairground',
 programme(d, 'days', '27 — 29 May 2027', 'Three days in May', [
       ('hall-galeries', 'The galleries hall of NFC Summit 2026', 'Thursday 27', 'The working day', ['Working groups', 'Fair, cards and Art Factory open', 'The hackathon starts']),
       ('scene-speaker', 'A speaker on the main stage of NFC Summit 2026', 'Friday 28', 'The symposium', ['Main stage, big names', 'Tournaments and fair all day', 'Hackathon demos']),
-      ('fete-dj-palmiers', 'A DJ set under the palm trees, NFC Summit 2026', 'Saturday 29', 'The party day', ['No talks, no stage', 'A full day of party', 'The final party'])],
-      'Thursday is the working day, Friday the symposium, Saturday the party day.', 16)
+      ('fete-dj-palmiers', 'A DJ set under the palm trees, NFC Summit 2026', 'Saturday 29', 'The party day', ['No talks, no stage', 'FAIR PLAY open all day', 'The final party'])],
+      'Thursday is the working day, Friday the symposium, Saturday the party day. FAIR PLAY stays open on the plaza in Beato on Saturday.', 16)
 stage(d, 'stage', '2027 · our fifth anniversary', 'Just wait until you see what we’ve built.',
       'Five years of bringing together artists, collectors, builders and fans in Lisbon. To celebrate our birthday, we are not just doing more of the same: we are taking things to a whole new level. Just wait until you see what we’ve built.', size=168)
 pstatement(d, 'lisbon', PH('terrasse-tage-fete'), 'The city was already here', 'Artists, founders and collectors moved to Lisbon before anyone called it a scene.',

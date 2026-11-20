@@ -470,6 +470,26 @@ def value_offer(d, sid, label, title, anchor, vals, price, stamp, note, cta='Tal
     if full: note = note + ' Full list. ' + ' '.join(f'{h}: ' + '; '.join(i) + '.' for h, i in full)
     d.add(sid, sec(sid, 'yellow', body, note, ' style="padding-bottom:300px"'))
 
+def visual_offer(d, sid, visual, label, title, anchor, vals, price, stamp, level, perks, note, cta=''):
+    """An offer with its picture: the cut-out visual on a black panel with the price under it; on yellow, what you get in big figures, then the sponsor level and every perk of that level."""
+    vv = ''.join(f'''<div class="col g8" style="border-top:3px solid var(--ink);padding-top:20px">
+<div class="row g12" style="align-items:baseline"><p class="t" style="font-size:112px;line-height:0.84;color:var(--ink)">{a}</p><p class="t" style="font-size:40px;line-height:1;color:var(--ink)">{b}</p></div>
+<p class="body" style="color:var(--ink)">{c}</p></div>''' for a, b, c in vals)
+    pp = ''.join(f'<p class="small" style="color:var(--ink)">{x}</p>' for x in perks)
+    body = f'''<div style="position:absolute;left:0px;top:0px;width:600px;height:1080px;background:var(--ink)"></div>
+<div style="position:absolute;left:0px;top:850px;width:1920px;height:230px;background:var(--ink)"></div>
+<div style="position:absolute;left:0px;top:70px;width:600px;height:760px;display:flex;align-items:center;justify-content:center">{visual}</div>
+<div class="col g16 in" style="margin-left:584px;color:var(--ink)"><p class="lab">{label}</p><h2 class="t t120" style="color:var(--ink)">{title}</h2><p class="lab">{anchor}</p></div>
+<div class="in2" style="margin-left:584px;display:grid;grid-template-columns:repeat({len(vals)}, 1fr);column-gap:40px">{vv}</div>
+<div class="in3" style="margin-left:584px;border-top:3px solid var(--ink);padding-top:18px;display:grid;grid-template-columns:300px 1fr;column-gap:32px;align-items:start">
+<div class="col g8"><p class="lab" style="color:var(--ink)">Your sponsor level</p><p class="t t48" style="color:var(--ink)">{level}</p></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;column-gap:32px;row-gap:4px">{pp}</div></div>
+<div class="row in3" style="position:absolute;left:96px;top:850px;width:1728px;height:230px;align-items:center;justify-content:space-between">
+<div class="row" style="align-items:center;gap:40px"><p class="t" style="font-size:112px;line-height:0.86;color:var(--yellow)">{price}</p>
+<p class="t" style="font-size:44px;line-height:1;padding:10px 18px 8px;background:var(--yellow);color:var(--ink);transform:rotate(-3deg)">{stamp}</p></div>
+<p class="lab" style="color:var(--yellow);text-align:right;width:560px">{cta}</p></div>'''
+    d.add(sid, sec(sid, 'yellow', body, note, ' style="padding-bottom:270px;padding-top:72px"'))
+
 OFFER_VALUES = {}   # sid -> dict(label, title, anchor, vals), set by the deck spec
 def offer_page(d, sid, label, title, price, caption, cols, note, n, cta='Talk to John first →', foot=None):
     """Street Activations offer pages, drawn value-first (15 Nov 2026, late). The full columns go to the notes."""

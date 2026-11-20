@@ -62,29 +62,35 @@ d.add('wild', sec('wild', '', f"""<div class="col g24 in"><p class="lab acc">For
 <div class="row" style="align-items:flex-start;flex:none"><img src="{d.m('fp/cut-oracle.png')}" alt="Concept model of a handmade fortune-teller cabin with a curtain and stars" style="height:440px;width:auto;flex:none">{screen('Ask<br>the<br>AI', 160, 32, 'margin:48px 0 0 -18px')}</div>
 <div class="col" style="flex:1">{ww}</div></div>
 {d.foot(8)}""", 'The signature rides, for artists and galleries who want a bigger show. Same camera, payment and print as the first three. The Oracle: a fortune-teller cabin where a voice answers behind a curtain. A shooting gallery: targets painted by the artist, each shot caught on camera and turned into the piece. A paintball roll: the splashes on the printed work become a new digital piece. The mirror: no game, the artist’s algorithm follows the visitor. Or bring your own machine: we plug it into the fair. These are built with the artist, on a quote.'))
-deal(d, 'split', ['10 to 20 works that define your style.', 'The art for your booth and your print frame.', 'Prizes: a small edition and a 1/1.'],
+deal(d, 'split', ['10 to 20 works that define your style.', 'The art for your booth and your print frame.', 'The price of a play, on your own ride.'],
      [('The machine', 'Built, tested, and a wooden booth dressed in your colours.'), ('The tech', 'Contactless payment and colour printing.'), ('The crowd', 'The software, the staff and every visitor of NFC.')],
-     'Who does what. You bring the world: 10 to 20 works that define your style, the art for your booth and your print frame, the prizes (a small edition and a 1/1), and for the arcade a game or its art. We bring the machine: built and tested, a wooden booth in your colours, contactless payment and colour printing, the software, the staff and the crowd. The ask is files, not hardware.', 9, label='Who does what')
-pause_video(d, 'ways', VID('art-factory-rez-de-chaussee'), 'FAIR PLAY 2027', 'Three ways in.',
-      'Three ways in: a shared machine for artists, your own stand for artists and galleries, and the whole fair for one brand.', 'The flour mill machines of the Art Factory at NFC Summit 2026', poster='px/factory-immersive.jpg')
+     'Who does what. You bring the world: 10 to 20 works that define your style, the art for your booth and your print frame, the prizes on your own ride (a small edition and a 1/1), and for the arcade a game or its art. On your own ride you set the price of a play, and you can sell your works at your stand. We bring the machine: built and tested, a wooden booth in your colours, contactless payment and colour printing, the software, the staff and the crowd. The ask is files, not hardware.', 9, label='Who does what')
+pause_video(d, 'ways', VID('art-factory-rez-de-chaussee'), 'Our partners fund the fair · artists only cover the costs', 'Three ways in.',
+      'Three ways in: a shared machine for artists, your own stand for artists and galleries, and the fair at NFC Summit for one brand. The partners of FAIR PLAY fund the fair; what an artist pays is only the cost of the package: the place, the machine, the passes. Every way in comes with a sponsor level of NFC Summit and its perks.', 'The flour mill machines of the Art Factory at NFC Summit 2026', poster='px/factory-immersive.jpg')
 credit('ways')
-value_offer(d, 'shared', 'For artists · 1 of 3', 'Shared attraction', 'The easy way in: your art inside a machine you share with other artists',
+cut = lambda k, sc, h=560: f'<div class="row" style="align-items:flex-start"><img src="{d.m(k)}" alt="" style="height:{h}px;width:auto;flex:none">{screen(sc, 150, 30, "margin:56px 0 0 -18px")}</div>'
+four = '<div style="display:grid;grid-template-columns:auto auto;gap:28px 36px;justify-items:center;align-items:end">' + ''.join(f'<img src="{d.m(k)}" alt="" style="height:300px;width:auto">' for k in ['fp/cut-photobooth.png', 'fp/cut-arcade.png', 'fp/cut-claw.png', 'fp/cut-oracle.png']) + '</div>'
+EARLY = 'Early-bird price until 31 December, excl. VAT'
+visual_offer(d, 'shared', cut('fp/cut-arcade.png', 'Play<br>to<br>art'), 'For artists · 1 of 3', 'Shared attraction', 'The easy way in: your art inside a machine you share with other artists',
       [('1', 'machine', 'Your world on a machine shared with other artists'), ('50/50', 'plays', 'The revenue of your plays, shared with NFC'),
-       ('3', 'days', 'Open all festival long. We run the machine'), ('50', 'places', 'You are an exhibited artist of NFC Summit 2027')],
-      '€250', 'Per artist',
-      'Shared attraction, €250 per artist, 50 places: your art on the machine and on the prints players win; you are an artist of NFC Summit 2027, in the official list; the revenue of your plays is shared 50/50 with NFC; open all festival long, we run the machine.')
-value_offer(d, 'dedicated', 'For artists and galleries · 2 of 3', 'Your own ride', 'We bring the machine, you bring the game',
-      [('2 m²', 'stand', 'A 1 × 2 m stand, walls printed with your art'), ('1', 'machine', 'A claw, an arcade or a photobooth, built on our base'),
-       ('100%', 'of plays', 'The play revenue is yours'), ('100', 'prints', 'Included. Your best score wins a 1/1')],
-      '€3,000', 'Bronze',
-      'Dedicated attraction, €3,000, Bronze level: your own 1 × 2 m stand dressed in your universe, one machine built on our base, 100% of the play revenue, 100 prints included. Bronze perks: 6 three-day passes, 10 codes at −50% for your community, your logo on the website.')
-value_offer(d, 'presenting', 'For brands · 3 of 3', 'Presenting partner', '“FAIR PLAY presented by you”. One brand only',
-      [('1', 'brand', 'Category exclusivity across the festival'), ('All', 'signage', 'Your name on signage, agenda, Luma and posts'),
-       ('10', 'minutes', 'On the main stage'), ('20', 'passes', 'Plus 8 VIP, 4 posts and a video, a dedicated email')],
-      '€30,000', 'Platinum · 1 partner',
-      'Presenting partner, €30,000, Platinum, one brand only: “FAIR PLAY presented by you” on signage, agenda, Luma and posts; category exclusivity across the festival; 10 minutes on the main stage; Platinum perks: 20 passes, 8 VIP, 4 posts and a video, a dedicated email. Bigger machines, like a shooting gallery or paintball, or an attraction built by an artist in your brand’s world: ask us.')
+       ('3', 'days', 'Thursday to Saturday. We run the machine')],
+      '€250', 'Per artist', 'Exhibited artist',
+      ['1 three-day pass', 'Your name on the website', 'In the official artist list', 'Shared post on social media'],
+      'Shared attraction, €250 per artist, 50 places: your art on the machine and on the prints players win; the revenue of your plays is shared 50/50 with NFC; open the three days, Thursday to Saturday, and we run the machine. Your level is Exhibited artist of NFC Summit 2027: one three-day pass, your name on the website and in the official artist list, a shared post on social media.', cta=EARLY)
+visual_offer(d, 'dedicated', cut('fp/cut-photobooth.png', 'AI<br>photo<br>booth', 480), 'For artists and galleries · 2 of 3', 'Your own ride', 'A stand in your name: we bring the machine, you bring the world',
+      [('2 m²', 'stand', 'A 1 × 2 m stand, a claw, an arcade or a photobooth'), ('100%', 'yours', 'Every play, and every work you sell at your stand'),
+       ('Your', 'price', 'You set the price of a play. Prints included')],
+      '€3,000', 'Bronze', 'Bronze',
+      ['Logo: website and sponsor wall', 'Shared post on social media', '6 three-day passes', '10 codes at −50%'],
+      'Your own ride, €3,000, Bronze sponsor of NFC Summit 2027: your own 1 × 2 m stand dressed in your world, one machine built on our base (a claw, an arcade or a photobooth). You set the price of a play and keep 100% of it. You can also sell your works and editions at your stand: 100% yours. Colour prints are included, and your best score wins a 1/1. Bronze perks: your logo on the website and on the sponsor wall, 6 three-day passes, 10 codes at −50% for your community, a shared post on social media.', cta=EARLY)
+visual_offer(d, 'presenting', four, 'For brands · 3 of 3', 'Presenting partner', '“FAIR PLAY at NFC Summit, presented by you”. One brand only',
+      [('3', 'days', 'The fair at NFC Summit, 27 to 29 May, in your name'), ('All', 'signage', 'On the fair, the agenda, Luma and the posts'),
+       ('10', 'minutes', 'On the main stage')],
+      '€30,000', 'Platinum · 1 partner', 'Platinum',
+      ['Logo: website and sponsor wall', '4 posts and 1 video', 'Dedicated email', '20 three-day passes', '8 VIP passes', '40 codes at −50%', '10-minute talk, main stage', 'Category exclusivity on the fair'],
+      'Presenting partner, €30,000, Platinum sponsor, one brand only: “FAIR PLAY at NFC Summit, presented by you”, for the three days of the festival, 27 to 29 May, on the signage of the fair, the agenda, Luma and the posts. Category exclusivity on the fair during NFC Summit. Platinum perks: logo on the website and the sponsor wall, 4 posts and 1 video, a dedicated email, 20 three-day passes, 8 VIP passes, 40 codes at −50%, a 10-minute talk on the main stage. The season of FAIR PLAY, online from January and in Lisbon from May to November, is a separate partnership: see the FAIR PLAY season deck. Bigger machines, like a shooting gallery or paintball, or a ride built by an artist in your brand’s world: on request.', cta=EARLY)
 closing(d, 'close', 'FAIR PLAY · NFC Summit 2027', 'Build a ride', ['Early-bird prices until 31 December, excl. VAT. From 1 January, every price goes up by 25%.'],
-      'Next step: tell John which way in you want. He confirms what is left and sends the contract.', contact='John Karp · john@nonfungibleconference.com · t.me/thejonnkarp')
+      'Next step: tell us which way in you want. We confirm what is left and send the contract. The fair is open the three days of NFC Summit, Thursday 27 to Saturday 29 May, on the central plaza in Beato.', contact='John Karp · john@nonfungibleconference.com · t.me/thejonnkarp')
 SECTIONS = {"fair": {"description": "The fair: where it is and the family it belongs to.", "start": "cover"},
             "machines": {"description": "The machines and who does what.", "start": "how"},
             "offers": {"description": "Three ways in, from €250 to €30,000.", "start": "ways"},
