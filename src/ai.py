@@ -35,12 +35,13 @@ statement_light(d, 'getback', 'What your lab gets', 'Adoption you can show', row
 world(d, 'noise', PH('scene-speakeuse'), 'The noise', 'Three months of stories.', 'One podcast episode a month, ten creators who make and tell, a live at every submission.',
       'Media and influence: one People of the Wall episode a month, 10 creator-influencers who create during the programme and tell the story, a live at every submission, then the exhibition and the awards in Lisbon.',
       'A speaker on the main stage of NFC Summit 2026', 8)
-value_offer(d, 'residency', 'NFC Residency 27 · presented by your lab', 'One lab. One residency.', '90 days online, then the exhibition at NFC Summit, 27 — 29 May 2027',
+visual_offer(d, 'residency', f'<img src="{d.m("px/expo-crowd.jpg")}" alt="Visitors in an exhibition room of the Art Factory at NFC Summit 2026" style="position:absolute;left:0px;top:-70px;width:600px;height:850px;object-fit:cover">',
+      'NFC Residency 27 · presented by your lab', 'The residency', '90 days online, then a floor of the Art Factory in your name, 27 — 29 May 2027',
       [('100', 'artists', 'Selected from the Wall and the NFC network, on application'), ('90', 'days', 'Weekly sessions, monthly open studios, three submissions'),
-       ('€30K', 'to artists', '20 grants of €1,000 and €10,000 in prizes'), ('1', 'floor', 'Of the Art Factory, in your name, for the exhibition')],
-      '€90,000', 'Platinum · 1 lab',
-      'Where the €90,000 goes, roughly: €30,000 to the artists (20 grants of €1,000 and €10,000 in prizes), about €15,000 of exhibition production, about €10,000 of media and influence, the rest for NFC (one full-time person for three months to run the programme, the platform, curation). Exclusive: one lab only. 50% at signature. Must be signed before the end of January, or the open call cannot go out in time.',
-      cta='Signed before 31 January →')
+       ('€30K', 'grants', 'To the artists: 20 grants of €1,000, €10,000 in prizes')],
+      '€90,000', 'Platinum · 1 lab', 'Platinum', ['Logo: website and sponsor wall', '4 posts and 1 video', 'Dedicated email', '20 three-day passes', '8 VIP passes', '40 codes at −50%', '10-minute talk, main stage', 'Category exclusivity'],
+      'Where the €90,000 goes, roughly: €30,000 to the artists (20 grants of €1,000 and €10,000 in prizes), about €15,000 of exhibition production, about €10,000 of media and influence, the rest for NFC (one full-time person for three months to run the programme, the platform, curation). The exhibition takes one floor of the Art Factory, in the lab’s name. Platinum perks: logo on the website and the sponsor wall, 4 posts and 1 video, a dedicated email, 20 three-day passes, 8 VIP passes, 40 codes at −50%, a 10-minute talk on the main stage, category exclusivity. Exclusive: one lab only. 50% at signature. Must be signed before the end of January, or the open call cannot go out in time.',
+      cta='To be signed before 31 January')
 pause_video(d, 'more', VID('art-factory-rez-de-chaussee'), 'Not a residency?', 'Four more<br>ways in.',
       'For labs that do not take the residency: a hackathon, the engine of the fair, a model launch, an academy.', 'The flour mill machines of the Art Factory at NFC Summit 2026')
 fmts = [('02', 'Build the fair', 'Online hackathon', 'Artist and developer teams build the games of FAIR PLAY with your model or API. The winners run in the fair for three days.'),
@@ -51,13 +52,14 @@ cells = ''.join(f'<div class="col g16 rule-d" style="padding-top:28px"><p class=
 d.add('formats', sec('formats', '', f'''<div class="col g24 in"><p class="lab acc">One lab per format</p><h2 class="t t120">Four more formats</h2></div>
 <div class="in2" style="display:grid;grid-template-columns:repeat(4, 1fr);column-gap:48px">{cells}</div>
 {d.foot(11)}''', 'One principle for every format: put the lab’s tool in the hands of the best artists of the community, and end with public proof at NFC. One lab per format, so exclusivity means something. Build the fair: six to eight weeks before NFC; the final runs during the Hackathon · AI Day at Escola 42, on site; the ideal format for a code lab. Powered by: “Powered by” on every machine and print, a demo screen, generation figures shared after the event; one category per lab (image, video, sound). Model launch: May is a release season; can be sold alone or as an option of the residency. Academy: four masterclasses for the 1,000 artists of the network. Creator squad: 10 to 20 NFC artist-influencers who create with the tool for three months and post on a fixed calendar, plus two podcast episodes.'))
-value_offer(d, 'founding', 'Founding lab · the whole programme', 'Own the season.', 'The residency, the hackathon and the engine of the fair, all season, for one lab',
+visual_offer(d, 'founding', '<div style="display:grid;grid-template-columns:auto auto;gap:28px 36px;justify-items:center;align-items:end">' + ''.join(f'<img src="{d.m(k)}" alt="" style="height:300px;width:auto">' for k in ['fp/cut-photobooth.png', 'fp/cut-arcade.png', 'fp/cut-claw.png', 'fp/cut-oracle.png']) + '</div>',
+      'Founding lab · the whole programme', 'Own the season.', 'The residency, the hackathon and the engine of FAIR PLAY, for one lab. €45,000 goes to the artists',
       [('100', 'artists', 'The residency, 90 days online'), ('1', 'hackathon', 'Build the fair, presented by you'),
-       ('1', 'engine', 'Every print of the fair, generated by your model'), ('€45K', 'to artists', 'Grants and prizes')],
-      '€250,000', 'Platinum · 1 lab',
-      'Founding lab: residency + hackathon + fair engine, and the whole FAIR PLAY season, from the online start in January to the closing in November, one lab only. €45,000 goes to the artists as grants and prizes. Platinum perks: category exclusivity, a talk on the main stage, 20 three-day passes, 8 VIP passes. 50% at signature.',
-      cta='Talk to John first →')
-prices = [('Founding lab', 'Residency + hackathon + fair engine', '1 lab', 'Platinum', '€250,000'),
+       ('1', 'engine', 'Every print of the fair, generated by your model')],
+      '€250,000', 'Co-organizer · 1 lab', 'Co-organizer', ['Logo: website and sponsor wall', '4 posts and 1 video', 'Dedicated email', '20 three-day passes', '8 VIP passes', '40 codes at −50%', '10-minute talk, main stage', 'Category exclusivity'],
+      'Founding lab: residency + hackathon + fair engine, and the whole FAIR PLAY season, from the online start in January to the closing in November, one lab only. €45,000 goes to the artists as grants and prizes. Above €100,000 a partner is a co-organizer of NFC Summit: every Platinum perk (logo on the website and the sponsor wall, 4 posts and 1 video, a dedicated email, 20 three-day passes, 8 VIP passes, 40 codes at −50%, a 10-minute talk on the main stage, category exclusivity), then a programme built with the lab. 50% at signature.',
+      cta='One lab only')
+prices = [('Founding lab', 'Residency + hackathon + fair engine', '1 lab', 'Co-organizer', '€250,000'),
           ('NFC Residency 27', '100 artists, 90 days, the exhibition', '1 lab', 'Platinum', '€90,000'),
           ('Build the fair', 'Online hackathon, final on site', '1 lab', 'Platinum', '€50,000'),
           ('Powered by', 'The engine of the fair', '1 per category', 'Platinum', '€40,000'),
@@ -80,7 +82,7 @@ d.add('contact', sec('contact', 'bottom', f'''<img class="bg" src="{d.m('px/expo
 <div class="shade-b"></div>
 <div class="col g32 in" style="width:1400px">
 <p class="lab acc">NFC Residency 27 · NFC Summit 2027</p>
-<h2 class="t t150">Talk to John</h2>
+<h2 class="t t150">Let’s talk</h2>
 <div class="col g12"><p class="lead">John Karp</p><p class="lab">john@nonfungibleconference.com · t.me/thejonnkarp</p></div>
 </div>
 {d.foot(15)}''', 'Next step: a 20-minute call, then a proposal for your lab, with your format first and the Founding lab as an option.'))

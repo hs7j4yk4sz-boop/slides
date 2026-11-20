@@ -82,19 +82,22 @@ pause_video(d, 'reveal', VID('art-factory-rez-de-chaussee'), 'Kawaii Summit 2027
 deal(d, 'deal', ['Bring your character and approve the card.', 'Come to Lisbon for the reveal.', 'Tell your community.'],
      [('Before', 'We find the artist, make the card, announce it and open the pre-sale.'), ('During', 'A slot on stage, a table to show the card, sales on site.'), ('After', 'Your card joins the PHANTASM exhibition: two months in a Lisbon gallery.')],
      'Your part: bring your character and approve the card, come to Lisbon for the reveal, tell your community. Our part: before, we find the artist, make the card, announce it and open the pre-sale. During, a slot on stage, a table to show the card, sales on site. After, your card joins the PHANTASM exhibition, two months in a Lisbon gallery.', 12)
-value_offer(d, 'offer', 'Your card · Kawaii Summit 2027', 'One card. Three lives.', 'Enter PHANTASM, or your own Kawaii Summit special',
+visual_offer(d, 'offer', f'<img src="{d.m("pc/new-world.jpg")}" alt="NEW WORLD, a PHANTASM card by CA Chou" class="frame" style="height:640px;width:auto">',
+      'Your card · Kawaii Summit 2027', 'One card. Three lives.', 'Enter PHANTASM, or your own Kawaii Summit special. Revealed on stage on 27 May',
       [('100', 'cards', 'Numbered printed cards, and their online twins'), ('1', 'giant', 'Framed and lit, on the gallery wall'),
-       ('1', 'reveal', 'On stage in Lisbon, 27 May 2027'), ('40%', 'to you', 'Of every sale, once production is covered')],
-      'From €5,000', 'Bronze and up',
-      'From €5,000, Bronze level and up. Sales split once production is covered: 40% to you, 30% to the artist, 30% to NFC, on the edition, the giant and the signings. Production of the edition and the giant is quoted per card, before you commit.')
+       ('40%', 'to you', 'Of every sale, once production is covered')],
+      'From €5,000', 'Bronze and up', 'Bronze',
+      ['Logo: website and sponsor wall', 'Shared post on social media', '6 three-day passes', '10 codes at −50%'],
+      'From €5,000, Bronze level and up. The card is revealed on stage in Lisbon on 27 May 2027. Sales split once production is covered: 40% to you, 30% to the artist, 30% to NFC, on the edition, the giant and the signings. Production of the edition and the giant is quoted per card, before you commit. Bronze perks: your logo on the website and the sponsor wall, a shared post, 6 three-day passes, 10 codes at −50% for your community. A bigger package moves you to the next level and its perks.',
+      cta='Early-bird price until 31 December, excl. VAT')
 tl = [('Now', 'We talk, you pick A or B.'), ('January', 'The artist is chosen, the subject is set.'), ('March', 'The card is announced, pre-sale opens.'), ('27 May', 'The card is revealed in Lisbon.'), ('June — July', 'The exhibition, in a Lisbon gallery.')]
 tt = ''.join(f'<div class="col g16"><div class="sq"></div><p class="t t48">{a}</p><p class="small mute">{b}</p></div>' for a, b in tl)
 w = 330; h = round(w / RATIO['kawaii-summit'])
 d.add('next', sec('next', '', f'''<img src="{d.m(DR('kawaii-summit'))}" alt="The Kawaii Summit dragon" style="position:absolute;left:{1824 - w}px;top:64px;width:{w}px;height:{h}px;object-fit:contain">
 <div class="col g24 in" style="width:1300px"><p class="lab acc">How it happens</p><h2 class="t t168">Your card in 2027.</h2></div>
 <div class="in2" style="display:grid;grid-template-columns:repeat(5, 1fr);column-gap:40px">{tt}</div>
-<div class="col g12 in3"><p class="t t64">Talk to John first.</p><p class="lab">John Karp · john@nonfungibleconference.com · t.me/thejonnkarp</p></div>
-{d.foot(14)}''', 'Now: we talk, you pick A or B. January: the artist is chosen, the subject is set. March: the card is announced, pre-sale opens. 27 May: the card is revealed in Lisbon. June and July: the exhibition, in a Lisbon gallery. Artists invited to draw a card follow the same calendar, with the drawing due at the end of February. Talk to John Karp first.'))
+<div class="col g12 in3"><p class="t t64">Let’s make your card.</p><p class="lab">John Karp · john@nonfungibleconference.com · t.me/thejonnkarp</p></div>
+{d.foot(14)}''', 'Now: we talk, you pick A or B. January: the artist is chosen, the subject is set. March: the card is announced, pre-sale opens. 27 May: the card is revealed in Lisbon. June and July: the exhibition, in a Lisbon gallery. Artists invited to draw a card follow the same calendar, with the drawing due at the end of February.'))
 SECTIONS = {"event": {"description": "NFC Summit and Kawaii Summit.", "start": "cover"},
             "game": {"description": "Polygon1993 and PHANTASM, the card game.", "start": "artist"},
             "card": {"description": "Your card: two ways in, four ways to sell.", "start": "deserve"},

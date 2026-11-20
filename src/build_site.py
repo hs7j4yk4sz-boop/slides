@@ -61,15 +61,21 @@ OFFERS = [
     dict(slug='catalogue', title='NFC Catalogue 27', audience='Every partner, first',
          desc='The whole offer: co-organizer from €100,000, then one page per way in, with why, what and from how much. Then the perks by level and how to book.',
          claude='https://claude.ai/artifact/GJ6ioVUkjnRqteGzEKqWPK'),
-    dict(slug='art-fun-fair', home=False, title='Art Fun Fair', audience='Artists, galleries and brands',
+    dict(slug='art-fun-fair', home=False, moved='../../decks/art-fun-fair/', title='Art Fun Fair', audience='Artists, galleries and brands',
          desc='The fairground at the heart of NFC: a shared machine, your own attraction, or the whole fair in your name.',
          claude='https://claude.ai/artifact/UfidEw1U8GBT2v21KCwe12'),
-    dict(slug='attractions', home=False, title='Attractions', audience='Artists who want to build a ride',
+    dict(slug='attractions', home=False, moved='../../decks/art-fun-fair/', title='Attractions', audience='Artists who want to build a ride',
          desc='How every machine works, the three to start with, the wild ones, who does what, and the two ways in.',
          claude='https://claude.ai/artifact/TQDjVcmtETSZEg1h6xExQf'),
     dict(slug='kawaii-summit', home=False, title='Kawaii Summit', audience='Card games, collections and characters',
          desc='Your card, made with an artist and sold together: four ways to sell it, two ways in, the split.',
          claude='https://claude.ai/artifact/S5uQG7teB1fPz1YtVEG8q4'),
+    dict(slug='stands', home=False, title='Stands', audience='Brands with a product to show and sell',
+         desc='The four stand levels, from a shared container to your own.',
+         claude='https://claude.ai/artifact/XZbcGhLMvggxxBjZuTeMGu'),
+    dict(slug='branding', home=False, title='Branding', audience='Brands that want awareness without a stand',
+         desc='Your name on what everyone uses: wristbands, cups, Wi-Fi, transition slides.',
+         claude='https://claude.ai/artifact/XuB8c6fJBeH1oLrasvbqLP'),
     dict(slug='side-events', title='Side Events', audience='Brands and projects that want their own moment',
          desc='Five venues inside NFC. At Casa Capitão: your own brunch or cocktail from €5,000, or one of five shared slots at €1,500. Packages, menus, prices.',
          claude='https://claude.ai/artifact/5g3jCjirNMkr644jmZQgYv'),
@@ -185,48 +191,23 @@ def offer_pages(spec):
 
 
 def offer_page(spec, n):
+    """Vertical decks are shared as PDF only. Their old web address sends to the PDF, or to the deck that replaced them."""
     title, slug = html.escape(spec['title']), spec['slug']
-    imgs = ''.join(f'<img {"src" if i == 1 else "data-src"}="pages/{i:02d}.jpg" alt="{title}, page {i}" width="1080" height="1920" draggable="false">'
-                   for i in range(1, n + 1))
-    grid = ''.join(f'<li><button type="button" data-i="{i - 1}"><img src="pages/{i:02d}-s.jpg" alt="" loading="lazy" width="360" height="640">{i:02d}</button></li>'
-                   for i in range(1, n + 1))
+    to = spec.get('moved') or f'nfc27-{slug}.pdf'
+    label = 'Open the current deck' if spec.get('moved') else 'Download the PDF'
     return f'''<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
+<meta http-equiv="refresh" content="0; url={to}">
 <title>{title} · NFC Summit 2027</title>
-<meta property="og:title" content="{title} · NFC Summit 2027">
-<meta property="og:image" content="cover.jpg">
 <link rel="icon" href="../../assets/favicon.png">
-{FONTS}
-<link rel="stylesheet" href="../../assets/viewer.css">
-<link rel="stylesheet" href="../../assets/offers.css">
+<style>body{{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#0B0B0B;color:#F2F0EB;font:500 18px/1.5 system-ui,sans-serif}}a{{color:#F6B800}}</style>
 </head>
 <body>
-<div id="pages">{imgs}</div>
-
-<nav class="v-bar v-top" aria-label="Deck">
-  <span class="v-title">{title}</span>
-</nav>
-<nav class="v-bar v-bottom" aria-label="Page controls">
-  <button class="v-btn" id="v-prev" type="button" title="Previous (←)" aria-label="Previous page">{ICON['prev']}</button>
-  <span class="v-count" id="v-count" aria-live="polite">01 / {n:02d}</span>
-  <button class="v-btn" id="v-next" type="button" title="Next (→)" aria-label="Next page">{ICON['next']}</button>
-  <span class="v-sep"></span>
-  <button class="v-btn" id="v-grid" type="button" title="All pages (G)" aria-pressed="false">{ICON['grid']}<span class="v-hide-sm">Pages</span></button>
-  <a class="v-btn" href="nfc27-{slug}.pdf" download title="Download the PDF">{ICON['pdf']}<span class="v-hide-sm">PDF</span></a>
-  <button class="v-btn" id="v-fs" type="button" title="Full screen (F)" aria-label="Full screen">{ICON['fs']}</button>
-</nav>
-<div class="v-progress" id="v-progress"></div>
-
-<div id="o-grid" hidden>
-  <div class="g-head"><h2>{title}</h2><button class="v-btn" type="button" data-close>Close · Esc</button></div>
-  <ol>{grid}</ol>
-</div>
-
-<script src="../../assets/offers.js"></script>
+<p>{title}: <a href="{to}">{label}</a></p>
 </body>
 </html>
 '''
@@ -236,20 +217,19 @@ def offers_section(offers):
     cards = []
     for i, (spec, n) in enumerate(offers, 1):
         slug, title = spec['slug'], html.escape(spec['title'])
+        mb = f"{os.path.getsize(os.path.join(ROOT, 'offers', slug, f'nfc27-{slug}.pdf')) / 1e6:.1f}"
         cards.append(f'''
 <li class="offer">
-  <a class="o-thumb" href="offers/{slug}/" aria-label="Open {title}">
+  <a class="o-thumb" href="offers/{slug}/nfc27-{slug}.pdf" download aria-label="Download {title} as a PDF">
     <img src="offers/{slug}/cover.jpg" alt="" width="540" height="960" loading="lazy">
   </a>
   <p class="num">{i:02d}</p>
   <h3>{title}</h3>
   <p class="aud">{html.escape(spec['audience'])}</p>
   <p class="desc">{html.escape(spec['desc'])}</p>
-  <p class="meta">{n} pages · vertical · prices excl. VAT</p>
+  <p class="meta">{n} pages · PDF, {mb} MB · prices excl. VAT</p>
   <div class="actions">
-    <a class="btn primary" href="offers/{slug}/">Open</a>
-    <a class="btn" href="offers/{slug}/nfc27-{slug}.pdf" download>PDF</a>
-    <button class="btn" type="button" data-copy="offers/{slug}/">Copy link</button>
+    <a class="btn primary" href="offers/{slug}/nfc27-{slug}.pdf" download>Download PDF</a>
   </div>
 </li>''')
     return f'''
@@ -257,7 +237,7 @@ def offers_section(offers):
   <div class="offers-head">
     <p class="lab">Vertical · for partners</p>
     <h2 id="offers-t">Business</h2>
-    <p class="lead">One deck per business, with prices excl. VAT. Send the catalogue first, then the deck of the business they want. Early-bird prices until 31 December.</p>
+    <p class="lead">One PDF per business, with prices excl. VAT. Send the catalogue first, then the PDF of the business they want. Early-bird prices until 31 December.</p>
   </div>
   <ol class="offers">{''.join(cards)}
   </ol>
@@ -350,7 +330,7 @@ def hub_page(entries, offers=()):
     </div>
     <div>
       <p class="lab">Good to know</p>
-      <p>This site is for the team. To share a deck outside, send its PDF or the link to that deck only. The editable originals are on claude.ai, in John’s account.</p>
+      <p>This site is for the team. To share a presentation outside, send the link to that deck or its PDF. The business decks are shared as PDF only. The editable originals are on claude.ai, in John’s account.</p>
     </div>
   </div>
 </footer>
