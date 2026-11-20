@@ -22,7 +22,7 @@ DECKS = [
          claude='https://claude.ai/artifact/PyY8ZiYEzwmsxWSxPL2YTT'),
     dict(slug='fair-play', mod='fp', title='FAIR PLAY',
          audience='AI labs, sponsors, press',
-         desc='An art fairground that runs on AI, from May to November 2027: its family in art history, the rides, the artists, the year in Lisbon and what a partner gets. No prices.',
+         desc='An art fairground that runs on AI, from May to November 2027: its family in art history, the rides, the artists, the year in Lisbon, what a partner gets and four ways in, from €30,000, each made to measure.',
          claude=''),
     dict(slug='art-fun-fair', mod='aff', title='FAIR PLAY · Build a ride',
          audience='Artists and galleries',

@@ -136,7 +136,23 @@ d.add('return', sec('return', 'paper', f"""<div class="col g24 in"><p class="lab
 {d.foot(11)}""",
       f'The return, in four figures. One: usage. Each play is one person who makes an artwork with {MODEL}, in a minute, and takes it home; the season goal is one million, on site and online. Two: artists. About forty artists build with {TOOLS} and say so; because a partner funds the fair, each of them only pays the cost of their package, in the workshops, in the residencies and on their machines; each one is a case study and a film. Three: stage. Five moments with press and an audience in Lisbon: the premiere at NFC Summit in May, MAAT week in September, Devcon week in October, Web Summit and the closing panels of game week in November. Four: one founding lab on the season. Every artwork carries the credit “made by the artist, with” the model. After every stop the partner gets a report: plays, artworks made, visitors, reach, press. Your part: your models generate the artworks inside the rides, your engineers and artists take part in the workshops, the hackathon and the residencies, your name signs the season. Our part: the artists, the production of the fair, and the audiences. An independent curator chooses the artists; the partner does not choose them and does not review the works. Nothing is used to train a model without the written agreement of the artist. The same season is open to other partners, who can sign a moment, a stop or a set of machines. The figures on this slide are goals for the season.'))
 
-# 12 — close (video)
+# 12 — four ways in, with prices: starting points, every partnership is custom
+cutv = lambda k, h=250: f'<img src="{d.m(k)}" alt="" style="height:{h}px;width:auto">'
+ways = [(cutv('fp/cut-photobooth.png'), 'The fair at NFC', 'FAIR PLAY at NFC Summit, 27 — 29 May, presented by you.', '€30,000', 'Platinum'),
+        (cutv('fp/cut-arcade.png'), 'The hackathon', 'Developers and artists build the games of the fair with your tools.', '€50,000', 'Platinum'),
+        (f'<img src="{d.m("px/expo-crowd.jpg")}" alt="Visitors in an exhibition room of the Art Factory at NFC Summit 2026" style="width:100%;height:250px;object-fit:cover">', 'The residency', '100 artists, 90 days online, then an exhibition in your name.', '€90,000', 'Platinum'),
+        ('<div class="row" style="gap:10px;align-items:flex-end">' + ''.join(cutv(k, 120 if k.endswith('claw.png') or k.endswith('arcade.png') else 150) for k in ['fp/cut-photobooth.png', 'fp/cut-arcade.png', 'fp/cut-claw.png', 'fp/cut-oracle.png']) + '</div>', 'The season', 'Founding partner: the residency, the hackathon and the engine of the fair, all year.', '€250,000', 'Co-organizer')]
+wy = ''.join(f'''<div class="col g12"><div style="height:250px;display:flex;align-items:flex-end;justify-content:flex-start">{v}</div>
+<h3 class="t t48" style="padding-top:8px">{t}</h3><p class="small mute" style="min-height:98px">{l}</p>
+<div class="row g16" style="align-items:baseline"><p class="lab mute">From</p><p class="t t64 acc" style="white-space:nowrap">{p}</p></div>
+<p class="lab" style="border:2px solid var(--chalk);padding:4px 12px 3px;align-self:flex-start">{lv}</p></div>''' for v, t, l, p, lv in ways)
+d.add('ways', sec('ways', '', f"""<div class="col g24 in"><p class="lab acc">Built with you · starting points, excl. VAT</p><h2 class="t t120">Four ways in</h2></div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(4, 1fr);column-gap:40px;align-items:start">{wy}</div>
+<p class="small in3">Every partnership is made to measure: these are the places to start. Each comes with its NFC sponsor level: logo, posts, a dedicated email, 20 passes, 8 VIP passes, a talk on the main stage.</p>
+{d.foot(12)}""",
+      f'Four ways in, as starting points: every partnership is built with the partner, and the price follows the scope. The fair at NFC, from €30,000, Platinum: FAIR PLAY at NFC Summit, 27 to 29 May, presented by one brand. The hackathon, from €50,000, Platinum: developers and artists build the games of the fair with {TOOLS}, online first, with the final on site. The residency, from €90,000, Platinum: 100 artists work with {TOOLS} for 90 days, then show the result in an exhibition in the partner’s name; about a third of the budget goes to the artists as grants and prizes. The season, from €250,000, co-organizer, one partner: the residency, the hackathon and the engine of the fair, from the online start in January to the closing in November. Platinum perks: logo on the website and the sponsor wall, 4 posts and 1 video, a dedicated email, 20 three-day passes, 8 VIP passes, 40 codes at −50%, a 10-minute talk on the main stage, category exclusivity. The AI Residency deck details each format for an AI lab.'))
+
+# 13 — close (video)
 d.add('close', sec('close', 'bottom', f'''{video(d, VID('mur-crane-pixel'), 'A giant pixel skull painted on a facade at the Unicorn Factory, filmed by drone')}
 <div class="shade-l"></div>
 <div class="shade-b"></div>
@@ -152,4 +168,4 @@ credit('close', 'Filmed at NFC Summit 2026, Lisbon · mural: XCOPY, The Doomed')
 SECTIONS = {"idea": {"description": "What FAIR PLAY is, why Lisbon in 2027, and the family it belongs to.", "start": "cover"},
             "rides": {"description": "How a ride works and the machines.", "start": "how"},
             "artists": {"description": "Three dream matches and the artists of the NFC network.", "start": "builders"},
-            "partner": {"description": "The calendar, the audience in millions, what a partner gets and the contact.", "start": "year"}}
+            "partner": {"description": "The calendar, the audience in millions, what a partner gets, four ways in with their prices and the contact.", "start": "year"}}
