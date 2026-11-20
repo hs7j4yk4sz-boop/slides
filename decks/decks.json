@@ -5,9 +5,14 @@
   "title": "General Presentation"
  },
  {
-  "slug": "art-fun-fair",
-  "slides": 13,
+  "slug": "fair-play",
+  "slides": 12,
   "title": "FAIR PLAY"
+ },
+ {
+  "slug": "art-fun-fair",
+  "slides": 14,
+  "title": "FAIR PLAY · Build a ride"
  },
  {
   "slug": "kawaii-summit",
@@ -18,11 +23,6 @@
   "slug": "ai-residency",
   "slides": 15,
   "title": "AI Residency"
- },
- {
-  "slug": "fair-play",
-  "slides": 12,
-  "title": "FAIR PLAY — the art show you can play"
  },
  {
   "slug": "cryptostamp-corner",

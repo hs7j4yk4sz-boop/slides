@@ -21,12 +21,12 @@ The decks themselves are generated from Python specs in `src/`, so every change 
 | `offers/<slug>/` | The vertical partner-offer decks (catalogue + one deck per offer, 1080 × 1920): `pages/NN.jpg`, thumbnails `NN-s.jpg`, `cover.jpg`, the PDF and `pages.json`, exported from their Claude Design canvases. `index.html` in each folder is generated (`OFFERS` in `src/build_site.py`) | No: export the pages again from the canvas |
 | `NFC Street Activations.dc.html`, root `*.mp4`, `compressed/`, `uploads/`, `_ds/`, `assets/dragons/`, `deck-stage.js`, `image-slot.js`, `support.js` | The old Street Activations v7 deck (Sept 2026), still online at its own address. Its videos load from `raw.githubusercontent.com/hs7j4yk4sz-boop/slides/main/…` | **No — never move, rename or delete** |
 
-Deck slugs: `general-presentation` (gp), `art-fun-fair` (aff, titled FAIR PLAY since Nov 2026), `kawaii-summit` (ks), `ai-residency` (ai). Still built and online at their address, but off the home page (`home=False`): `fair-play` (fp, the FAIR PLAY season deck, one version for every partner), `cryptostamp-corner` (cs), `artist-cards` (ac), `collection-cards` (cc), `street-activations` (sa), and the vertical `art-fun-fair`, `attractions`, `kawaii-summit` offers.
+Deck slugs: `general-presentation` (gp), `fair-play` (fp, the FAIR PLAY season deck for labs, sponsors and press, no prices), `art-fun-fair` (aff, titled "FAIR PLAY · Build a ride": the same fair for artists and galleries, with the three offers), `kawaii-summit` (ks), `ai-residency` (ai). Still built and online at their address, but off the home page (`home=False`): `cryptostamp-corner` (cs), `artist-cards` (ac), `collection-cards` (cc), `street-activations` (sa), and the vertical `art-fun-fair`, `attractions`, `kawaii-summit` offers.
 
 ## Build
 
 ```bash
-python3 src/build_site.py      # HTML for the home page and the five decks
+python3 src/build_site.py      # HTML for the home page and every deck
 python3 src/render.py          # thumbnails, covers, PDFs (all decks)
 python3 src/render.py street-activations   # or only the deck you touched
 python3 -m http.server 8000    # preview at http://localhost:8000
