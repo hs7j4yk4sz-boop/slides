@@ -14,7 +14,7 @@ sys.path.insert(0, SRC)
 os.chdir(SRC)   # the deck specs import nfclib from the current folder
 from nfclib import DECK_CSS, LOCAL, MEDIA   # noqa: E402
 
-# The five decks, in the order the team sees them. Everything shown on the site is in English. 'claude' is the editable original on claude.ai (John's account).
+# The five decks, in the order the team sees them. home=False keeps a deck online but off the home page; old=True also marks it OLD in its viewer. Everything shown on the site is in English. 'claude' is the editable original on claude.ai (John's account).
 DECKS = [
     dict(slug='general-presentation', mod='gp', title='General Presentation',
          audience='Everyone: partners, press, sponsors, speakers',
@@ -36,19 +36,19 @@ DECKS = [
          audience='AI labs: image, video, code',
          desc='One hundred NFC artists create with your model for 90 days, then an exhibition in Lisbon. Plus four more formats and the price list.',
          claude=''),
-    dict(slug='cryptostamp-corner', home=False, mod='cs', title='CryptoStamp Corner',
+    dict(slug='cryptostamp-corner', home=False, old=True, mod='cs', title='CryptoStamp Corner',
          audience='Postal services and digital stamp issuers',
          desc='The digital stamp corner, sixth edition: the place, the 27 May meetup, the turnkey booth.',
          claude='https://claude.ai/artifact/BRmKeS1PLUSXbYPYccMKp1'),
-    dict(slug='artist-cards', home=False, mod='ac', title='NFC Artist Cards — Kawaii × PHANTASM',
+    dict(slug='artist-cards', home=False, old=True, mod='ac', title='NFC Artist Cards — Kawaii × PHANTASM',
          audience='Artists invited to draw a card',
          desc='A PHANTASM card drawn with Polygon1993: a numbered edition, a giant on the wall, revealed on stage on 27 May.',
          claude='https://claude.ai/artifact/SJKvtPbYDA2RSVChtMvYmj'),
-    dict(slug='collection-cards', home=False, mod='cc', title='NFC Collection Cards',
+    dict(slug='collection-cards', home=False, old=True, mod='cc', title='NFC Collection Cards',
          audience='NFT and PFP collections',
          desc='A card for your collection: two ways in, three lives, the revenue split and the timeline.',
          claude='https://claude.ai/artifact/Y6P6MjqFHPssV83iATjxBR'),
-    dict(slug='street-activations', home=False, mod='sa', title='NFC Street Activations — On The Wall',
+    dict(slug='street-activations', home=False, old=True, mod='sa', title='NFC Street Activations — On The Wall',
          audience='Sponsors, galleries, platforms, communities',
          desc='The walls of the festival: the flagship mural, the artist murals, the community houses, the PFP and Name walls.',
          claude='https://claude.ai/artifact/KQPvnq4mh9NKDwVif9UWAV'),
@@ -133,7 +133,9 @@ def deck_page(spec, d):
     n = len(d.slides)
     grid = ''.join(f'<li><button type="button" data-i="{i}"><img src="thumbs/{i + 1:02d}.jpg" alt="Slide {i + 1}" loading="lazy" width="480" height="270">{i + 1:02d}</button></li>'
                    for i in range(n))
-    title = html.escape(spec['title'])
+    old = spec.get('old')   # an earlier version kept online at its address: marked so nobody sends it by mistake
+    title = html.escape(('OLD · ' if old else '') + spec['title'])
+    old_tag = '<span class="v-old">Old version · not for sending</span>' if old else ''
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -156,7 +158,7 @@ def deck_page(spec, d):
 </div></div>
 
 <nav class="v-bar v-top" aria-label="Deck">
-  <span class="v-title">{title}</span>
+  <span class="v-title">{title}</span>{old_tag}
 </nav>
 <nav class="v-bar v-bottom" aria-label="Slide controls">
   <button class="v-btn" id="v-prev" type="button" title="Previous (←)" aria-label="Previous slide">{ICON['prev']}</button>
