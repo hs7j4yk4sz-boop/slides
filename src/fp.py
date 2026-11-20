@@ -5,16 +5,31 @@ TOOLS = 'the partner’s tools'
 MODEL = 'the partner’s model'
 d = Deck('fp', 'FAIR PLAY — the art show you can play')
 
+def credit(sid, text='Filmed at NFC Summit 2026, Lisbon'):
+    """A discreet credit on a video slide, bottom right."""
+    i = [s for s, _ in d.slides].index(sid); h = d.slides[i][1]; k = h.rindex('</section>')
+    d.slides[i] = (sid, h[:k] + f'<p class="small" style="position:absolute;right:96px;bottom:64px;margin:0;opacity:.72;text-align:right">{text}</p>\n' + h[k:])
+
+def screen(text, size=150, fs=30, style=''):
+    """A small square screen on the side of a machine: what the AI does, in three words."""
+    return (f'<div style="width:{size}px;height:{size}px;flex:none;box-sizing:border-box;border:4px solid var(--yellow);border-radius:14px;background:#0B0B0B '
+            f'repeating-linear-gradient(0deg, rgba(246,184,0,.10) 0 2px, transparent 2px 6px);box-shadow:0 0 28px rgba(246,184,0,.35);display:flex;align-items:center;justify-content:center;{style}">'
+            f'<p class="t" style="font-size:{fs}px;line-height:1.06;letter-spacing:0;text-align:center;color:var(--yellow)">{text}</p></div>')
+
 # 1 — cover (video)
 cover(d, 'cover', VID('art-factory-a'), 'Lisbon · 2027', 'FAIR PLAY',
       'An art fairground that runs on AI. Artists build the rides, you play, you leave with art.', 'By NFC Summit, the digital art festival of Lisbon',
       'FAIR PLAY is an art exhibition in the shape of a fairground, with the machines of our time: AI. Artists build the rides, AI runs inside them, and every visitor leaves with an artwork. It starts online in January 2027, opens at NFC Summit in Lisbon, 27 to 29 May, and lives through the year: Devcon week in October, then Web Summit and Lisbon’s game week in November. The footage is the Art Factory at NFC Summit 2026.',
       'A visitor in front of an immersive artwork in the Art Factory at NFC Summit 2026')
 
+credit('cover')
+
 # 2 — why now (video)
 vstatement(d, 'lisbon', VID('place-totem-et-mur'), 'In 2027, Lisbon is the city of AI and creativity.', 'A museum show on AI, Devcon, Web Summit and NFC Summit, in one year.',
       'Why now and why here. In 2027 Lisbon hosts, in the same year: NFC Summit in May, the opening of the exhibition “Energies of AI” at MAAT in September, Devcon in October, Web Summit and the city’s game week in November. The whole world of art, AI and technology walks through one city. Most exhibitions about AI ask the public to look, and to worry. FAIR PLAY is the optimistic one: you play.',
       'The central plaza of NFC Summit 2026: a digital art totem in front of the pixel portraits of the Wall')
+
+credit('lisbon')
 
 # 3 — the family
 family = [('1926', 'Calder’s Circus', 'A miniature fair, performed by the artist himself.', ''),
@@ -37,28 +52,29 @@ statement_light(d, 'how', 'How every ride works', '<span style="display:block;li
       sentence='You pay for an artwork, never for a chance.')
 
 # 5 — the machines (cut-outs, no background)
-mach = [('fp/cut-photobooth.png', 'Ten photobooths', 'Concept model of a handmade photobooth in black and yellow plywood'),
-        ('fp/cut-arcade.png', 'Ten arcades', 'Concept model of a handmade arcade cabinet in black and yellow plywood'),
-        ('fp/cut-claw.png', 'Ten claws', 'Concept model of a handmade claw machine filled with rolled prints'),
-        ('fp/cut-oracle.png', 'The Oracle', 'Concept model of a handmade fortune-teller cabin with a curtain and stars'),
-        ('fp/cut-wheel.png', 'The Wheel of Odds', 'Concept model of a handmade wheel of fortune on a timber frame')]
-mm = ''.join(f'<div class="col g20" style="align-items:center"><img src="{d.m(k)}" alt="{a}" style="height:470px;width:auto"><h3 class="t" style="font-size:40px;line-height:1;white-space:nowrap">{t}</h3></div>' for k, t, a in mach)
+mach = [('fp/cut-photobooth.png', 'Ten photobooths', 'AI<br>photo<br>booth', 'You sit down. The artist’s model remakes your portrait.', 'Concept model of a handmade photobooth in black and yellow plywood'),
+        ('fp/cut-arcade.png', 'Ten arcades', 'Play<br>to<br>art', 'The better you play, the better the artwork.', 'Concept model of a handmade arcade cabinet in black and yellow plywood'),
+        ('fp/cut-claw.png', 'Ten claws', 'Grab<br>a<br>print', 'You fish for a print. The AI made each one only once.', 'Concept model of a handmade claw machine filled with rolled prints'),
+        ('fp/cut-oracle.png', 'The Oracle', 'Ask<br>the<br>AI', 'Behind the curtain, a voice answers, and shows why.', 'Concept model of a handmade fortune-teller cabin with a curtain and stars')]
+mm = ''.join(f'<div class="col g20"><div class="row" style="align-items:flex-start;height:360px"><img src="{d.m(k)}" alt="{a}" style="height:360px;width:auto;flex:none">{screen(sc, style="margin:36px 0 0 -18px")}</div><h3 class="t t48">{t}</h3><p class="body mute">{l}</p></div>' for k, t, sc, l, a in mach)
 d.add('machines', sec('machines', '', f"""<div class="col g24 in"><p class="lab acc">The machines · concept models</p><h2 class="t t120">One artist per machine</h2></div>
-<div class="row in2" style="justify-content:space-between;align-items:flex-end">{mm}</div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(4, 1fr);column-gap:40px;align-items:start">{mm}</div>
 <p class="lead">Built by hand, signed by an artist, run by AI.</p>
 {d.foot(5)}""",
-      f'The fair is made of machines, and each one is signed by an artist. In series: ten photobooths, where the artist’s model remakes your portrait; ten arcades, where your score generates your artwork; ten claws, where you fish for a print. Then the signature rides, such as the Oracle, a fortune-teller cabin where a language and voice model answers behind a curtain, and the Wheel of Odds, where a prediction model calls the result before the spin. Also planned: a hall of doubles, a robot portraitist, darts, a shooting gallery. One container only in the exhibition. The machines are built by hand, in plywood, by the artists and a workshop; {TOOLS} run inside. The objects shown are concept models, not built yet.'))
+      f'The fair is made of machines, and each one is signed by an artist. Each has a small screen on its side that says what the AI does. In series: ten photobooths, where the artist’s model remakes your portrait; ten arcades, where your score generates your artwork, so the better you play, the better the piece; ten claws, where you fish for a print that exists only once. Then the signature rides, starting with the Oracle, a fortune-teller cabin where a language and voice model answers behind a curtain. Also planned: a hall of doubles, a robot portraitist, darts, a shooting gallery. One container only in the exhibition. The machines are built by hand, in plywood, by the artists and a workshop; {TOOLS} run inside. The objects shown are concept models, not built yet, and the screens are illustrations.'))
 
 # 6 — breath (video)
 pause_video(d, 'builders', VID('art-factory-b'), 'Who builds them', 'The artists.',
       'A breath. The artists come from the NFC network: more than 200 exhibited in 2026, in a four-floor Art Factory. The next slide shows three ideas, the one after the names.',
       'Three generative artworks on vertical screens in the Art Factory at NFC Summit 2026')
 
+credit('builders')
+
 # 7 — three dream matches (yellow, cut-outs)
-dreams = [('fp/cut-newsarcade.png', 'beeple', 'The arcade', 'A game made from the day’s news. Beat it, win the print of the day.', 'Concept model: an arcade cabinet in a stand whose walls are covered with torn paper'),
-          ('fp/cut-blast.png', 'Vhils', 'The blast game', 'Place the charges, push the plunger. The wall blows, a face appears.', 'Concept model: a stand with a blasted plaster wall and a detonator box'),
-          ('fp/cut-ghost.png', 'XCOPY', 'The ghost train', 'One car, no rails. The screens remix his loops with your face.', 'Concept model: a stand lined with old television sets around a small two-seat car')]
-dd = ''.join(f'<div class="col g16"><img src="{d.m(k)}" alt="{a}" style="height:400px;width:auto;align-self:flex-start"><p class="lab acc" style="padding-top:8px">{r}</p><h3 class="t t64">{w}</h3><p class="body">{l}</p></div>' for k, w, r, l, a in dreams)
+dreams = [('fp/cut-newsarcade.png', 'beeple', 'The arcade', 'Today’s<br>level', 'A game made from the day’s news. Beat it, win the print of the day.', 'Concept model: an arcade cabinet in a stand whose walls are covered with torn paper'),
+          ('fp/cut-blast.png', 'Vhils', 'The blast game', 'Push<br>to<br>blast', 'Place the charges, push the plunger. The wall blows, a face appears.', 'Concept model: a stand with a blasted plaster wall and a detonator box'),
+          ('fp/cut-ghost.png', 'XCOPY', 'The ghost train', 'Ride<br>the<br>glitch', 'One car, no rails. The screens remix his loops with your face.', 'Concept model: a stand lined with old television sets around a small two-seat car')]
+dd = ''.join(f'<div class="col g16"><div class="row" style="align-items:flex-start;height:400px"><img src="{d.m(k)}" alt="{a}" style="height:400px;width:auto;flex:none">{screen(sc, 160, 32, "margin:60px 0 0 -20px")}</div><p class="lab acc" style="padding-top:8px">{r}</p><h3 class="t t64">{w}</h3><p class="body">{l}</p></div>' for k, w, r, sc, l, a in dreams)
 d.add('dreams', sec('dreams', 'paper', f"""<div class="col g24 in"><p class="lab acc">Three dream matches · ideas to open the conversation, not confirmed projects</p><h2 class="t t120">What if they built a ride?</h2></div>
 <div class="in2" style="display:grid;grid-template-columns:repeat(3, 1fr);column-gap:56px;align-items:start">{dd}</div>
 {d.foot(7)}""",
@@ -77,14 +93,25 @@ d.add('artists', sec('artists', '', f"""<div class="col g24 in"><p class="lab ac
       'FAIR PLAY grows out of a festival that already shows the artists who matter in digital art. Left, the 2026 programme: a three-screen LED installation of Dmitri Cherniak’s Ringers; the exhibition SYSTEMS, curated by Nina Roehrs and presented by Arab Bank Switzerland, with Kim Asendorf, Jack Butcher, Linda Dounia and Larva Labs; Gretchen Andrew won the ABS Digital Art Prize; a mural of XCOPY’s The Doomed; site-specific installations by Vhils and BOLDTRON; Efdot in an OpenSea container gallery; a Botto pop-up; Hackatao and Coldie on screen; Operator on stage. More than 200 artists exhibited. Right, a wish list for the rides, not a line-up: none of them has been asked yet, conversations start in December, and an independent curator has the last word. The longer list also has Cypherdudes, Nicolas Sassoon, Bryan Brinkman, Karmic, Tschuuuly, die with the most likes, Amrit Pal Singh.'))
 
 # 9 — the year
-timeline(d, 'year', 'Why Lisbon, why 2027', 'One city, one year', [
-      ('From January', 'Online workshops, art jams and a hackathon open the season'),
-      ('27 — 29 May', 'Premiere at NFC Summit, with the Hackathon · AI Day'),
-      ('15 September', 'MAAT opens “Energies of AI”. We host a panel and activations'),
-      ('12 — 14 October', 'Devcon, at the Lisbon Congress Centre. The fair’s big week'),
-      ('November', 'Web Summit, 8 — 11. Then Lisbon’s game week: our panels close the season')],
-      f'One calendar for the city and for FAIR PLAY. From January, online: a monthly workshop where an artist of the season shows how they make art with {TOOLS}; initiations for beginners and families; four art jams; an online hackathon in February, whose best prototypes win a residency; and the first rides playable from a phone. March to May: residencies in Lisbon, eight to twelve projects. 27 to 29 May: the fair opens on the central plaza of NFC Summit, at the Unicorn Factory, with the Hackathon · AI Day on site. Summer: the fair travels across Lisbon. 15 September: MAAT opens “Energies of AI”, curated by Antonio Somaini, until 10 April 2028; that week we host a panel and activations. 12 to 14 October: Devcon IX, at the Lisbon Congress Centre, the fair’s big week; this is also where the on-chain side of FAIR PLAY is on show. 8 to 11 November: Web Summit. Mid-November: Lisbon’s game week, when Lisboa Games Week fills the FIL and DevGAMM brings the game industry to town; in 2026 they ran from 17 to 22 November, and the 2027 dates are not announced yet. We close the season that week with our own panels on games, art and AI, at our own venue: these are our events, not part of either programme.', 9,
-      line='Residencies from March to May. The fair travels across Lisbon all summer.')
+months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov']
+mh = ''.join(f'<p class="lab mute" style="grid-column:{i + 1};grid-row:1">{m}</p>' for i, m in enumerate(months))
+bar = lambda a, b, row, text, solid: (f'<div style="grid-column:{a} / {b + 1};grid-row:{row};height:64px;display:flex;align-items:center;padding:0 20px;box-sizing:border-box;'
+      + ('background:var(--yellow);color:var(--ink)' if solid else 'border:3px solid var(--yellow);color:var(--yellow)') + f'"><p class="lab" style="white-space:nowrap">{text}</p></div>')
+pins = [(5, '27 — 29 May', 'Premiere at NFC Summit, with the Hackathon · AI Day'),
+        (9, '15 September', 'MAAT opens “Energies of AI”. Our panel and activations'),
+        (10, '12 — 14 October', 'Devcon week. The fair’s big week'),
+        (11, 'November', 'Web Summit, then game week. Our panels close the season')]
+pp = ''.join(f'<div class="col g12"><div class="sq"></div><p class="t t64">{a}</p><p class="body mute">{b}</p></div>' for _, a, b in pins)
+d.add('year', sec('year', '', f"""<div class="col g24 in"><p class="lab acc">Why Lisbon, why 2027</p><h2 class="t t120">One city, one year</h2></div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(11, 1fr);column-gap:8px;row-gap:14px;align-items:center">
+{mh}
+{bar(1, 5, 2, 'Online · workshops, art jams, hackathon', False)}
+{bar(3, 5, 3, 'Residencies', False)}
+{bar(5, 11, 4, 'The fair, in Lisbon', True)}
+</div>
+<div class="in2" style="display:grid;grid-template-columns:repeat(4, 1fr);column-gap:48px;border-top:2px solid var(--graphite)">{pp}</div>
+{d.foot(9)}""",
+      f'One calendar for the city and for FAIR PLAY. From January, online: a monthly workshop where an artist of the season shows how they make art with {TOOLS}; initiations for beginners and families; four art jams; an online hackathon in February, whose best prototypes win a residency; and the first rides playable from a phone. March to May: residencies in Lisbon, eight to twelve projects. 27 to 29 May: the fair opens on the central plaza of NFC Summit, at the Unicorn Factory, with the Hackathon · AI Day on site. Summer: the fair travels across Lisbon. 15 September: MAAT opens “Energies of AI”, curated by Antonio Somaini, until 10 April 2028; that week we host a panel and activations. 12 to 14 October: Devcon IX, at the Lisbon Congress Centre, the fair’s big week; this is also where the on-chain side of FAIR PLAY is on show. 8 to 11 November: Web Summit. Mid-November: Lisbon’s game week, when Lisboa Games Week fills the FIL and DevGAMM brings the game industry to town; in 2026 they ran from 17 to 22 November, and the 2027 dates are not announced yet. We close the season that week with our own panels on games, art and AI, at our own venue: these are our events, not part of either programme.'))
 
 # 10 — the audience
 facts = [('3M+', 'Tourists in Lisbon while the fair is open'), ('86,000', 'People at Web Summit, Devcon and NFC Summit')]
@@ -119,6 +146,8 @@ d.add('close', sec('close', 'bottom', f'''{video(d, VID('mur-crane-pixel'), 'A g
 <p class="lead">By NFC Summit: 2,740 visitors from 79 countries and more than 200 artists in 2026.</p>
 <p class="lab">John Karp · john@nonfungibleconference.com · t.me/thejonnkarp</p>
 </div>''', 'Next step: a 20-minute call with John, then a proposal made for your team. Who is behind it: NFC Summit is the digital art and culture festival of Lisbon, founded by John Karp, in its sixth edition in 2027. In 2026: 2,740 visitors from 79 countries, more than 200 artists exhibited, more than 150 speakers, 6M+ organic impressions, at the Unicorn Factory, a former flour mill. In 2026 OpenSea ran two container galleries and Arab Bank Switzerland presented the exhibition SYSTEMS. Around 1,000 artists in the network, many already fluent with AI. Source: NFC Summit 2026 final report. The film: the mural of XCOPY’s The Doomed at NFC Summit 2026, by drone.', ' style="padding-bottom:144px"'))
+
+credit('close', 'Filmed at NFC Summit 2026, Lisbon · mural: XCOPY, The Doomed')
 
 SECTIONS = {"idea": {"description": "What FAIR PLAY is, why Lisbon in 2027, and the family it belongs to.", "start": "cover"},
             "rides": {"description": "How a ride works and the machines.", "start": "how"},
