@@ -147,8 +147,6 @@ def deck_page(spec, d):
 </div></div>
 
 <nav class="v-bar v-top" aria-label="Deck">
-  <a class="v-btn" href="../../" title="All decks">{ICON['back']}<span class="v-hide-sm">All decks</span></a>
-  <span class="v-sep"></span>
   <span class="v-title">{title}</span>
 </nav>
 <nav class="v-bar v-bottom" aria-label="Slide controls">
@@ -207,8 +205,6 @@ def offer_page(spec, n):
 <div id="pages">{imgs}</div>
 
 <nav class="v-bar v-top" aria-label="Deck">
-  <a class="v-btn" href="../../#offers" title="All decks">{ICON['back']}<span class="v-hide-sm">All decks</span></a>
-  <span class="v-sep"></span>
   <span class="v-title">{title}</span>
 </nav>
 <nav class="v-bar v-bottom" aria-label="Page controls">
